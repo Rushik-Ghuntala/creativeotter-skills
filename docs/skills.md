@@ -4,7 +4,7 @@ All 21 workflows are included in both client packages. Their execution depends o
 
 | Skill | Purpose |
 | --- | --- |
-| `creativeotter` | Route mixed media and workspace requests through CreativeOtter. Use for several media types, onboarding, account activity, saved assets, themes or budgets; use a focused skill for one clear media outcome. |
+| `creativeotter` | Route mixed media and workspace requests through CreativeOtter. Use for connection checks, account overview, activity or settings, several media types, onboarding, saved assets, themes or budgets; use a focused skill for one clear media outcome. |
 | `creativeotter-ad-variations` | Turn one product shot, one model or one existing ad into a numbered set of video ad variations: each variation is generated with its own hook visuals and line, or gets a new generated opening spliced onto the existing ad, or (cheapest) keeps the same footage with a new voiceover or captions. One estimate for the set. Use for hook tests, A/B ad variants for Meta, Instagram or TikTok, or 'N versions of my ad'. |
 | `creativeotter-budget-projects` | Organize CreativeOtter generation costs by client or production using enabled budget-project tools. Use to assign work, inspect spend or manage a stated production budget. |
 | `creativeotter-build-film` | Produce a complete multi-shot CreativeOtter film from planning through an assembled first cut. Use for ads, explainers, music videos, or stories that require several coordinated clips, narration, and approval gates. |

@@ -1,6 +1,6 @@
 {
   "name": "creativeotter",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "CreativeOtter media workflows. Generation requires a configured CreativeOtter backend; availability depends on its enabled tools.",
   "author": {
     "name": "Rushik",

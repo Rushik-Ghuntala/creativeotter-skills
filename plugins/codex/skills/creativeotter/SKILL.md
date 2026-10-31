@@ -1,6 +1,6 @@
 ---
 name: creativeotter
-description: Route mixed media and workspace requests through CreativeOtter. Use for several media types, onboarding, account activity, saved assets, themes or budgets; use a focused skill for one clear media outcome.
+description: Route mixed media and workspace requests through CreativeOtter. Use for connection checks, account overview, activity or settings, several media types, onboarding, saved assets, themes or budgets; use a focused skill for one clear media outcome.
 ---
 
 # CreativeOtter
@@ -36,7 +36,7 @@ Use only the configured `creativeotter` connection. If it is absent, explain tha
 
 Use the focused skill's relevant references, not every guide. Model names do not change the owning outcome. Prefer a clear user outcome over broad media routing. If designed motion versus filmed-looking footage is materially unclear, ask one question.
 
-For account balance and past charges, use `manage_account` and [account guidance](references/workflows/account.md). For assets, themes and project state, use only their enabled tools. Curated examples require an advertised catalog; none is provided by this repository. Feedback and optional attribution require explicit user authorization.
+For connection checks, account overview, balance, activity or settings, call `manage_account` with the relevant section and follow [account guidance](references/workflows/account.md). A capabilities-only response does not open the account panel. In UI-capable hosts, let the returned interactive panel present the details and keep accompanying prose brief. In other hosts, summarize the returned data and include its account link. For assets, themes and project state, use only their enabled tools. Curated examples require an advertised catalog; none is provided by this repository. Feedback and optional attribution require explicit user authorization.
 
 ## Production pattern
 

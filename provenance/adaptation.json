@@ -1,7 +1,7 @@
 {
   "source_repository": "https://github.com/CreativeClawCo/creative-claw-marketplace",
   "source_commit": "9a611714f425047e44de916eac7d778804a188fa",
-  "adaptation_version": "0.1.0",
+  "adaptation_version": "0.1.1",
   "adapted_on": "2026-11-01",
   "skill_count": 21,
   "note": "Modified files carry adaptation notices. Original snapshot and license remain unchanged. Source-null files are original CreativeOtter additions.",
@@ -402,7 +402,7 @@
       "source": "upstream/plugins/creative-claw/skills/creativeclaw/references/workflows/account.md",
       "path": "skills/creativeotter/references/workflows/account.md",
       "source_sha256": "849cfd6ab45243ae442c91f9c01eee7998148e6aa6cd029e7cf76022ecea7e75",
-      "sha256": "d00c6eb5d8bbf76fd05b8770ec82f6161bae3ad0177aec1727f9f88ac8484c06",
+      "sha256": "c57461431e54ed467babbba6a94994928d63ae596254d516dec27a0c973d7e98",
       "modified": true
     },
     {
@@ -486,7 +486,7 @@
       "source": "upstream/plugins/creative-claw/skills/creativeclaw/SKILL.md",
       "path": "skills/creativeotter/SKILL.md",
       "source_sha256": "2a4266b12f1310b695510c39577fb238f730c83e10eaf384272a493a6b15c48f",
-      "sha256": "e79acb2061ababa5eae023f3129b0edf0c0420f34a20cf520b4447000b1f0ba9",
+      "sha256": "2b1a966e44af8b3f647d656f0e1ae09b711fd5ced55609e98f84af22786a3fc1",
       "modified": true
     },
     {
