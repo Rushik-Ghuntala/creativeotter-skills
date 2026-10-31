@@ -12,3 +12,5 @@ An explicit generation request authorizes its requested output and configured cr
 6. Inspect confirmed outputs and ledger state. Keep retries within the existing operation. Reuse completed assets when appropriate; a new generated take requires a fresh quote and user-requested scope.
 
 Read [client guidance](platform-client.md), [uploads](platform-upload.md) or [recovery](job-recovery.md) when relevant. Feedback and analytics require explicit authorization.
+
+For two or more saved images, call `show_image_gallery` to present them together in the CreativeOtter viewer. Reopening a saved gallery never authorizes regeneration or credit spending.

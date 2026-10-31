@@ -18,3 +18,5 @@ CreativeOtter adaptation, 2026-11-01. Follow [the runtime contract](runtime-cont
 | Requested product feedback | `submit_feedback`, only after explicit user request |
 
 No examples catalog, inline viewer, Studio or host-native import is guaranteed. Use tool schemas for fields; never infer a usable legacy alias. Every paid processing, cloning or rendering operation also needs the server's quote/reservation/execution contract. Read current account activity for charges; a quote is not a charge record.
+
+For displaying multiple saved image results, use `show_image_gallery` with ordered generation IDs and execution sources. This opens the CreativeOtter-branded MCP Apps gallery and is read-only; it never generates or charges credits.

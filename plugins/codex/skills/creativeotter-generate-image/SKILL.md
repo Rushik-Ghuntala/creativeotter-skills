@@ -21,6 +21,10 @@ If a native tool is absent/unsuitable or a specific available provider model was
 
 Obtain a bound `estimate_generation` quote for exact inputs and owned reference assets. Open `generate_image` using only the quote field declared by its schema. For an explicit generation request, call it immediately to reserve credits and start the image; no browser approval is required. For estimate-only requests, return the quote without executing. Keep its quote/job IDs, use [recovery guidance](references/job-recovery.md), and inspect only confirmed saved output. No fallback after a safety refusal, unknown native outcome, or successful native result merely because saving failed.
 
+## Show multiple saved results
+
+After multiple requested images have been saved, or when asked to show existing images together, call `show_image_gallery` in the original slide order. Follow [multi-image delivery](references/runtime-contract.md). Use the CreativeOtter embedded gallery for the combined result, with no new generation or credit charge.
+
 ## Prompt construction
 
 Specify deliverable, subject, composition, preservation requirements, environment, lighting, materials, exact quoted copy and exclusions. Use ordered reference roles. For an edit, preserve the source ratio unless reframing was requested and describe the smallest change. Native and provider tools can have different aspect/edit/transparency limits; verify rather than assuming interchangeability. A provider keyframe or extra take is another paid operation with its own quote within user-requested scope.

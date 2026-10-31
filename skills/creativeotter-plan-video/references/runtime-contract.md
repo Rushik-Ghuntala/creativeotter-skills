@@ -27,6 +27,12 @@ If native is absent or unsuitable, inspect the configured **creativeotter** serv
 
 Use only implemented, configured adapters. Operators provide API credentials; customers never paste keys into chat. Do not run a second engine after a safety refusal, uncertain native outcome or saving failure. Native and provider operation IDs are distinct; keep the original request for recovery.
 
+## Multi-image delivery
+
+For two or more saved images, carousel slides or campaign outputs, call `show_image_gallery` with a short title and the original ordered list of `{ generation_id, execution_source }` returned by CreativeOtter. For provider results use the quote ID as generation_id. This opens the CreativeOtter embedded viewer with thumbnails, per-image Output/Inputs, favorites and download. Also use it when the user asks to show existing slides together. This is a read-only display operation: reuse saved images and never prepare, claim or regenerate merely to reopen the gallery. Viewing needs media read access; it does not require new credit pricing or funds.
+
+Keep the branded gallery as the primary combined presentation when the host supports MCP Apps. Do not replace it with a host Canvas, artifact slideshow or raw Markdown image gallery. Keep final prose brief and let the widget present the images. If the gallery tool or embedded UI is unavailable, use the existing CreativeOtter result links and state the limitation without generating again. The host may independently show native tool previews while generation runs; our gallery presents the saved CreativeOtter results.
+
 ## Delivery, ledger and privacy
 
 Report the execution source and authoritative quoted/reserved/charged/released credit state. Historical legacy records with no charge are not a current free tier. Never invent a credit balance, fixed price, trial, retention or refund promise. A quote is not a charge; a reservation reduces available credits before execution. Confirmed saved delivery settles it once.
