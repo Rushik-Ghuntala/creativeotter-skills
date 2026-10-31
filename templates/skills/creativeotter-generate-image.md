@@ -9,9 +9,11 @@ CreativeOtter adaptation, 2026-11-01. Read [the hybrid runtime contract](referen
 
 ## Choose execution
 
-Resolve the subject, purpose, ratio, exact text, references and must-preserve details. Inspect the host's actual image tools before checking provider configuration. If a suitable built-in image generator exists, use it and its native imagegen guidance. Missing CreativeOtter provider tools or API keys must not block this path. Preserve the requested model: if the user explicitly chose one the native tool cannot identify/support, use its available provider route or explain the limitation.
+Resolve the subject, purpose, ratio, exact text, references and must-preserve details. Inspect actual native image tools and preserve any explicit model requirement. Native-first reduces operating cost; customers still spend CreativeOtter credits.
 
-Use the native tool's actual schema and reference mechanism. Produce one image unless more were requested. Inspect its content, text, identity and crop; report any inspection limit. Deliver the native preview. If supported and authorized, save the existing output using the [private native import flow](references/platform-upload.md). Report the actual source; do not claim a provider model or a CreativeOtter credit charge for native work. Failure to save is not failure to generate.
+Before invoking a host-native generator, follow the [paid native sequence](references/runtime-contract.md): `prepare_native_generation` → authenticated browser credit approval → successful `claim_native_generation`. Use only the approved inputs returned by the claim. Missing funds, pricing or connection stops generation; do not deliver an unbilled native substitute.
+
+After the one authorized native call, inspect the result, transfer the existing bytes through `create_native_output` and `complete_native_output` with the execution token, and report the actual saved/charged state. A failed upload is not permission for a second take. Report failed/unknown native outcomes for reconciliation; do not self-refund or switch engines.
 
 ## Provider branch
 

@@ -29,7 +29,7 @@ export async function build({ out = path.join(ROOT, 'plugins'), mcpUrl = null, m
         ...base, skills: './skills/', mcpServers: './.mcp.json',
         interface: {
           displayName: config.displayName, shortDescription: 'Create media with CreativeOtter',
-          longDescription: '21 native-first creative workflows. Use available host tools before an optional reviewed CreativeOtter API fallback; saving and API features depend on enabled backend capabilities.',
+          longDescription: '21 creative workflows with mandatory credit approval for native and API generation. Prefer suitable native engines to reduce operating cost; all execution requires configured backend billing and current capabilities.',
           developerName: config.author.name, category: 'Creativity', capabilities: ['Read', 'Write'],
           composerIcon: './assets/icon.png', logo: './assets/icon.png',
           defaultPrompt: ['Create one image from this brief.', 'Help me plan a short product video.'],

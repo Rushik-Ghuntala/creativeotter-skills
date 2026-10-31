@@ -1,11 +1,9 @@
-# Private media uploads
+# Private image uploads
 
-CreativeOtter adaptation, 2026-11-01. Follow [the runtime contract](runtime-contract.md).
+CreativeOtter adaptation, 2026-11-01. Follow [the paid runtime contract](runtime-contract.md).
 
-Reuse a ready workspace asset when possible. Refresh its signed links rather than importing it again.
+Reference files use `create_upload_url`, a scoped byte transfer and `complete_upload`. Uploading a reference is not generation authorization. Reuse ready assets and refresh private links rather than importing duplicates.
 
-For reference files, inspect the live upload schema. The current image backend exposes `create_upload_url` and `complete_upload`: prepare the upload, transfer the selected PNG/JPEG/WebP bytes with the returned method/content type, then finalize and retain the asset ID. A successful byte transfer alone is not a ready asset. For native generated images use `create_native_output` and `complete_native_output` instead, with a stable import request key. Retry transferring or saving the same result after an upload error; do not generate another image.
+New native outputs require a prior `prepare_native_generation` quote, browser approval and successful `claim_native_generation`. After the host tool runs, call `create_native_output` with that exact generation ID and execution token, upload the existing PNG/JPEG/WebP bytes, and call `complete_native_output` with the same ID/token. No free post-generation import route is available. Retry saving the same output; do not generate again or claim a charge settled until finalization confirms it.
 
-Local paths and conversation attachment IDs are not downloadable URLs. Use a supported host file-transfer capability. If none is available, deliver the native result and use the authenticated library upload page returned by the server when the user wants to save it. Do not invent a signed URL or claim that a host attachment has been imported.
-
-Import public URLs only through a supported import capability. Keep private recordings private and separate voice-cloning consent. Never make a private file public merely to feed a provider. Do not expose scoped upload tokens in user-facing prose.
+Local paths and attachment IDs are not remote URLs. Use supported transfer capabilities; preserve the existing output and report a delivery problem if transfer is unavailable. Keep tokens private. Never publish a private recording or image to feed another service. Other media formats require their own implemented billing/import contract.

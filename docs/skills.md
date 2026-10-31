@@ -1,6 +1,6 @@
 # Skill inventory
 
-All 21 workflows are included in both client packages. They prefer suitable native host tools; optional API fallback and library operations use our own backend. Skills alone do not supply missing generators.
+All 21 workflows are included in both client packages. They prefer suitable native engines; both native and API execution require backend credit approval. Skills alone do not supply missing generators.
 
 | Skill | Purpose |
 | --- | --- |

@@ -7,7 +7,7 @@ description: Route mixed media and workspace requests through CreativeOtter. Use
 
 CreativeOtter adaptation, 2026-11-01. Read [the runtime contract](references/runtime-contract.md) and [shared execution guidance](references/workflow-basics.md) before tools. They define the CreativeOtter integration; inherited examples do not establish available models, prices or UI.
 
-Use suitable native host tools first under the hybrid runtime contract. Inspect the real host inventory; do not require a provider key for an available native tool. Use the configured `creativeotter` connection for optional saved assets, account data and reviewed API fallback. `get_capabilities` describes our backend, not the host’s native inventory. Do not substitute another external plugin’s similarly named tools.
+Use suitable native host tools first under the hybrid runtime contract. Inspect the real host inventory; do not require a provider key for an available native tool. Use the configured `creativeotter` connection for mandatory credit authorization before native or API generation, account data and saved delivery. Missing billing must stop generation. `get_capabilities` describes our backend, not the host’s native inventory. Do not substitute another external plugin’s similarly named tools.
 
 ## Choose the workflow
 
@@ -40,4 +40,4 @@ For connection checks, account overview, balance, activity or settings, call `ma
 
 ## Production pattern
 
-Resolve the brief and references, inspect native capabilities and preserve explicit model requirements. Prefer suitable native execution and save existing outputs when possible. For provider fallback, select an enabled model, quote all paid steps and obtain direct web approval. Preserve IDs, inspect confirmed outputs and organize assets. Reuse completed work and approved identity anchors across shots. Do not silently add keyframes, auditions, variants or generative repairs outside the requested scope. A completed asset must be confirmed by the server; a job ID alone is unfinished.
+Resolve the brief and references, inspect native capabilities and preserve explicit model requirements. Prefer a suitable native engine, obtain its credit quote and direct web approval, and claim execution before the native tool runs. For provider fallback, select an enabled model, quote all paid steps and obtain direct web approval. Preserve IDs, inspect confirmed outputs and organize assets. Reuse completed work and approved identity anchors across shots. Do not silently add keyframes, auditions, variants or generative repairs outside the requested scope. A completed asset must be confirmed by the server; a job ID alone is unfinished.
