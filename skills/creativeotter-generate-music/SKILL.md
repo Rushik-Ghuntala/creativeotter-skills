@@ -3,7 +3,7 @@ name: creativeotter-generate-music
 description: Compose songs, scores, instrumentals or remixes through enabled CreativeOtter music models. Use for music, not narration or isolated sound effects.
 ---
 
-> CreativeOtter adaptation, 2026-11-01. Before using this workflow, read [the runtime contract](references/runtime-contract.md). Use only enabled CreativeOtter tools, current model schemas, bound quotes and direct web approvals. Inherited examples do not establish defaults, prices, entitlements or UI availability.
+> CreativeOtter adaptation, 2026-11-01. Before using this workflow, read [the runtime contract](references/runtime-contract.md). Use suitable native host tools first. Provider-specific steps below apply only to enabled CreativeOtter API fallback, with current schemas, bound quotes and direct web approval. Native execution follows its own host schema; inherited examples do not establish availability or pricing.
 
 
 # Generate Music

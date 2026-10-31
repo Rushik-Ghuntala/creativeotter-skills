@@ -18,7 +18,7 @@ export async function build({ out = path.join(ROOT, 'plugins'), mcpUrl = null, m
     for (const f of ['LICENSE', 'NOTICE']) await copyFile(path.join(ROOT, f), path.join(dest, f));
     const base = {
       name: config.name, version: config.version,
-      description: 'CreativeOtter media workflows. Generation requires a configured CreativeOtter backend; availability depends on its enabled tools.',
+      description: 'CreativeOtter native-first media workflows with optional reviewed API fallback and a private library.',
       author: config.author, repository: config.repository, license: 'Apache-2.0',
       keywords: ['creativeotter', 'media', 'image-generation', 'video', 'voice', 'skills', 'mcp'],
     };
@@ -29,7 +29,7 @@ export async function build({ out = path.join(ROOT, 'plugins'), mcpUrl = null, m
         ...base, skills: './skills/', mcpServers: './.mcp.json',
         interface: {
           displayName: config.displayName, shortDescription: 'Create media with CreativeOtter',
-          longDescription: 'Shared image, video, voice, music and production workflows. This development package includes 21 skills; execution requires enabled tools on our own backend.',
+          longDescription: '21 native-first creative workflows. Use available host tools before an optional reviewed CreativeOtter API fallback; saving and API features depend on enabled backend capabilities.',
           developerName: config.author.name, category: 'Creativity', capabilities: ['Read', 'Write'],
           composerIcon: './assets/icon.png', logo: './assets/icon.png',
           defaultPrompt: ['Create one image from this brief.', 'Help me plan a short product video.'],

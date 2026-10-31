@@ -1,6 +1,6 @@
 # Skill inventory
 
-All 21 workflows are included in both client packages. Their execution depends on enabled tools on our own backend; this repository alone performs no media generation.
+All 21 workflows are included in both client packages. They prefer suitable native host tools; optional API fallback and library operations use our own backend. Skills alone do not supply missing generators.
 
 | Skill | Purpose |
 | --- | --- |
@@ -14,7 +14,7 @@ All 21 workflows are included in both client packages. Their execution depends o
 | `creativeotter-create-reels` | Turn existing long-form video into coherent social clips in the requested aspect ratio, with optional captions. Use when the agent should transcribe, select standalone highlights, choose speech-safe cuts and framing, then render and review. User-selected moments override AI selection; invented footage belongs to video-generation skills. |
 | `creativeotter-create-ugc-ad` | Create a scripted creator-style UGC product ad with CreativeOtter. Use when the user wants a vertical testimonial, demo, unboxing, problem-solution ad, or social video combining a creator, product, speech, and several shots. |
 | `creativeotter-edit-media` | Edit existing video or audio with CreativeOtter without regenerating it: trim, cut and reorder chosen moments, resize or reframe, caption, transcribe, clean speech, extract frames, add or mix audio, burn a logo watermark, compose images and clips, or add an intro/outro. Use when the source footage should be kept; use generation skills for invented or transformed footage and create-reels to pick highlights. |
-| `creativeotter-generate-image` | Generate or edit one image through CreativeOtter using an enabled model. Use for a single image or correction; use product-photoshoot for coordinated campaigns or create-avatar for a reusable identity. |
+| `creativeotter-generate-image` | Generate or edit one image with native-first CreativeOtter routing and an optional reviewed provider fallback. Use for a single image or correction; use product-photoshoot for a campaign or create-avatar for a reusable identity. |
 | `creativeotter-generate-music` | Compose songs, scores, instrumentals or remixes through enabled CreativeOtter music models. Use for music, not narration or isolated sound effects. |
 | `creativeotter-generate-sound-effects` | Generate sound effects, Foley, ambience, loops, UI cues, transitions, impacts, or audio textures with ElevenLabs Sound Effects v2 through CreativeOtter. Use for non-speech, non-song audio. |
 | `creativeotter-generate-video` | Generate, animate, extend, reframe, or transform one video clip with CreativeOtter. Use for a clear single-clip request when the user has not asked for a storyboard, UGC ad, or complete multi-shot film. |

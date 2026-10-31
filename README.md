@@ -2,7 +2,7 @@
 
 Shared media-production skills with separate **Codex** and **Claude Code** plugin packages. Includes all **21 adapted skills**, their prompting references and rendering assets, plus an unchanged, hash-verified upstream snapshot.
 
-**Status:** skills and packaging foundation, version 0.1.0. No CreativeOtter backend is deployed by this repository. The committed packages are **instructions-only** and have no active MCP endpoint. They can guide planning; generation, uploads, credits, account views and other tool actions require our own implemented backend. No global plugin installation or public directory approval is implied.
+**Status:** native-first skills and packaging, version 0.2.0. Use a suitable native host tool first, with an optional reviewed API fallback through our backend. The committed packages have no active MCP endpoint; native creation can work independently when the host exposes the required tool. Private library imports, account views, provider quotes and other remote actions require the implemented CreativeOtter backend and a connected package. Native host usage limits still apply. No public directory approval is implied.
 
 ## Repository layout
 

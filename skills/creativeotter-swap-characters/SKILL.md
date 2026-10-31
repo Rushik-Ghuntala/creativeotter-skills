@@ -3,7 +3,7 @@ name: creativeotter-swap-characters
 description: "Swap, replace or recast the people in an existing video with CreativeOtter: put yourself, a saved Character or a photo into a TikTok, Reel, movie scene or ad while the original motion, camera, cuts and audio stay. Use for character swaps, face swaps, recasting an actor, \"put me in this video\", \"replace her with my grandma\" and multi-person swaps. Not for copying a performance into a new scene (motion transfer) or for new footage."
 ---
 
-> CreativeOtter adaptation, 2026-11-01. Before using this workflow, read [the runtime contract](references/runtime-contract.md). Use only enabled CreativeOtter tools, current model schemas, bound quotes and direct web approvals. Inherited examples do not establish defaults, prices, entitlements or UI availability.
+> CreativeOtter adaptation, 2026-11-01. Before using this workflow, read [the runtime contract](references/runtime-contract.md). Use suitable native host tools first. Provider-specific steps below apply only to enabled CreativeOtter API fallback, with current schemas, bound quotes and direct web approval. Native execution follows its own host schema; inherited examples do not establish availability or pricing.
 
 
 # Swap Characters

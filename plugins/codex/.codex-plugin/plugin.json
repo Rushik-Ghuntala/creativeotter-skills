@@ -1,7 +1,7 @@
 {
   "name": "creativeotter",
-  "version": "0.1.1",
-  "description": "CreativeOtter media workflows. Generation requires a configured CreativeOtter backend; availability depends on its enabled tools.",
+  "version": "0.2.0",
+  "description": "CreativeOtter native-first media workflows with optional reviewed API fallback and a private library.",
   "author": {
     "name": "Rushik",
     "email": "rushisoni2003@gmail.com"
@@ -22,7 +22,7 @@
   "interface": {
     "displayName": "CreativeOtter",
     "shortDescription": "Create media with CreativeOtter",
-    "longDescription": "Shared image, video, voice, music and production workflows. This development package includes 21 skills; execution requires enabled tools on our own backend.",
+    "longDescription": "21 native-first creative workflows. Use available host tools before an optional reviewed CreativeOtter API fallback; saving and API features depend on enabled backend capabilities.",
     "developerName": "Rushik",
     "category": "Creativity",
     "capabilities": [

@@ -108,7 +108,7 @@ for (const src of await files(original)) {
       if (!text.includes('references/runtime-contract.md')) {
         const end = text.indexOf('\n---', 4) + 4;
         assert(end > 4, `Missing frontmatter: ${rel}`);
-        text = text.slice(0, end) + '\n\n> CreativeOtter adaptation, 2026-11-01. Before using this workflow, read [the runtime contract](references/runtime-contract.md). Use only enabled CreativeOtter tools, current model schemas, bound quotes and direct web approvals. Inherited examples do not establish defaults, prices, entitlements or UI availability.\n' + text.slice(end);
+        text = text.slice(0, end) + '\n\n> CreativeOtter adaptation, 2026-11-01. Before using this workflow, read [the runtime contract](references/runtime-contract.md). Use suitable native host tools first. Provider-specific steps below apply only to enabled CreativeOtter API fallback, with current schemas, bound quotes and direct web approval. Native execution follows its own host schema; inherited examples do not establish availability or pricing.\n' + text.slice(end);
       }
       if (skill === 'creativeotter-generate-music') {
         text = text.replace(/^description:.*$/m, 'description: Compose songs, scores, instrumentals or remixes through enabled CreativeOtter music models. Use for music, not narration or isolated sound effects.');
@@ -170,5 +170,5 @@ for (const name of skillNames) {
   const frontmatter = YAML.parse(entry.match(/^---\n([\s\S]*?)\n---/)[1]);
   inventory.push(`| \`${name}\` | ${frontmatter.description.replaceAll('|', '\\|')} |`);
 }
-await write(path.join(ROOT, 'docs/skills.md'), '# Skill inventory\n\nAll 21 workflows are included in both client packages. Their execution depends on enabled tools on our own backend; this repository alone performs no media generation.\n\n| Skill | Purpose |\n| --- | --- |\n' + inventory.join('\n') + '\n');
+await write(path.join(ROOT, 'docs/skills.md'), '# Skill inventory\n\nAll 21 workflows are included in both client packages. They prefer suitable native host tools; optional API fallback and library operations use our own backend. Skills alone do not supply missing generators.\n\n| Skill | Purpose |\n| --- | --- |\n' + inventory.join('\n') + '\n');
 console.log(`Adapted ${skillNames.length} skills and ${modifications.length} files; upstream snapshot was not changed.`);

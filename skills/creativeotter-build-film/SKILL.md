@@ -3,7 +3,7 @@ name: creativeotter-build-film
 description: "Produce a complete multi-shot CreativeOtter film from planning through an assembled first cut. Use for ads, explainers, music videos, or stories that require several coordinated clips, narration, and approval gates."
 ---
 
-> CreativeOtter adaptation, 2026-11-01. Before using this workflow, read [the runtime contract](references/runtime-contract.md). Use only enabled CreativeOtter tools, current model schemas, bound quotes and direct web approvals. Inherited examples do not establish defaults, prices, entitlements or UI availability.
+> CreativeOtter adaptation, 2026-11-01. Before using this workflow, read [the runtime contract](references/runtime-contract.md). Use suitable native host tools first. Provider-specific steps below apply only to enabled CreativeOtter API fallback, with current schemas, bound quotes and direct web approval. Native execution follows its own host schema; inherited examples do not establish availability or pricing.
 
 
 # Build Film

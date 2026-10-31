@@ -1,31 +1,35 @@
-# CreativeOtter runtime contract
+# CreativeOtter hybrid runtime contract
 
-CreativeOtter adaptation, 2026-11-01. Read once per task, before applying a workflow or provider guide.
+CreativeOtter adaptation, 2026-11-01. This routing contract takes precedence over provider-specific steps in inherited guides.
 
-## Connection and available capabilities
+## Native first
 
-Use only tools belonging to the configured **creativeotter** MCP connection. A tool with the same name on another service is not interchangeable. This repository contains instructions, not a running generation service. The default packages deliberately have no active MCP URL. If tools are absent, explain that the backend must be deployed and the package rebuilt with its real HTTPS endpoint; do not send the user to another product or invent a sign-in page.
+Inspect the actual tools available in the current host for the requested operation. Skills describe workflows; their installation does not prove that a generator exists. Prefer a matching built-in host tool or local code/rendering capability. In Codex, use the native image-generation tool and its imagegen guidance when available. Do not ask for a provider API key to use an available built-in tool. Host usage limits or charges can still apply; do not describe native work as universally free.
 
-When connected, call `get_capabilities` if exposed and use its enabled operations, schema version and default models. Otherwise inspect the actual exposed tools. An installed skill is not evidence that its backend exists. Stop only the unavailable execution branch; planning and prompt drafting can continue. Do not promise Studio, widgets, examples, voices or models that the server does not advertise.
+A native tool must satisfy the requested outcome, reference/edit requirements and any explicitly requested model. Do not label a native output as Nano Banana or another model unless the host actually identifies that model. Do not silently replace an explicitly requested model. A safety refusal is not a reason to switch providers. For an unknown outcome, reconcile the native attempt before starting another generation.
 
-## Schemas and model guides
+Backend unavailability, missing media permissions, or `media_generation: false` do not disable an independent native tool. CreativeOtter's capability response distinguishes its provider adapter from host-native availability. If `resolve_generation_route` exists, use it to confirm routing after inspecting host tools; never report an uninspected host tool as available.
 
-The exposed tool schema defines top-level inputs. `get_model_params` defines current settings for a selected model. Both take precedence over copied examples and provider guides, which are prompting references, not an availability or pricing catalog. Discover models through `list_models`; honor an explicitly requested available model and never silently substitute one. Use the server's advertised default where suitable. No packaged model ID is a CreativeOtter default merely because it appears in a guide.
+Provider tool sequences and model guides below apply to the provider branch. For native execution, use that host's actual tool schema and applicable native skill. Do not call a second generator merely to reproduce a provider-specific sequence. A successfully generated native result is already an output; a saving failure does not authorize regeneration.
 
-## Paid requests and approval
+## Save native results when supported
 
-Before **each** paid operation, obtain a quote through `estimate_generation` or the server's advertised equivalent using the exact normalized inputs. Preserve its `quote_id`, expiry, maximum charge and review link. Pass the quote ID only in a field the actual execution schema declares. If the required quoting/execution contract is missing, stop paid execution and explain the missing integration; never fall back to an unquoted paid call.
+Deliver the native result even if optional library saving is unavailable. When the CreativeOtter connection supports native imports and has media permission, call `create_native_output` with the exact prompt, reported host/model (model may be null), owned reference asset IDs, actual output MIME and a unique `request_key`. Reuse that key only for the same import and inputs. Upload the existing file bytes to the returned `signed_url` using its method/content type, then call `complete_native_output` with the returned `generation_id`. A private upload is not a saved generation until completion confirms a ready asset. `get_native_generation` refreshes existing private links without generation.
 
-Initial CreativeOtter behavior is Review: execution prepares a request and returns an authenticated web approval link; the user approves the bound request directly. A chat instruction is not that browser approval. Do not click approval, self-approve, poll while approval is pending, or assume a widget is present. Changed inputs, expired quotes and additional takes need a fresh quote. Auto execution is permitted only when the server reports the user's explicit opt-in and finite spending limits. An estimate-only request never starts work. For batches, include keyframes, audio, editing and rendering in the cost plan, and obtain the applicable quote for each operation.
+Local paths and host attachment IDs are not remote URLs. Use a supported host transfer capability; otherwise give the native preview/download and the returned web upload link when available. Do not fabricate a saved library record or send private content to another service. Do not expose scoped upload credentials in the user-facing reply.
 
-## Jobs, assets and reporting
+## Provider fallback
 
-Keep returned quote, job, project and asset IDs distinct. A job is unfinished until the server confirms success with a saved asset. Honor `retry_after` and bounded status checks. For an unknown submission outcome, retain the job and reconcile it; never blindly submit another generation. A failed ingestion is not permission to regenerate the provider output. Ask before a replacement paid attempt unless that attempt was already explicitly requested and remains within the server's limits.
+If no suitable native tool is available, or the user explicitly requests an available provider model, use only the configured **creativeotter** MCP server. Other products' similarly named tools are not interchangeable and are not a silent fallback. Inspect `get_capabilities`, `list_models` and `get_model_params` for enabled adapters and current input placement. A packaged guide is not proof that its model, pricing, UI or feature is implemented.
 
-Prefer workspace asset IDs. Use private uploads and server-returned signed URLs where supported; never promise permanent or public links. A local file path or attachment identifier is not a remote URL. Refresh an expired link through the owning asset rather than importing it again. Explain any inspection limitations honestly.
+Obtain a bound quote through `estimate_generation` for the exact normalized inputs before every provider-backed paid operation. Preserve the `quote_id`, expiry, maximum estimate and authenticated review link. Use `generate_image` or the advertised execution tool with only the fields its schema declares. Initial provider behavior is Review: the user approves the bound request directly in the authenticated browser. A chat instruction or a native generation is not provider spending approval. Do not click that approval, self-approve, change quoted inputs, or run another take without a fresh quote and approval. An estimate-only request never starts work.
 
-Read balances, charges, refunds and retention from current account/policy results. Missing amounts are unknown, not zero. No fixed credit rates, trials, included generations, refund guarantees, retention periods or voice quotas are established by these packages.
+The operator configures server-side provider credentials and a finite workspace budget. End users do not paste API keys into chat. If the required fallback is unavailable, explain the missing capability and keep planning or native delivery useful. Do not represent unavailable video/audio/editing adapters as implemented.
 
-Feedback is sent only when the user explicitly asks to report it. Workflow attribution (`skills_used`) is off unless the user has explicitly opted in and the server exposes the field. Never send prompts, media, local paths, conversation history, private data or another plugin's identity as analytics. Share only current CreativeOtter support/policy URLs returned by the configured backend; do not invent a mailbox or domain.
+## Jobs, private assets and reporting
 
-This contract defines the CreativeOtter integration. Conflicting commercial, model-default, widget, consent-form or API details in inherited references are not implemented behavior. Use their creative guidance only after checking current capabilities.
+Keep native generation, quote, provider job and asset IDs distinct. A provider job is unfinished until a valid output is saved in private storage. Honor bounded polling and retry intervals. For unknown submission outcomes retain and reconcile the existing job; never blindly resubmit. Failed ingestion means retry saving the same output, not generate again.
+
+Prefer owned workspace asset IDs and current signed URLs. Refresh expired links through the owning asset. Inspect the result with available tools and state inspection limits. Report the actual engine/source and cost category: native host usage, provider estimate, or recorded charge. Missing billing amounts are unknown, not zero; no copied fixed prices, trials, retention or refund guarantees apply.
+
+Consent for likeness/voice, approval of creative direction and provider spending approval are separate. Feedback and workflow attribution are off unless explicitly requested and supported. Never send another plugin's identity, private paths, conversation history or private media as analytics. Use only current support/policy URLs returned by our backend.

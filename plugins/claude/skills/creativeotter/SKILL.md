@@ -7,7 +7,7 @@ description: Route mixed media and workspace requests through CreativeOtter. Use
 
 CreativeOtter adaptation, 2026-11-01. Read [the runtime contract](references/runtime-contract.md) and [shared execution guidance](references/workflow-basics.md) before tools. They define the CreativeOtter integration; inherited examples do not establish available models, prices or UI.
 
-Use only the configured `creativeotter` connection. If it is absent, explain that the package contains instructions and needs our deployed backend. Do not use another product's similarly named tools. When available, use `get_capabilities` to identify enabled operations and defaults. Planning may proceed while execution is unavailable.
+Use suitable native host tools first under the hybrid runtime contract. Inspect the real host inventory; do not require a provider key for an available native tool. Use the configured `creativeotter` connection for optional saved assets, account data and reviewed API fallback. `get_capabilities` describes our backend, not the host’s native inventory. Do not substitute another external plugin’s similarly named tools.
 
 ## Choose the workflow
 
@@ -40,4 +40,4 @@ For connection checks, account overview, balance, activity or settings, call `ma
 
 ## Production pattern
 
-Resolve the brief and supplied references, select an enabled model with current parameters, plan all paid steps, obtain each quote and applicable web approval, preserve job IDs, inspect saved outputs, and organize assets. Reuse completed work and approved identity anchors across shots. Do not silently add keyframes, auditions, variants or generative repairs outside the requested scope. A completed asset must be confirmed by the server; a job ID alone is unfinished.
+Resolve the brief and references, inspect native capabilities and preserve explicit model requirements. Prefer suitable native execution and save existing outputs when possible. For provider fallback, select an enabled model, quote all paid steps and obtain direct web approval. Preserve IDs, inspect confirmed outputs and organize assets. Reuse completed work and approved identity anchors across shots. Do not silently add keyframes, auditions, variants or generative repairs outside the requested scope. A completed asset must be confirmed by the server; a job ID alone is unfinished.
