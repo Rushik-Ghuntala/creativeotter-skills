@@ -23,7 +23,7 @@ Obtain a bound `estimate_generation` quote for exact inputs and owned reference 
 
 ## Show multiple saved results
 
-After multiple requested images have been saved, or when asked to show existing images together, call `show_image_gallery` in the original slide order. Follow [multi-image delivery](references/runtime-contract.md). Use the CreativeOtter embedded gallery for the combined result, with no new generation or credit charge.
+After multiple requested images have been saved, or when asked to show existing images together, call `show_image_gallery` in the original slide order. Follow [multi-image delivery](references/runtime-contract.md). Use the CreativeOtter embedded gallery for the combined result, with no new generation or credit charge. If its tool is missing from an older chat, follow the runtime contract’s discovery refresh and exact-ID branded gallery link.
 
 ## Prompt construction
 

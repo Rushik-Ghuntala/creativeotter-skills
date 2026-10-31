@@ -14,3 +14,5 @@ An explicit generation request authorizes its requested output and configured cr
 Read [client guidance](platform-client.md), [uploads](platform-upload.md) or [recovery](job-recovery.md) when relevant. Feedback and analytics require explicit authorization.
 
 For two or more saved images, call `show_image_gallery` to present them together in the CreativeOtter viewer. Reopening a saved gallery never authorizes regeneration or credit spending.
+
+If a chat has an older tool catalog, use the runtime contract’s explicit connection-refresh guidance and exact-ID CreativeOtter gallery link. Do not stop at “combined viewer unavailable” or generate new images for display.
