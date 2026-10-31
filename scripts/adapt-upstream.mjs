@@ -120,7 +120,7 @@ for (const src of await files(original)) {
       delete data.dependencies; // An actual endpoint is injected only in an explicitly connected build.
       data.interface.display_name = data.interface.display_name.replace(/CreativeOtter/g, config.displayName);
       data.interface.default_prompt = data.interface.default_prompt.replace(/\$creativeotter(?:-[a-z-]+)?/g, `$${skill}`);
-      text = '# CreativeOtter adaptation, 2026-11-01. MCP dependency is added by a connected package build.\n' + YAML.stringify(data);
+      text = '# CreativeOtter adaptation, 2026-11-01. MCP dependency is added by a connected package build.\n' + YAML.stringify(data, { defaultStringType: 'QUOTE_DOUBLE', defaultKeyType: 'PLAIN' });
     } else if (resource.endsWith('.md')) {
       const link = path.posix.relative(path.posix.dirname(resource), 'references/runtime-contract.md');
       text = `> CreativeOtter adaptation, 2026-11-01. [Runtime contract](${link}) governs execution. This inherited creative/technical guide is not a current model catalog, price list, API schema or product-policy promise.\n\n` + text;

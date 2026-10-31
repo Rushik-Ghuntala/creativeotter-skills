@@ -1,8 +1,8 @@
 # CreativeOtter adaptation, 2026-11-01. MCP dependency is added by a connected package build.
 interface:
-  display_name: CreativeOtter — Generate Video
-  short_description: Generate or edit one video clip with smart routing
-  default_prompt: Use $creativeotter-generate-video to turn this brief and my
-    references into a polished video clip.
+  display_name: "CreativeOtter — Generate Video"
+  short_description: "Generate or edit one video clip with smart routing"
+  default_prompt: "Use $creativeotter-generate-video to turn this brief and my
+    references into a polished video clip."
 policy:
   allow_implicit_invocation: true

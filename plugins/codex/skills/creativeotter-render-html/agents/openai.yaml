@@ -1,8 +1,8 @@
 # CreativeOtter adaptation, 2026-11-01. MCP dependency is added by a connected package build.
 interface:
-  display_name: CreativeOtter — Render HTML
-  short_description: Render exact HTML layouts to PNG or video
-  default_prompt: Use $creativeotter-render-html to render my explicit HTML, CSS,
-    or HyperFrames composition as an image or video.
+  display_name: "CreativeOtter — Render HTML"
+  short_description: "Render exact HTML layouts to PNG or video"
+  default_prompt: "Use $creativeotter-render-html to render my explicit HTML, CSS,
+    or HyperFrames composition as an image or video."
 policy:
   allow_implicit_invocation: true

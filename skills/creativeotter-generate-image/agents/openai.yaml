@@ -1,8 +1,8 @@
 # CreativeOtter adaptation, 2026-11-01. MCP dependency is added by a connected package build.
 interface:
-  display_name: CreativeOtter — Generate Image
-  short_description: Generate or edit images with smart model routing
-  default_prompt: Use $creativeotter-generate-image to create or edit this image
-    with the right model.
+  display_name: "CreativeOtter — Generate Image"
+  short_description: "Generate or edit images with smart model routing"
+  default_prompt: "Use $creativeotter-generate-image to create or edit this image
+    with the right model."
 policy:
   allow_implicit_invocation: true

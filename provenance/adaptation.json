@@ -10,7 +10,7 @@
       "source": "upstream/plugins/creative-claw/skills/creativeclaw/agents/openai.yaml",
       "path": "skills/creativeotter/agents/openai.yaml",
       "source_sha256": "12f28c9c9b2723fc001576857f582733875fbdd7688e02ff159dc9cfa93f7f29",
-      "sha256": "7092c0c621af04ba05ba525cdd3ec76ff0d28582d128047516845e37b1c54771",
+      "sha256": "7a04778d1d28cbd79219a559a065c58558905a83ee1beebed013198dbdbe083e",
       "modified": true
     },
     {
@@ -493,7 +493,7 @@
       "source": "upstream/plugins/creative-claw/skills/creativeclaw-ad-variations/agents/openai.yaml",
       "path": "skills/creativeotter-ad-variations/agents/openai.yaml",
       "source_sha256": "1d178c17b0b523aca834b4e3255ef0cf9c5176123ba0165f286e96c1e1210c77",
-      "sha256": "921d9208da5b446290b2ba33b6c034518c34be271ac7ce0569dd323aefd4fd49",
+      "sha256": "888cf0020b6973a4848c28aa84c42901686c8f8b46cb2274cf708158e9ac4afc",
       "modified": true
     },
     {
@@ -717,7 +717,7 @@
       "source": "upstream/plugins/creative-claw/skills/creativeclaw-budget-projects/agents/openai.yaml",
       "path": "skills/creativeotter-budget-projects/agents/openai.yaml",
       "source_sha256": "829e1663aa45422bcc07b5b056ef7066dc0e97a9a663f40fea99ac07fb1e4166",
-      "sha256": "c8e8d88dc9c905846bb0fb706d5a82b0fe5d19ba1f5d7016dcd6f44dc434efa1",
+      "sha256": "8693ef53e8e2f19dfbaa2b61c84084c7c3751d855db35f0f6b76300117965203",
       "modified": true
     },
     {
@@ -766,7 +766,7 @@
       "source": "upstream/plugins/creative-claw/skills/creativeclaw-build-film/agents/openai.yaml",
       "path": "skills/creativeotter-build-film/agents/openai.yaml",
       "source_sha256": "e186c4c840130f5c9d4941d9b8d03d1a98f218c41b5bec230fe890513e2cd3c9",
-      "sha256": "72e1683cf5d98a4815b484ebf3c976aa6846c9d367e344de655e016ad2956b00",
+      "sha256": "782399c4739390fa44a0b6555f5b8aec78f9586d0143ccea9d4446ff42367d49",
       "modified": true
     },
     {
@@ -990,7 +990,7 @@
       "source": "upstream/plugins/creative-claw/skills/creativeclaw-clone-voice/agents/openai.yaml",
       "path": "skills/creativeotter-clone-voice/agents/openai.yaml",
       "source_sha256": "d11be8daabebdb1d4ee949d785f26a4935d5bb5aef095fce85444c4e24dfe508",
-      "sha256": "66f34c00429b1dc96a92643cc1df7eff02ee2811957a22e56fe078f745972041",
+      "sha256": "8275fb394afeb946f71440143afbba74d0660bf7dfc138ed98818719b4352b8c",
       "modified": true
     },
     {
@@ -1165,7 +1165,7 @@
       "source": "upstream/plugins/creative-claw/skills/creativeclaw-create-avatar/agents/openai.yaml",
       "path": "skills/creativeotter-create-avatar/agents/openai.yaml",
       "source_sha256": "aae23df53cc0283a86eeee418e72bee7dc934b38b72899347fb3651d97e32f3f",
-      "sha256": "e208055d86cb5b45d3e7f53300dbbc740177ae57413240b0757b294e799df9dc",
+      "sha256": "af616c00be02cd960fcdc85fb4384114c53e495b40234bd9d9e38890b6edc002",
       "modified": true
     },
     {
@@ -1403,7 +1403,7 @@
       "source": "upstream/plugins/creative-claw/skills/creativeclaw-create-character/agents/openai.yaml",
       "path": "skills/creativeotter-create-character/agents/openai.yaml",
       "source_sha256": "b41fd1cea776abf1895c28957defe2bc561724b6776d2073ed08eb32e2430782",
-      "sha256": "395a97542c55dcd50b49c0d6b3e05dee80cec760998adfd21d0781b62e9ecbee",
+      "sha256": "4a27273606dbb109b6d369f178ed512dc14c0fcfa0f8730de6469d989329eec8",
       "modified": true
     },
     {
@@ -1515,7 +1515,7 @@
       "source": "upstream/plugins/creative-claw/skills/creativeclaw-create-reels/agents/openai.yaml",
       "path": "skills/creativeotter-create-reels/agents/openai.yaml",
       "source_sha256": "82a884b0fcb277ad42211fe04f26fb1c2421d4749606a087fca372739834cf1f",
-      "sha256": "ffac8198456d003216ac7c94857a2506f10079ae4da25ff842922dbafd5e006d",
+      "sha256": "946c0f12411a0d0de505f6e9d465dd217231c473e7c793a2f9e20875a469a294",
       "modified": true
     },
     {
@@ -1578,7 +1578,7 @@
       "source": "upstream/plugins/creative-claw/skills/creativeclaw-create-ugc-ad/agents/openai.yaml",
       "path": "skills/creativeotter-create-ugc-ad/agents/openai.yaml",
       "source_sha256": "0c62c9ce08538d633594d130611f43130f4ef8dd34d1a477b8dd0ff9b43b9517",
-      "sha256": "6faf043b3a94b8561624ac7b8c4cd35b1cd25d3ca9bb78e8bcb175f6eebdf9a5",
+      "sha256": "3ec8488580c75b77d4884890a641fae3bc17cef4e86d5b99b44ad218bcb40374",
       "modified": true
     },
     {
@@ -1802,7 +1802,7 @@
       "source": "upstream/plugins/creative-claw/skills/creativeclaw-edit-media/agents/openai.yaml",
       "path": "skills/creativeotter-edit-media/agents/openai.yaml",
       "source_sha256": "e00288e508711f2fcff92b44a8ee8bf5364855f087fe715eed58d110d4922bf4",
-      "sha256": "1740fcc1b66a15eb393a1f15d35370e5845851db6fd202a47e12dcb43dc73198",
+      "sha256": "55a1255d61b066700161dc2b2407147f0f0db70ee8141151c5c81e00b962f4e0",
       "modified": true
     },
     {
@@ -1858,7 +1858,7 @@
       "source": "upstream/plugins/creative-claw/skills/creativeclaw-generate-image/agents/openai.yaml",
       "path": "skills/creativeotter-generate-image/agents/openai.yaml",
       "source_sha256": "8094067f55541503a55f7aa5c0fffb5dd0ddfb551fb4c6c46d1acc98d5fe84ab",
-      "sha256": "8d831719028565a751ffc22d21cace3ef2c8651b2f11b91540bc48dbf6c72c93",
+      "sha256": "4e5641b2a2319c2b7c61b334a20fdb3ff147b3d0b641d7e6443155a6fd58a2c0",
       "modified": true
     },
     {
@@ -1942,7 +1942,7 @@
       "source": "upstream/plugins/creative-claw/skills/creativeclaw-generate-music/agents/openai.yaml",
       "path": "skills/creativeotter-generate-music/agents/openai.yaml",
       "source_sha256": "3546c557d949e06e8596ec106c53dee2ee4d633394abc8c3d3419a6e6524c2bf",
-      "sha256": "348900b3082c15e92c9628352063127dc00aad601aa105a01271f2df699ca7a1",
+      "sha256": "b85abb6c82ee4ec134e8d61cfe8eb3ab2a658f799c1d5f3c1760cd2e51eeedc4",
       "modified": true
     },
     {
@@ -2005,7 +2005,7 @@
       "source": "upstream/plugins/creative-claw/skills/creativeclaw-generate-sound-effects/agents/openai.yaml",
       "path": "skills/creativeotter-generate-sound-effects/agents/openai.yaml",
       "source_sha256": "d047720b3deb3dda516fff4ffde12aa346b7f1373301f2315dba958e4d3256cf",
-      "sha256": "bc0c4cb693fc02f64fc22a783d99088150b9b6d33883f9b12d96cc6658e50a46",
+      "sha256": "a37c19fb352e9ad648f86bdb5cb230ea64309162bd31d90990579636a54a9850",
       "modified": true
     },
     {
@@ -2061,7 +2061,7 @@
       "source": "upstream/plugins/creative-claw/skills/creativeclaw-generate-video/agents/openai.yaml",
       "path": "skills/creativeotter-generate-video/agents/openai.yaml",
       "source_sha256": "42c0c3e52ab6875c5560b4ac83bcaeeec12cd565afec1d980761144dffbed3c1",
-      "sha256": "aca45fb32d2ec2add5190824b1930a1efb47e4b0fb8af6e1b0c2af344a4921c1",
+      "sha256": "f5eabc7aebd715f0d9b1fc720d52b7ca9f30ba0acab232ecad09a5f55866c58a",
       "modified": true
     },
     {
@@ -2285,7 +2285,7 @@
       "source": "upstream/plugins/creative-claw/skills/creativeclaw-generate-voiceover/agents/openai.yaml",
       "path": "skills/creativeotter-generate-voiceover/agents/openai.yaml",
       "source_sha256": "17b13e89b9368986344d2aadde732d22390ed7882f2c680e8129c40ee56f2dea",
-      "sha256": "90778e95f0166296e8f4f87ad4a5b4ef5d25df223bdee9b9b93292e77e25b8c5",
+      "sha256": "e9b3975f1022a78c3512bc5a8a4959a23c3c93dc9bca0f44c66a0f98e41cbae8",
       "modified": true
     },
     {
@@ -2481,7 +2481,7 @@
       "source": "upstream/plugins/creative-claw/skills/creativeclaw-plan-video/agents/openai.yaml",
       "path": "skills/creativeotter-plan-video/agents/openai.yaml",
       "source_sha256": "6d36f06b28cc477caa377a6741af37b74dbac7ac0c16ce9109532d0146f61e80",
-      "sha256": "b7d2e4c1ec2b76201b40089af3c23fff9c3ab38ff67082ecb5d582814571d003",
+      "sha256": "928e24eeb44d4410313fc6f54bb0ace454bbac2af17cfd9f5563b9c14d4ea3e9",
       "modified": true
     },
     {
@@ -2705,7 +2705,7 @@
       "source": "upstream/plugins/creative-claw/skills/creativeclaw-product-photoshoot/agents/openai.yaml",
       "path": "skills/creativeotter-product-photoshoot/agents/openai.yaml",
       "source_sha256": "39e39e02312a9c87dfa72ad9e65de373b4038824158c0fbf7a930461823ae5a8",
-      "sha256": "da55c53deda6e180f9fcc3865c8fb6e78583b853d23bd19bae00052193e347b9",
+      "sha256": "2e4d11e64a2a9e2c3a5ec0148d60081b44ca1c276c7b314e38e5193c59fd828a",
       "modified": true
     },
     {
@@ -2789,7 +2789,7 @@
       "source": "upstream/plugins/creative-claw/skills/creativeclaw-render-html/agents/openai.yaml",
       "path": "skills/creativeotter-render-html/agents/openai.yaml",
       "source_sha256": "7f30e1b3aaf90a3016ee3921974e27e705b57d5022371fbb40ecba716bc7fcfd",
-      "sha256": "1ece309da04aa64df58b04f667182ec7cc0ed096d0a9f9f8866f47face30afcc",
+      "sha256": "877eff1062038d8a12ea8428ca0120ed559599294240f1bca42700e64009b843",
       "modified": true
     },
     {
@@ -2894,7 +2894,7 @@
       "source": "upstream/plugins/creative-claw/skills/creativeclaw-setup/agents/openai.yaml",
       "path": "skills/creativeotter-setup/agents/openai.yaml",
       "source_sha256": "6eafc2645b7733b733b8fbf143a7c1ecbfa371f24187d0be42ffb8ecb137dcc1",
-      "sha256": "5558938f5f7c30ae24c9a1966cf884ca6c58722b8c981a5b7a325d9fc624699f",
+      "sha256": "1fdef9b13cc295807304fb8c271a24ab89d7b1315c9b8c9b6ab10b794d688d57",
       "modified": true
     },
     {
@@ -3139,7 +3139,7 @@
       "source": "upstream/plugins/creative-claw/skills/creativeclaw-submit-feedback/agents/openai.yaml",
       "path": "skills/creativeotter-submit-feedback/agents/openai.yaml",
       "source_sha256": "7e14c735184a03747add5bd05cda8bbc67c41efa13ae0d7257ba98582241e6ec",
-      "sha256": "9c9c3796df38284ec44c40618be2d93e8c9d90960e92491bdd8062e30189c47c",
+      "sha256": "f074edf9c15cd0d540f219aad626b3c70800f1d1c69521747fa046c9b8d2d4e7",
       "modified": true
     },
     {
@@ -3188,7 +3188,7 @@
       "source": "upstream/plugins/creative-claw/skills/creativeclaw-swap-characters/agents/openai.yaml",
       "path": "skills/creativeotter-swap-characters/agents/openai.yaml",
       "source_sha256": "96cd69f7f27711f7828e242fac4a77005cea5c0482b4b79be512b5bcb1b108ec",
-      "sha256": "253f2585bffcf11d431962bda1ec952989829f580ad552930cbbcbebdbdb5afd",
+      "sha256": "6ae03986188d0d2a433b76132c4b4c5cd736fb932180b7b2fb0f540dbcf2073a",
       "modified": true
     },
     {

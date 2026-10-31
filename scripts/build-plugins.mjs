@@ -39,7 +39,7 @@ export async function build({ out = path.join(ROOT, 'plugins'), mcpUrl = null, m
         for (const f of (await files(path.join(dest, 'skills'))).filter(f => f.endsWith('/agents/openai.yaml'))) {
           const data = YAML.parse(await readFile(f, 'utf8'));
           data.dependencies = { tools: [{ type: 'mcp', value: config.serverName, description: 'CreativeOtter media and workspace tools', transport: 'streamable_http', url }] };
-          await write(f, '# CreativeOtter generated connected package.\n' + YAML.stringify(data));
+          await write(f, '# CreativeOtter generated connected package.\n' + YAML.stringify(data, { defaultStringType: 'QUOTE_DOUBLE', defaultKeyType: 'PLAIN' }));
         }
       }
     } else {
