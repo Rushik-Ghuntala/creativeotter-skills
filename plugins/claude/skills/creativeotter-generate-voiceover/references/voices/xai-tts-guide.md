@@ -2,7 +2,7 @@
 
 # CreativeOtter , xAI TTS
 
-Read [shared execution guidance](../workflow-basics.md) once per task before using tools. It covers existing authorization, model discovery, required quotes and web approval, imports, and recovery.
+Read [shared execution guidance](../workflow-basics.md) once per task before using tools. It covers existing authorization, model discovery, bound quotes and direct requested execution, imports, and recovery.
 
 Use this model reference inside `creativeotter-generate-voiceover`. It supplies casting and performance direction for `speech/xai-tts`; the outcome skill still owns the script, generation, review, and delivery.
 

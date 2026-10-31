@@ -3,7 +3,7 @@ name: creativeotter-generate-voiceover
 description: "Generate narration, dialogue, or expressive speech with CreativeOtter, or design a new custom synthetic voice from a description. Use for spoken audio, voice selection, a saved Character voice, or 'make me a new voice'. To copy a real person's voice from a recording, use creativeotter-clone-voice."
 ---
 
-> CreativeOtter adaptation, 2026-11-01. Before using this workflow, read [the runtime contract](references/runtime-contract.md). Prefer suitable native engines, but require a CreativeOtter credit quote, direct approval and execution claim before native tools. Missing billing stops generation. Provider-specific steps below apply only to enabled CreativeOtter API fallback, with current schemas, bound quotes and direct web approval. Native execution follows its own host schema; inherited examples do not establish availability or pricing.
+> CreativeOtter adaptation, 2026-11-01. Before using this workflow, read [the runtime contract](references/runtime-contract.md). Prefer suitable native engines, but require a CreativeOtter credit quote and paid execution claim directly on explicit user request before native tools. Missing billing stops generation. Provider-specific steps below apply only to enabled CreativeOtter API fallback, with current schemas and bound quotes, starting requested images without extra browser approval. Native execution follows its own host schema; inherited examples do not establish availability or pricing.
 
 
 # Generate voiceover

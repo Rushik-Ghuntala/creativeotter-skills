@@ -3,14 +3,14 @@ name: creativeotter-generate-sound-effects
 description: "Generate sound effects, Foley, ambience, loops, UI cues, transitions, impacts, or audio textures with ElevenLabs Sound Effects v2 through CreativeOtter. Use for non-speech, non-song audio."
 ---
 
-> CreativeOtter adaptation, 2026-11-01. Before using this workflow, read [the runtime contract](references/runtime-contract.md). Prefer suitable native engines, but require a CreativeOtter credit quote, direct approval and execution claim before native tools. Missing billing stops generation. Provider-specific steps below apply only to enabled CreativeOtter API fallback, with current schemas, bound quotes and direct web approval. Native execution follows its own host schema; inherited examples do not establish availability or pricing.
+> CreativeOtter adaptation, 2026-11-01. Before using this workflow, read [the runtime contract](references/runtime-contract.md). Prefer suitable native engines, but require a CreativeOtter credit quote and paid execution claim directly on explicit user request before native tools. Missing billing stops generation. Provider-specific steps below apply only to enabled CreativeOtter API fallback, with current schemas and bound quotes, starting requested images without extra browser approval. Native execution follows its own host schema; inherited examples do not establish availability or pricing.
 
 
 # Generate Sound Effects
 
 
 
-Read [shared execution guidance](references/workflow-basics.md) once per task before using tools. It covers existing authorization, model discovery, required quotes and web approval, imports, and recovery.
+Read [shared execution guidance](references/workflow-basics.md) once per task before using tools. It covers existing authorization, model discovery, bound quotes and direct requested execution, imports, and recovery.
 
 Create one finished non-speech sound asset with `generate_sound_effect` and `sfx/elevenlabs-sound-v2`. Route full music, scores, jingles, and songs to `creativeotter-generate-music`. Route narration, dialogue, and character performance to `creativeotter-generate-voiceover`.
 

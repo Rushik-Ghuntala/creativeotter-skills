@@ -3,7 +3,7 @@ name: creativeotter-plan-video
 description: "Plan a video as an approved script, shot list, and storyboard with clean generation references. Use before costly multi-shot work, when continuity matters, or when the user asks to storyboard without producing a final film yet."
 ---
 
-> CreativeOtter adaptation, 2026-11-01. Before using this workflow, read [the runtime contract](references/runtime-contract.md). Prefer suitable native engines, but require a CreativeOtter credit quote, direct approval and execution claim before native tools. Missing billing stops generation. Provider-specific steps below apply only to enabled CreativeOtter API fallback, with current schemas, bound quotes and direct web approval. Native execution follows its own host schema; inherited examples do not establish availability or pricing.
+> CreativeOtter adaptation, 2026-11-01. Before using this workflow, read [the runtime contract](references/runtime-contract.md). Prefer suitable native engines, but require a CreativeOtter credit quote and paid execution claim directly on explicit user request before native tools. Missing billing stops generation. Provider-specific steps below apply only to enabled CreativeOtter API fallback, with current schemas and bound quotes, starting requested images without extra browser approval. Native execution follows its own host schema; inherited examples do not establish availability or pricing.
 
 
 # Plan Video
@@ -12,7 +12,7 @@ description: "Plan a video as an approved script, shot list, and storyboard with
 
 Read [video model selection](references/video/index.md) when choosing shot models. Load a specific model guide only when planning its timing, references or controls. These references are packaged locally; no sibling model skill is required. Planning alone does not authorize video generation.
 
-Read [shared execution guidance](references/workflow-basics.md) once per task before using tools. It covers existing authorization, model discovery, required quotes and web approval, imports, and recovery.
+Read [shared execution guidance](references/workflow-basics.md) once per task before using tools. It covers existing authorization, model discovery, bound quotes and direct requested execution, imports, and recovery.
 
 Convert a concept into an execution-ready video plan before spending on clips. This skill stops at an approved plan or storyboard unless the user also asks for production.
 

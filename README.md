@@ -2,7 +2,7 @@
 
 Shared media-production skills with separate **Codex** and **Claude Code** plugin packages. Includes all **21 adapted skills**, their prompting references and rendering assets, plus an unchanged, hash-verified upstream snapshot.
 
-**Status:** paid native-first routing, version 0.3.0. Prefer a suitable native engine to lower operating cost; native and API generation both spend CreativeOtter credits. New native work requires a priced quote, direct web approval, reserved credits and a single execution claim before the host tool runs. A missing connection, price or balance stops generation. The committed packages have no active MCP endpoint; build a connected package for the actual backend. No public directory approval is implied.
+**Status:** paid native-first routing, version 0.4.0. Prefer a suitable native engine to lower operating cost; native and API generation both spend CreativeOtter credits. New native work requires a priced quote and a single execution claim that reserves credits directly on user request before the host tool runs. A missing connection, price or balance stops generation. The committed packages have no active MCP endpoint; build a connected package for the actual backend. No public directory approval is implied.
 
 ## Repository layout
 

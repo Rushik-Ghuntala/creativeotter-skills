@@ -2,7 +2,7 @@
 
 # CreativeOtter , Seedream 5 Pro
 
-Read [shared execution guidance](../workflow-basics.md) once per task before using tools. It covers existing authorization, model discovery, required quotes and web approval, imports, and recovery.
+Read [shared execution guidance](../workflow-basics.md) once per task before using tools. It covers existing authorization, model discovery, bound quotes and direct requested execution, imports, and recovery.
 
 Use `image/seedream-5-pro` when the user explicitly requests Seedream for product, fashion, portrait, editorial, or campaign work. Default to `image/nano-banana-2` (Nano Banana 2) for most generation and editing, especially precise local corrections that should preserve the existing scene. Reference-guided editing does not guarantee preservation of untouched pixels. After a model moderation refusal, Seedream may also be offered as the tool's suggested alternative, with user confirmation before another paid generation; it applies its own safety checks and may still reject the request.
 

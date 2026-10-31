@@ -2,7 +2,7 @@
 
 # CreativeOtter: GPT Image
 
-Read [shared execution guidance](../workflow-basics.md) once per task before using tools. It covers existing authorization, model discovery, required quotes and web approval, imports, and recovery.
+Read [shared execution guidance](../workflow-basics.md) once per task before using tools. It covers existing authorization, model discovery, bound quotes and direct requested execution, imports, and recovery.
 
 Choose the explicit variant that matches the job:
 

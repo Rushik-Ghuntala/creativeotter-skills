@@ -3,7 +3,7 @@ name: creativeotter-swap-characters
 description: "Swap, replace or recast the people in an existing video with CreativeOtter: put yourself, a saved Character or a photo into a TikTok, Reel, movie scene or ad while the original motion, camera, cuts and audio stay. Use for character swaps, face swaps, recasting an actor, \"put me in this video\", \"replace her with my grandma\" and multi-person swaps. Not for copying a performance into a new scene (motion transfer) or for new footage."
 ---
 
-> CreativeOtter adaptation, 2026-11-01. Before using this workflow, read [the runtime contract](references/runtime-contract.md). Prefer suitable native engines, but require a CreativeOtter credit quote, direct approval and execution claim before native tools. Missing billing stops generation. Provider-specific steps below apply only to enabled CreativeOtter API fallback, with current schemas, bound quotes and direct web approval. Native execution follows its own host schema; inherited examples do not establish availability or pricing.
+> CreativeOtter adaptation, 2026-11-01. Before using this workflow, read [the runtime contract](references/runtime-contract.md). Prefer suitable native engines, but require a CreativeOtter credit quote and paid execution claim directly on explicit user request before native tools. Missing billing stops generation. Provider-specific steps below apply only to enabled CreativeOtter API fallback, with current schemas and bound quotes, starting requested images without extra browser approval. Native execution follows its own host schema; inherited examples do not establish availability or pricing.
 
 
 # Swap Characters
@@ -50,7 +50,7 @@ Kling generates audio, so Swap replaces it with the source soundtrack by default
 | What the user sees | Cause and fix |
 | --- | --- |
 | "The source character could not be identified confidently" | The frame picker could not tell who maps to whom. Start again with one line per person naming position and look, and one Character per person. |
-| "The swap could not pick frames from your video" or another "This swap stopped" message | Inspect the existing job and recorded ledger state. A corrected swap needs a fresh quote and direct approval; do not assume it was uncharged or start another automatically. The card's **Fix it in chat** button sends exactly this request. |
+| "The swap could not pick frames from your video" or another "This swap stopped" message | Inspect the existing job and recorded ledger state. A corrected swap needs a fresh quote within user-requested scope; do not assume it was uncharged or start another automatically. The card's **Fix it in chat** button sends exactly this request. |
 | A preview has the wrong hair, the original clothes, or a pasted-in look | Adjust that preview (free) with a specific change. A recurring hair problem usually comes from the Character sheet; a better sheet fixes every future swap. |
 | A person's face is tiny, cropped or turned away in every frame | The swap cannot show an identity on a face that never appears. Use a clip where each target's face is visible at least once. |
 | The video swapped one person but not the other | Check that the previews show both and the instructions name both, then render again (a new paid render). |

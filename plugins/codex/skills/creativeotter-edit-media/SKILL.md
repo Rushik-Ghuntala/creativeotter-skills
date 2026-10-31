@@ -3,14 +3,14 @@ name: creativeotter-edit-media
 description: "Edit existing video or audio with CreativeOtter without regenerating it: trim, cut and reorder chosen moments, resize or reframe, caption, transcribe, clean speech, extract frames, add or mix audio, burn a logo watermark, compose images and clips, or add an intro/outro. Use when the source footage should be kept; use generation skills for invented or transformed footage and create-reels to pick highlights."
 ---
 
-> CreativeOtter adaptation, 2026-11-01. Before using this workflow, read [the runtime contract](references/runtime-contract.md). Prefer suitable native engines, but require a CreativeOtter credit quote, direct approval and execution claim before native tools. Missing billing stops generation. Provider-specific steps below apply only to enabled CreativeOtter API fallback, with current schemas, bound quotes and direct web approval. Native execution follows its own host schema; inherited examples do not establish availability or pricing.
+> CreativeOtter adaptation, 2026-11-01. Before using this workflow, read [the runtime contract](references/runtime-contract.md). Prefer suitable native engines, but require a CreativeOtter credit quote and paid execution claim directly on explicit user request before native tools. Missing billing stops generation. Provider-specific steps below apply only to enabled CreativeOtter API fallback, with current schemas and bound quotes, starting requested images without extra browser approval. Native execution follows its own host schema; inherited examples do not establish availability or pricing.
 
 
 # Edit Existing Media
 
 
 
-Read [shared execution guidance](references/workflow-basics.md) once per task before using tools. It covers existing authorization, model discovery, required quotes and web approval, imports, and recovery.
+Read [shared execution guidance](references/workflow-basics.md) once per task before using tools. It covers existing authorization, model discovery, bound quotes and direct requested execution, imports, and recovery.
 
 Turn supplied footage or audio into a finished derivative. Apply the requested edits with sensible defaults and no settings questionnaire. Keep the original asset unchanged.
 
@@ -113,4 +113,4 @@ Omit a bookend that was not requested. Joining videos is a hard cut: no dissolve
 
 - A public YouTube, Google Drive, or social video page can go straight to `transcribe` as `video_url`. It is not a source for trimming, resizing, or subtitles; import the actual file for those.
 - `add_subtitles` already transcribes. Add a separate `transcribe` job only for a transcript the user wants or for choosing cuts.
-- Every paid processing operation needs a supported quote/approval route. If quoting is unavailable, stop paid execution instead of calling an unquoted edit. Do not present a partial estimate as the total.
+- Every paid processing operation needs a supported quote/reservation route. If quoting is unavailable, stop paid execution instead of calling an unquoted edit. Do not present a partial estimate as the total.

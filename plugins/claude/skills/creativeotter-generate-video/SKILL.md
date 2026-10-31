@@ -3,7 +3,7 @@ name: creativeotter-generate-video
 description: "Generate, animate, extend, reframe, or transform one video clip with CreativeOtter. Use for a clear single-clip request when the user has not asked for a storyboard, UGC ad, or complete multi-shot film."
 ---
 
-> CreativeOtter adaptation, 2026-11-01. Before using this workflow, read [the runtime contract](references/runtime-contract.md). Prefer suitable native engines, but require a CreativeOtter credit quote, direct approval and execution claim before native tools. Missing billing stops generation. Provider-specific steps below apply only to enabled CreativeOtter API fallback, with current schemas, bound quotes and direct web approval. Native execution follows its own host schema; inherited examples do not establish availability or pricing.
+> CreativeOtter adaptation, 2026-11-01. Before using this workflow, read [the runtime contract](references/runtime-contract.md). Prefer suitable native engines, but require a CreativeOtter credit quote and paid execution claim directly on explicit user request before native tools. Missing billing stops generation. Provider-specific steps below apply only to enabled CreativeOtter API fallback, with current schemas and bound quotes, starting requested images without extra browser approval. Native execution follows its own host schema; inherited examples do not establish availability or pricing.
 
 
 # Generate Video
@@ -12,7 +12,7 @@ description: "Generate, animate, extend, reframe, or transform one video clip wi
 
 Read [video model selection](references/video/index.md), then only the selected model's guide. Model families are covered locally, with live-schema guidance for additional models; do not load every guide or require a sibling model skill. For Kling 4, use [the Kling 4 prompting reference](references/video/kling-4.md) for reference roles, timed scenes, dialogue, source edits and the exact integration limits. Read [Review/Auto handling](references/video/review.md) before submission.
 
-Read [shared execution guidance](references/workflow-basics.md) once per task before using tools. It covers existing authorization, model discovery, required quotes and web approval, imports, and recovery.
+Read [shared execution guidance](references/workflow-basics.md) once per task before using tools. It covers existing authorization, model discovery, bound quotes and direct requested execution, imports, and recovery.
 
 Create one controlled video clip from text, a start frame, an optional end frame, or other model-supported references. Use the planning, UGC, or film skills when the deliverable is a larger production. Use `creativeotter-render-html` only when the user explicitly requests HTML/HyperFrames/code-driven rendering, or motion graphics, kinetic typography or animated titles instead of filmed-looking footage; use `creativeotter-edit-media` for video bookends.
 

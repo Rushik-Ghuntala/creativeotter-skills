@@ -2,7 +2,7 @@
 
 # CreativeOtter , MiniMax Speech 2.8 HD
 
-Read [shared execution guidance](../workflow-basics.md) once per task before using tools. It covers existing authorization, model discovery, required quotes and web approval, imports, and recovery.
+Read [shared execution guidance](../workflow-basics.md) once per task before using tools. It covers existing authorization, model discovery, bound quotes and direct requested execution, imports, and recovery.
 
 Use this model reference inside `creativeotter-generate-voiceover`. MiniMax is the strongest alternative when a native system voice, broad multilingual catalog, or global emotion/pitch controls matter more than ElevenLabs v4's inline delivery tags.
 

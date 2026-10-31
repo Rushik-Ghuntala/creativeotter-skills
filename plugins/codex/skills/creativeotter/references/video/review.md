@@ -1,7 +1,9 @@
-# Paid-operation review
+# Requested generation and optional creative review
 
-CreativeOtter adaptation, 2026-11-01.
+CreativeOtter adaptation, 2026-11-01. Follow [the runtime contract](../runtime-contract.md).
 
-Apply [the runtime contract](../runtime-contract.md) to images, video, audio, editing and rendering alike. Obtain a fresh quote bound to the exact inputs. Preparing an execution request can return `awaiting_approval`; present its authenticated browser link and let the user approve directly. A review request is not a rendered preview. Do not press Generate, self-approve through another tool, poll while approval is pending or duplicate a request.
+An explicit request to generate authorizes the requested output at the configured credit price. For native images, prepare the bound quote and immediately claim execution to reserve credits; for API images, prepare the quote and immediately call `generate_image`. No separate browser review or confirmation is required. The internal `awaiting_approval` state means a quote has not started; it does not impose a browser step. Missing funds, expired quotes and unavailable adapters stop execution.
 
-Use Auto only when the server reports explicit user opt-in with finite caps. New takes and changed settings require new quotes. Likeness approval and voice consent remain distinct from approval to spend credits. A backend that lacks this contract is not ready for paid execution with these skills.
+Estimate-only and planning-only requests do not authorize spending. Do not start, claim or poll a new generation in response to those requests. Preserve any user budget limits and requested count. A new take or additional output needs a user request covering that scope. Never duplicate an uncertain execution.
+
+Keep explicit creative review stages for multi-stage productions when applicable, honoring approvals already given. Identity and voice consent remain required independently. Unsupported media need their own advertised billing/execution contract; an image claim cannot pay for video or voice.

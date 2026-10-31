@@ -6,7 +6,7 @@ CreativeOtter adaptation, 2026-11-01. Follow [the runtime contract](runtime-cont
 | --- | --- |
 | Available operations and defaults | `get_capabilities` |
 | Model discovery and parameters | `list_models`, `get_model_params` |
-| Quotes and approval preparation | `estimate_generation`, the selected execution tool, returned authenticated web links |
+| Quotes and requested execution | `estimate_generation`, the selected execution tool, returned operation IDs |
 | One generated image/video | `generate_image`, `generate_video` |
 | Speech, music and sound effects | `generate_speech`, `generate_music`, `generate_sound_effect` |
 | Current jobs | `check_job` |
@@ -17,4 +17,4 @@ CreativeOtter adaptation, 2026-11-01. Follow [the runtime contract](runtime-cont
 | Explicit code-based rendering | `render_html_image`, `render_html_video`, optionally `generate_html_video` |
 | Requested product feedback | `submit_feedback`, only after explicit user request |
 
-No examples catalog, inline viewer, Studio or host-native import is guaranteed. Use tool schemas for fields; never infer a usable legacy alias. Every paid processing, cloning or rendering operation also needs the server's quote/approval contract. Read current account activity for charges; a quote is not a charge record.
+No examples catalog, inline viewer, Studio or host-native import is guaranteed. Use tool schemas for fields; never infer a usable legacy alias. Every paid processing, cloning or rendering operation also needs the server's quote/reservation/execution contract. Read current account activity for charges; a quote is not a charge record.

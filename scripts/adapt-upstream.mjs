@@ -71,7 +71,7 @@ for (const src of await files(original)) {
       .replace(/\[support@creativeotter\.co\]\(mailto:support@creativeotter\.co\)/gi, 'the CreativeOtter support channel returned by the backend')
       .replace(/(?:mailto:)?support@creativeotter\.co/gi, 'the CreativeOtter support channel returned by the backend')
       .replace(/https:\/\/claude\.ai\/customize\/plugins\/id\/[^\s)]+/g, 'CREATIVEOTTER_CONNECTOR_FROM_CLIENT_SETTINGS')
-      .replace(/optional cost checks/g, 'required quotes and web approval')
+      .replace(/optional cost checks/g, 'bound quotes and direct requested execution')
       .replace(/Use `estimate_generation` with ([^\n]*?) only when [^.\n]+\./g, 'Obtain a bound quote with `estimate_generation` for the exact inputs before paid execution; follow the runtime contract.')
       .replace(/Estimate with `operation: "image"` only for user-requested cost\/budget help\./g, 'Obtain a bound quote for the exact image request before paid execution.')
       .replace(/Use `estimate_generation` with ([^\n]*?) only when [^.\n]+\./g, 'Obtain a bound quote before paid execution and follow the runtime contract.')
@@ -81,14 +81,14 @@ for (const src of await files(original)) {
       .replace(/Use `submit_feedback` (for|when)/g, 'Only when the user explicitly asks to report it, use `submit_feedback` $1')
       .replace(/and report the route behavior through `submit_feedback`\./g, 'and report the route behavior only if the user explicitly requests a report.')
       .replace(/Estimate cost only when the user asks about cost or sets a budget\./g, 'Obtain a bound quote for the exact inputs before every paid operation.')
-      .replace(/`estimate_generation` does not cover these processing operations\. Discuss cost only when it matters to the request, and do not present a partial estimate as the total\./g, 'Every paid processing operation needs a supported quote/approval route. If quoting is unavailable, stop paid execution instead of calling an unquoted edit. Do not present a partial estimate as the total.')
+      .replace(/`estimate_generation` does not cover these processing operations\. Discuss cost only when it matters to the request, and do not present a partial estimate as the total\./g, 'Every paid processing operation needs a supported quote/reservation route. If quoting is unavailable, stop paid execution instead of calling an unquoted edit. Do not present a partial estimate as the total.')
       .replace(/^2\. Add the utility prices:[^\n]+/gm, '2. Obtain current quotes for every utility operation in the set, including audio mixing, assembly, captions, trimming and frame extraction. Do not use fixed packaged credit rates.')
       .replace(/With video inputs, reserve billed seconds[^\n]+/g, 'With video inputs, obtain a quote for the exact output settings, measured source lengths and cuts. Do not reuse another service\'s billed-second formula or rates; the current backend quote defines the maximum charge.')
       .replace(/Within HeyGen, Precision is the default mode[^.]+\./g, 'Select a mode supported by the current backend and obtain its bound quote.')
       .replace(/\bpermanent, publicly retrievable CreativeOtter URL\b/g, 'private workspace asset reference accepted by the live schema')
       .replace(/\bpermanent, worker-accessible HTTP\(S\) URLs\b/g, 'worker-accessible media references returned by the backend')
       .replace(/\bpermanent (result|generated audio|CreativeOtter asset)\b/g, 'saved $1')
-      .replace(/Nothing is still running and no video was charged\. Check the inputs with `check_job`, then start a corrected swap\./g, 'Inspect the existing job and recorded ledger state. A corrected swap needs a fresh quote and direct approval; do not assume it was uncharged or start another automatically.')
+      .replace(/Nothing is still running and no video was charged\. Check the inputs with `check_job`, then start a corrected swap\./g, 'Inspect the existing job and recorded ledger state. A corrected swap needs a fresh quote within user-requested scope; do not assume it was uncharged or start another automatically.')
       .replace(/No credits were charged\. Rendering the same clip unchanged/g, 'Check the actual ledger before describing charges. Rendering the same clip unchanged')
       .replace(/permanent (audio )?(?:asset|URL)/gi, 'saved asset reference')
       .replace(/permanent URLs/gi, 'current asset links');
@@ -108,7 +108,7 @@ for (const src of await files(original)) {
       if (!text.includes('references/runtime-contract.md')) {
         const end = text.indexOf('\n---', 4) + 4;
         assert(end > 4, `Missing frontmatter: ${rel}`);
-        text = text.slice(0, end) + '\n\n> CreativeOtter adaptation, 2026-11-01. Before using this workflow, read [the runtime contract](references/runtime-contract.md). Prefer suitable native engines, but require a CreativeOtter credit quote, direct approval and execution claim before native tools. Missing billing stops generation. Provider-specific steps below apply only to enabled CreativeOtter API fallback, with current schemas, bound quotes and direct web approval. Native execution follows its own host schema; inherited examples do not establish availability or pricing.\n' + text.slice(end);
+        text = text.slice(0, end) + '\n\n> CreativeOtter adaptation, 2026-11-01. Before using this workflow, read [the runtime contract](references/runtime-contract.md). Prefer suitable native engines, but require a CreativeOtter credit quote and paid execution claim directly on explicit user request before native tools. Missing billing stops generation. Provider-specific steps below apply only to enabled CreativeOtter API fallback, with current schemas and bound quotes, starting requested images without extra browser approval. Native execution follows its own host schema; inherited examples do not establish availability or pricing.\n' + text.slice(end);
       }
       if (skill === 'creativeotter-generate-music') {
         text = text.replace(/^description:.*$/m, 'description: Compose songs, scores, instrumentals or remixes through enabled CreativeOtter music models. Use for music, not narration or isolated sound effects.');
@@ -170,5 +170,5 @@ for (const name of skillNames) {
   const frontmatter = YAML.parse(entry.match(/^---\n([\s\S]*?)\n---/)[1]);
   inventory.push(`| \`${name}\` | ${frontmatter.description.replaceAll('|', '\\|')} |`);
 }
-await write(path.join(ROOT, 'docs/skills.md'), '# Skill inventory\n\nAll 21 workflows are included in both client packages. They prefer suitable native engines; both native and API execution require backend credit approval. Skills alone do not supply missing generators.\n\n| Skill | Purpose |\n| --- | --- |\n' + inventory.join('\n') + '\n');
+await write(path.join(ROOT, 'docs/skills.md'), '# Skill inventory\n\nAll 21 workflows are included in both client packages. They prefer suitable native engines; both native and API execution require backend credit reservation and paid execution. Skills alone do not supply missing generators.\n\n| Skill | Purpose |\n| --- | --- |\n' + inventory.join('\n') + '\n');
 console.log(`Adapted ${skillNames.length} skills and ${modifications.length} files; upstream snapshot was not changed.`);

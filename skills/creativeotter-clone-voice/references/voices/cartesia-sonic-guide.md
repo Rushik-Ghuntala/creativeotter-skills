@@ -2,7 +2,7 @@
 
 # CreativeOtter Cartesia Sonic
 
-Read [shared execution guidance](../workflow-basics.md) once per task before using tools. It covers model discovery, required quotes and web approval, imports, and recovery.
+Read [shared execution guidance](../workflow-basics.md) once per task before using tools. It covers model discovery, bound quotes and direct requested execution, imports, and recovery.
 
 Use `speech/cartesia-sonic` for fast, natural speech from a public stock voice or a saved consented Character voice. The CreativeOtter model ID stays stable while the underlying Cartesia Sonic version can be upgraded.
 

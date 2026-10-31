@@ -3,7 +3,7 @@ name: creativeotter-ad-variations
 description: "Turn one product shot, one model or one existing ad into a numbered set of video ad variations: each variation is generated with its own hook visuals and line, or gets a new generated opening spliced onto the existing ad, or (cheapest) keeps the same footage with a new voiceover or captions. One estimate for the set. Use for hook tests, A/B ad variants for Meta, Instagram or TikTok, or 'N versions of my ad'."
 ---
 
-> CreativeOtter adaptation, 2026-11-01. Before using this workflow, read [the runtime contract](references/runtime-contract.md). Prefer suitable native engines, but require a CreativeOtter credit quote, direct approval and execution claim before native tools. Missing billing stops generation. Provider-specific steps below apply only to enabled CreativeOtter API fallback, with current schemas, bound quotes and direct web approval. Native execution follows its own host schema; inherited examples do not establish availability or pricing.
+> CreativeOtter adaptation, 2026-11-01. Before using this workflow, read [the runtime contract](references/runtime-contract.md). Prefer suitable native engines, but require a CreativeOtter credit quote and paid execution claim directly on explicit user request before native tools. Missing billing stops generation. Provider-specific steps below apply only to enabled CreativeOtter API fallback, with current schemas and bound quotes, starting requested images without extra browser approval. Native execution follows its own host schema; inherited examples do not establish availability or pricing.
 
 
 # Ad Variations

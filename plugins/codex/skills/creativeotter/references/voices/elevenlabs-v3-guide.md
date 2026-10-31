@@ -2,7 +2,7 @@
 
 # CreativeOtter , ElevenLabs v3
 
-Read [shared execution guidance](../workflow-basics.md) once per task before using tools. It covers existing authorization, model discovery, required quotes and web approval, imports, and recovery.
+Read [shared execution guidance](../workflow-basics.md) once per task before using tools. It covers existing authorization, model discovery, bound quotes and direct requested execution, imports, and recovery.
 
 `speech/elevenlabs-v3` is legacy. Use it only when the user asks for it; otherwise use v4 for stock, expressive and multilingual speech. Speak a clone with its provider's model: Cartesia Sonic for a Cartesia clone; ElevenLabs v2 (steady) or v4 (expressive, dialogue) for an ElevenLabs clone. Choose a voice that already resembles the requested age, energy, accent, and performance; inline tags shape delivery but cannot completely transform an incompatible voice.
 

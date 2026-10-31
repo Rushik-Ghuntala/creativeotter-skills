@@ -2,7 +2,7 @@
 
 # CreativeOtter, Nano Banana 2
 
-Read [shared execution guidance](../workflow-basics.md) once per task before using tools. It covers existing authorization, model discovery, required quotes and web approval, imports, and recovery.
+Read [shared execution guidance](../workflow-basics.md) once per task before using tools. It covers existing authorization, model discovery, bound quotes and direct requested execution, imports, and recovery.
 
 Use `image/nano-banana-2`, publicly named Nano Banana 2, as CreativeOtter's default for most generation and editing, including targeted corrections that should preserve the existing scene. For a localized edit, keep the source aspect ratio unless reframing is requested, identify the small region to change, and inspect protected details afterward. Exact preservation outside the edited region requires compositing that region back into the original; text instructions alone do not guarantee unchanged pixels.
 
