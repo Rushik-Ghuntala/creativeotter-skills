@@ -1,0 +1,8 @@
+# CreativeOtter adaptation, 2026-11-01. MCP dependency is added by a connected package build.
+interface:
+  display_name: CreativeOtter — Budget Projects
+  short_description: Track spend per client or job and show each project's cost
+  default_prompt: Use $creativeotter-budget-projects to track the cost of this
+    work in a budget project.
+policy:
+  allow_implicit_invocation: true

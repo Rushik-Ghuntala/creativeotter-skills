@@ -1,0 +1,44 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "creative-claw",
+  "version": "0.7.55",
+  "description": "Generate and edit on-brand images, videos, speech, and branded graphics with Creative Claw.",
+  "author": {
+    "name": "Creative Claw Co.",
+    "email": "support@creativeclaw.co",
+    "url": "https://creativeclaw.co"
+  },
+  "homepage": "https://creativeclaw.co",
+  "repository": "https://github.com/CreativeClawCo/creative-claw-marketplace",
+  "license": "Apache-2.0",
+  "keywords": [
+    "ai-media",
+    "image-generation",
+    "video-generation",
+    "branding",
+    "mcp"
+  ],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Creative Claw",
+        "shortDescription": "Create images, video and voice",
+        "longDescription": "Create and edit on-brand images, videos, and speech; build reusable Characters, product campaigns, creator-style ads, and multi-shot Films with Creative Claw's hosted media studio.",
+        "developerName": "Creative Claw Co.",
+        "category": "Creativity",
+        "capabilities": [
+          "Interactive",
+          "Write"
+        ],
+        "websiteURL": "https://creativeclaw.co",
+        "privacyPolicyURL": "https://creativeclaw.co/privacy",
+        "termsOfServiceURL": "https://creativeclaw.co/terms",
+        "defaultPrompt": [
+          "Create a consistent product photoshoot from these references.",
+          "Animate this product photo into a five-second clip.",
+          "Read this script with a warm, natural voice."
+        ]
+      }
+    }
+  }
+}

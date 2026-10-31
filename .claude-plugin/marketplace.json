@@ -1,0 +1,15 @@
+{
+  "name": "creativeotter-skills",
+  "description": "CreativeOtter media workflows for our separately deployed backend.",
+  "owner": {
+    "name": "Rushik",
+    "email": "rushisoni2003@gmail.com"
+  },
+  "plugins": [
+    {
+      "name": "creativeotter",
+      "source": "./plugins/claude",
+      "description": "CreativeOtter media skills for a separately configured backend."
+    }
+  ]
+}

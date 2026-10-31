@@ -1,0 +1,9 @@
+# CreativeOtter adaptation, 2026-11-01. MCP dependency is added by a connected package build.
+interface:
+  display_name: CreativeOtter — Long Video to Reels
+  short_description: Turn long videos into configurable social clips
+  default_prompt: Use $creativeotter-create-reels to find strong standalone
+    moments in my video and make social clips in my requested format, with
+    captions when appropriate.
+policy:
+  allow_implicit_invocation: true

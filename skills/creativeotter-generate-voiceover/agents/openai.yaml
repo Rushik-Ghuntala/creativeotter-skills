@@ -1,0 +1,8 @@
+# CreativeOtter adaptation, 2026-11-01. MCP dependency is added by a connected package build.
+interface:
+  display_name: CreativeOtter — Generate Voiceover
+  short_description: Create speech, narration, and new voices
+  default_prompt: Use $creativeotter-generate-voiceover to choose or design a
+    voice and perform this script.
+policy:
+  allow_implicit_invocation: true

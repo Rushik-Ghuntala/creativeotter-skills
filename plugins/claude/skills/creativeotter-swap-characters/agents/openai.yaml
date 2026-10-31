@@ -1,0 +1,8 @@
+# CreativeOtter adaptation, 2026-11-01. MCP dependency is added by a connected package build.
+interface:
+  display_name: CreativeOtter — Swap Characters
+  short_description: Swap people in an existing video with your Characters
+  default_prompt: Use $creativeotter-swap-characters to put my Character into this
+    video in place of the person on screen.
+policy:
+  allow_implicit_invocation: true

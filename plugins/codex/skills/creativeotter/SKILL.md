@@ -1,0 +1,43 @@
+---
+name: creativeotter
+description: Route mixed media and workspace requests through CreativeOtter. Use for several media types, onboarding, account activity, saved assets, themes or budgets; use a focused skill for one clear media outcome.
+---
+
+# CreativeOtter
+
+CreativeOtter adaptation, 2026-11-01. Read [the runtime contract](references/runtime-contract.md) and [shared execution guidance](references/workflow-basics.md) before tools. They define the CreativeOtter integration; inherited examples do not establish available models, prices or UI.
+
+Use only the configured `creativeotter` connection. If it is absent, explain that the package contains instructions and needs our deployed backend. Do not use another product's similarly named tools. When available, use `get_capabilities` to identify enabled operations and defaults. Planning may proceed while execution is unavailable.
+
+## Choose the workflow
+
+| Outcome | Skill |
+| --- | --- |
+| One image or image edit | `creativeotter-generate-image` |
+| Coordinated product images | `creativeotter-product-photoshoot` |
+| One generated, extended or transformed video | `creativeotter-generate-video` |
+| Script, shot list and storyboard | `creativeotter-plan-video` |
+| Multi-shot film | `creativeotter-build-film` |
+| Creator-style product ad | `creativeotter-create-ugc-ad` |
+| Several ad variants | `creativeotter-ad-variations` |
+| Narration, dialogue or a designed synthetic voice | `creativeotter-generate-voiceover` |
+| Consented personal voice clone | `creativeotter-clone-voice` |
+| New music | `creativeotter-generate-music` |
+| Sound effects, Foley and ambience | `creativeotter-generate-sound-effects` |
+| Reusable avatar and identity sheet | `creativeotter-create-avatar` |
+| Save or update a Character | `creativeotter-create-character` |
+| Select social highlights from existing footage | `creativeotter-create-reels` |
+| Edit existing video or audio | `creativeotter-edit-media` |
+| Recast people in existing footage | `creativeotter-swap-characters` |
+| Explicit HTML/CSS or motion-graphics rendering | `creativeotter-render-html` |
+| Track production/client spend | `creativeotter-budget-projects` |
+| Guided first run | `creativeotter-setup` |
+| Explicitly requested product feedback report | `creativeotter-submit-feedback` |
+
+Use the focused skill's relevant references, not every guide. Model names do not change the owning outcome. Prefer a clear user outcome over broad media routing. If designed motion versus filmed-looking footage is materially unclear, ask one question.
+
+For account balance and past charges, use `manage_account` and [account guidance](references/workflows/account.md). For assets, themes and project state, use only their enabled tools. Curated examples require an advertised catalog; none is provided by this repository. Feedback and optional attribution require explicit user authorization.
+
+## Production pattern
+
+Resolve the brief and supplied references, select an enabled model with current parameters, plan all paid steps, obtain each quote and applicable web approval, preserve job IDs, inspect saved outputs, and organize assets. Reuse completed work and approved identity anchors across shots. Do not silently add keyframes, auditions, variants or generative repairs outside the requested scope. A completed asset must be confirmed by the server; a job ID alone is unfinished.

@@ -1,0 +1,8 @@
+# CreativeOtter adaptation, 2026-11-01. MCP dependency is added by a connected package build.
+interface:
+  display_name: CreativeOtter — Ad Variations
+  short_description: Make a numbered set of video ad variations
+  default_prompt: Use $creativeotter-ad-variations to turn my product shot into
+    five 9:16 ad variations with different hooks.
+policy:
+  allow_implicit_invocation: true

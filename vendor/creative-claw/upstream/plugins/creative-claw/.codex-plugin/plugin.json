@@ -1,0 +1,44 @@
+{
+  "name": "creative-claw",
+  "version": "0.7.55",
+  "description": "AI media studio — generate and edit images, video, and speech; create reusable Characters, product shoots, UGC ads, and multi-shot Films.",
+  "author": {
+    "name": "Creative Claw Co."
+  },
+  "homepage": "https://creativeclaw.co",
+  "repository": "https://github.com/CreativeClawCo/creative-claw-marketplace",
+  "license": "Apache-2.0",
+  "keywords": [
+    "image-generation",
+    "video-generation",
+    "characters",
+    "ugc-ads",
+    "film-production",
+    "brand-theme",
+    "ai-media",
+    "creative",
+    "fal-ai",
+    "mcp"
+  ],
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "Creative Claw",
+    "shortDescription": "Create images, video and voice",
+    "longDescription": "Create and edit on-brand images, videos, and speech; build reusable Characters, product campaigns, creator-style ads, and multi-shot Films with Creative Claw's hosted media studio.",
+    "developerName": "Creative Claw Co.",
+    "category": "Creativity",
+    "capabilities": [
+      "Interactive",
+      "Write"
+    ],
+    "websiteURL": "https://creativeclaw.co",
+    "privacyPolicyURL": "https://creativeclaw.co/privacy",
+    "termsOfServiceURL": "https://creativeclaw.co/terms",
+    "defaultPrompt": [
+      "Create a consistent product photoshoot from these references.",
+      "Animate this product photo into a five-second clip.",
+      "Read this script with a warm, natural voice."
+    ]
+  }
+}

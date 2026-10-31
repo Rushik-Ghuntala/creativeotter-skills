@@ -1,0 +1,8 @@
+# CreativeOtter adaptation, 2026-11-01. MCP dependency is added by a connected package build.
+interface:
+  display_name: CreativeOtter — Product Photoshoot
+  short_description: Create a consistent campaign-ready product shoot
+  default_prompt: Use $creativeotter-product-photoshoot to create a polished set
+    of product images from my references.
+policy:
+  allow_implicit_invocation: true

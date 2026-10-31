@@ -1,0 +1,8 @@
+# CreativeOtter adaptation, 2026-11-01. MCP dependency is added by a connected package build.
+interface:
+  display_name: CreativeOtter Setup
+  short_description: "Guided first run: your first on-brand video"
+  default_prompt: Use $creativeotter-setup to show me what CreativeOtter can do
+    and walk me through my first video.
+policy:
+  allow_implicit_invocation: true

@@ -1,0 +1,8 @@
+# CreativeOtter adaptation, 2026-11-01. MCP dependency is added by a connected package build.
+interface:
+  display_name: "CreativeOtter: Generate Music"
+  short_description: Compose music, songs, beds, and stings
+  default_prompt: Use $creativeotter-generate-music to compose a polished music
+    track for this request.
+policy:
+  allow_implicit_invocation: true

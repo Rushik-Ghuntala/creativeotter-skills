@@ -1,0 +1,55 @@
+---
+name: creativeclaw-generate-voiceover
+description: "Generate narration, dialogue, or expressive speech with Creative Claw, or design a new custom synthetic voice from a description. Use for spoken audio, voice selection, a saved Character voice, or 'make me a new voice'. To copy a real person's voice from a recording, use creativeclaw-clone-voice."
+---
+
+# Generate voiceover
+
+For each Creative Claw tool call that exposes it, pass the optional `skills_used` array with `creativeclaw-generate-voiceover`, any other Creative Claw skills actually followed, and guide entries in the form `<skill-name>/<relative-guide-path>` (for example, `creativeclaw-generate-voiceover/references/workflow-basics.md`). Include only skills and guides followed for that call. Omit attribution if the user declines tracking or the field is unavailable. Never send other plugin names, private data, or local paths.
+
+**Not connected yet?** If no Creative Claw tools (such as `list_models` or `generate_image`) are available, the plugin is installed but the server is not connected. Stop and give the user the click path: open the [Creative Claw plugin page](https://claude.ai/customize/plugins/id/3b9e3067-1092-46a5-b613-f52ddf9476ca%40anthropic-plugin-directory/connectors) in Claude, then the **Connectors** tab, press **Connect**, press **Add** if an "Add custom connector" dialog opens, and sign in. In Claude Code they run `/mcp` instead. Then they ask again. Do not substitute other tools or describe a result that was not generated.
+
+Read [shared execution guidance](references/workflow-basics.md) before tools. The speech tool is `generate_speech`.
+
+## Localize the spoken text
+
+For Hebrew, always send full niqqud on every spoken Hebrew word to every speech model. Apply this to narration, each dialogue turn, clone auditions and voice-design preview text, including user-supplied scripts. Preserve the words and intended meaning while adding vowel points. This rule applies across providers, not only Fish. Before submitting Hebrew or other pronunciation-sensitive text, read [speech localization](references/voices/speech-localization.md).
+
+## Which voice
+
+- "Clone my voice", "use my recording", or an unsaved personal voice: load creativeclaw-clone-voice when available. If this skill is installed alone, read [the complete cloning workflow](references/voices/cloning.md). Obtain explicit consent once, up front, import privately, clone right after the upload, test and save a reusable Character. Do not send source audio directly to ElevenLabs or Cartesia speech generation as a substitute for cloning.
+- Existing Character voice (cloned, designed or stock): find the Character with `list_characters` and provide `character_id`. Do not clone or design again.
+- Stock voice: fetch the selected model's current `get_model_params` voice catalog and use its exact `voice_id`. For more Cartesia or ElevenLabs choices, call `get_model_params` again with `include_voice_catalog: true`, or read the public Markdown catalog linked in `voiceCatalog.extendedCatalogMarkdownUrl`. Never pass both selectors.
+- Change who is speaking in an existing speech recording while keeping the performance: call `generate_speech` with `model: "speech/cartesia-voice-changer"`, `audio_url` = the workspace speech audio, and a Cartesia `voice_id` or a Character's `character_id`. Pass no `text`.
+- New voice from a description (no recording): call `design_voice({ prompt })` with age, accent, timbre, pace and attitude, never a real person's identity. It returns three auditions; after the user picks, save it with `update_character({ id, voice_preview_id })`, or `create_character({ title, voice_preview_id })` for a new Character, passing the audition's `preview_id` as `voice_preview_id`. Speak with `generate_speech({ character_id })` using `speech/elevenlabs-v4`, or `speech/gemini-3.8-flash-tts` for `provider: "google"`, or `speech/fish-drama-3` for `provider: "fish"`. Fish auditions accept up to 150 characters and Hebrew requires full niqqud on every word. If the save hits the limit, offer `replace_voice_option_id`; never quote plan prices. For a stock voice use `update_character({ id, voice_model, voice_id })`. Details: [voice design](references/voices/voice-design.md).
+
+## Choose and load one model guide
+
+| Need | Recommended starting point |
+| --- | --- |
+| Stock narration, designed ElevenLabs voices, expressive speech, broad language coverage, and dialogue | [ElevenLabs v4](references/voices/elevenlabs-v4.md) |
+| Google-designed voice | `speech/gemini-3.8-flash-tts` (read its `get_model_params`) |
+| A Cartesia clone | [Cartesia Sonic](references/voices/cartesia.md) |
+| An ElevenLabs clone, steady read | [ElevenLabs v2](references/voices/elevenlabs-v2.md) |
+| An ElevenLabs clone, expressive delivery or dialogue | [ElevenLabs v4](references/voices/elevenlabs-v4.md) |
+| An explicitly requested v3 workflow | [ElevenLabs v3](references/voices/elevenlabs-v3.md) |
+| Directed Fish performances, private Fish clones, or multi-speaker scenes | [Fish Drama 3](references/voices/fish.md) |
+| HeyGen public voices or an existing HeyGen instant clone | [HeyGen Voice](references/voices/heygen.md) |
+| A named alternative or a specific dialect/voice match | [MiniMax and xAI](references/voices/alternatives.md) |
+
+Default to ElevenLabs v4 for stock and designed ElevenLabs voices. Speak a clone with its provider's model: Cartesia Sonic for a Cartesia clone; v2 for a steady read or v4 for expressive delivery or dialogue from an ElevenLabs clone. Pass the model explicitly rather than relying on the omitted-model v4 default, and keep it for the whole project. V3 is legacy; use it only when the user asks for it. V2 can use public stock IDs, but v4 is the stock choice. If a user explicitly requests v2 stock speech, use a compatible public `voice_id` instead of silently switching. Do not automatically route stock corporate or long-form narration to v2.
+
+## Multiple speakers in one run
+
+ElevenLabs v4 supports up to 10 voices in one `generate_speech` request through `extras.dialogue`. Pass ordered turns with `speaker`, `text`, and either `voice_id` or a saved Character voice (cloned or designed) `character_id` for each turn. Google Flash and Flash-Lite TTS also support two-speaker dialogue. Fish Drama 3 support ordered turns through the same `extras.dialogue` contract, with a Creative Claw limit of 16 speakers and 100 turns. Read the selected model's current schema and [v4 dialogue examples](references/voices/elevenlabs-v4-guide.md) before submission. Omit top-level voice selectors and `text` for dialogue. If a cached OpenAI tool schema still requires `text`, provide `text: ""`.
+
+For non-English, mixed-language or less common languages, read [language routing](references/voices/languages.md) before selecting a voice. A model supporting a language does not guarantee every stock voice has a native accent.
+
+## Execute and deliver
+
+1. Establish text, target language/accent and delivery. Preserve supplied words unless rewriting is requested. Prepare the actual speech payload using the localization guidance; Hebrew must be fully vowelized before submission, including every `extras.dialogue[].text`.
+2. Read the selected model's reference and current `get_model_params`. Reuse a current schema already loaded in this task. Use `list_models({ category: "speech" })` only when discovering alternatives.
+3. Select a language-appropriate stock voice or saved Character and only settings accepted by that model. Never copy prompting tags across models.
+4. Generate the requested take. For a new clone or uncertain pronunciation, offer a short audition before a long production, not an unrequested paid model sweep. Do not add IPA or phonemes up front. If one word comes out wrong (an acronym, the stress, a homograph or a loanword), fix only that word as [pronunciation](references/voices/pronunciation.md) describes. Never send IPA to a model that does not decode it. When the user approves a fix, offer to save it as a saved pronunciation so later takes apply it automatically; saved rules already apply to every take, and the result lists the swaps.
+5. Follow queued results with `check_job` as directed by [job recovery](references/job-recovery.md). Show the completed audio through the available native preview.
+6. Keep the Character ID and voice/model choice available for the requested continuation. Speech added to a video is an audio overlay, not lip-sync, and a video's Character reference does not bring its voice into native video audio. For speech in video, read [voice in video](references/video/voice-in-video.md).

@@ -1,0 +1,138 @@
+{
+  "name": "app-6a2528e2c49c8191a8015ba5475f177e",
+  "version": "5.5.0",
+  "keywords": [
+    "ai video generator",
+    "video generation",
+    "text to video",
+    "image to video",
+    "animate photo",
+    "ai image generator",
+    "image editing",
+    "product photography",
+    "ugc ads",
+    "video ads",
+    "ai avatar",
+    "consistent characters",
+    "storyboard",
+    "short film",
+    "voiceover",
+    "text to speech",
+    "voice design",
+    "voice cloning",
+    "lip sync",
+    "music generation",
+    "sound effects",
+    "captions",
+    "subtitles",
+    "transcription",
+    "reels",
+    "youtube shorts",
+    "tiktok videos",
+    "explainer video",
+    "motion graphics",
+    "brand kit"
+  ],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Creative Claw",
+        "shortDescription": "Create videos & voiceovers",
+        "longDescription": "Create videos, product ads, images and voiceovers in ChatGPT. Animate a photo, turn a script into a multi-scene film, or make a creator-style product ad with narration and captions. Built for marketers, creators and small teams who need on-brand media without leaving the conversation.\n\nPlan shots and storyboards, prepare consistent reference images, generate clips and assemble a first cut. Turn interviews and longer videos into social clips, cut and reorder selected moments, reframe for vertical formats, and add captions. Transcribe audio, video files and public video links. Ask for motion graphics, kinetic typography or an animated explainer, and a video agent designs and renders it with voiceover, music and sound.\n\nCreate a reusable avatar from your photos or a fictional character brief. Review its character sheet, save it as a Character, and reuse its visual references in images and videos. Give a Character a voice: design a new synthetic voice from a description, clone your own voice (or a speaker's voice with their explicit permission) from a clean recording, or choose a stock voice for multilingual narration. Sync speech to on-screen lips, and add music and sound effects to the same project.\n\nGenerate and edit supporting images, product photos and campaign visuals. Use reference images to guide product appearance, character identity, composition and style. Several image, video and voice models are available; availability and settings vary.\n\nVideo Review mode shows the proposed prompt, references and settings before you press Generate. It reviews the request, not a rendered video preview. Auto mode submits the requested generation immediately.\n\nResults, character consistency and voice similarity vary. You can send feedback from the conversation. For help, contact support@creativeclaw.co.",
+        "developerName": "Creative Claw",
+        "category": "Creativity",
+        "capabilities": [
+          "Generate videos from text or images",
+          "Animate photos",
+          "Edit and extend video clips",
+          "Motion graphics and animated explainers",
+          "Generate and edit images",
+          "Product photoshoots",
+          "Reusable characters and avatars",
+          "Storyboards and multi-shot films",
+          "UGC-style video ads",
+          "Voiceovers and text to speech",
+          "Design custom voices",
+          "Voice cloning with consent",
+          "Lip sync",
+          "Music generation",
+          "Sound effects",
+          "Transcription",
+          "Captions and subtitles",
+          "Cut, trim and reframe video",
+          "Social clips from long videos",
+          "Brand themes"
+        ],
+        "websiteURL": "https://creativeclaw.co/chatgpt/",
+        "supportURL": "https://creativeclaw.co/help/",
+        "privacyPolicyURL": "https://creativeclaw.co/privacy/",
+        "termsOfServiceURL": "https://creativeclaw.co/terms/",
+        "defaultPrompt": [
+          "Turn this product photo into a 10-second vertical video ad with a voiceover and captions.",
+          "Create a consistent character and use it in a three-shot video with dialogue.",
+          "Design a warm narrator voice and read this script."
+        ],
+        "brandColor": "#EE6B4D",
+        "brandColorDark": "#EE6B4D",
+        "composerIcon": "./assets/icon.png",
+        "logo": "./assets/icon.png"
+      },
+      "onboardingSkill": "./skills/creativeclaw-setup/SKILL.md",
+      "review": {
+        "test_cases": {
+          "positive": [
+            {
+              "description": "Text-to-video with the account's Review/Auto preference. Needs a demo account with generation credits.",
+              "prompt": "Create a 5-second vertical video of a paper airplane flying through a bright creative studio.",
+              "tools_triggered": "get_model_params, generate_video; check_job only when needed for completion or a later step",
+              "expected_behavior": "In Review mode, show the request card without submitting or charging until Generate is pressed. In Auto mode, submit the request. Deliver a playable vertical clip once complete; a pending job is not a finished video."
+            },
+            {
+              "description": "Look up the demo account's saved brand theme. No credits used.",
+              "prompt": "Show me my CreativeClaw brand theme.",
+              "tools_triggered": "get_theme (list_themes if the name needs matching)",
+              "expected_behavior": "Show the saved CreativeClaw theme: colors, fonts, logo and brand notes. Nothing is generated or charged."
+            },
+            {
+              "description": "Image creation from a text brief. Needs image credits.",
+              "prompt": "Generate an image of a cozy coffee shop interior in warm morning light.",
+              "tools_triggered": "get_model_params, generate_image",
+              "expected_behavior": "One completed image of the described scene shown in the media viewer, with no extra paid variations."
+            },
+            {
+              "description": "On-brand social card from the saved theme and its reference image. Needs image credits.",
+              "prompt": "Create a 4:5 announcement card for my brand that says \"Now Live: On-Brand Media in ChatGPT.\" Please use my saved CreativeClaw theme and its reference image.",
+              "tools_triggered": "get_theme, get_model_params, generate_image",
+              "expected_behavior": "Load the CreativeClaw theme, pass its reference image to generate_image at 4:5 with the exact headline, and show one finished card in the media viewer. HTML and template renderers are not used."
+            },
+            {
+              "description": "Stock narration, not cloning. Needs speech credits.",
+              "prompt": "Generate a voiceover that says \"Welcome to CreativeClaw, your on-brand media studio.\"",
+              "tools_triggered": "get_model_params, generate_speech",
+              "expected_behavior": "Pick a suitable stock voice with the default speech model, keep the words exactly, and deliver playable audio. Do not create a Character or clone a voice."
+            }
+          ],
+          "negative": [
+            {
+              "description": "Written copy only. \"Instagram\" sounds media-related, but no media is requested.",
+              "prompt": "Write three witty Instagram captions for a coffee shop launching a new oat-milk latte."
+            },
+            {
+              "description": "A general question about video specs. The user wants an answer, not a generated asset.",
+              "prompt": "What's the ideal aspect ratio and length for a YouTube Short?"
+            },
+            {
+              "description": "Finding an existing stock photo. Creative Claw creates new media; it does not search stock libraries.",
+              "prompt": "Find me a free stock photo of a mountain sunset I can use in a presentation."
+            }
+          ]
+        },
+        "commerce": false,
+        "commerce_description": "Creative Claw does not sell anything in ChatGPT. When a feature needs a different plan or more credits, the plugin explains why and links to an informational page about plans."
+      },
+      "publication": {
+        "release_notes": "Guided setup: after installing, run setup to see what Creative Claw can do, add your own photos, logo or brand references, and go from a preview image to your first video, a designed voice and your workspace in Studio. Captions now come with ready-made looks, a style picker and fonts, and can be restyled from the result card. Creative Claw Studio: open a workspace from the sidebar or a chat to manage your characters, films, voices, library and the videos waiting for your review. A video agent can make designed, text-led videos such as explainers, promos and motion graphics from a prompt. Video review requests can also be approved from a browser link. Review settings are available on the plugin's settings page, and in Codex you can @mention your characters and films. Music has a new model option, YouTube transcription uses the video's existing captions, and guidance on feedback, approvals and voice cloning is clearer."
+      }
+    }
+  }
+}

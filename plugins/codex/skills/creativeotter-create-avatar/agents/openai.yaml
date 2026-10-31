@@ -1,0 +1,8 @@
+# CreativeOtter adaptation, 2026-11-01. MCP dependency is added by a connected package build.
+interface:
+  display_name: CreativeOtter Create Your Avatar
+  short_description: Create and save a consistent personal avatar
+  default_prompt: Use $creativeotter-create-avatar to turn my photos into an
+    approved character sheet and save my reusable avatar.
+policy:
+  allow_implicit_invocation: true

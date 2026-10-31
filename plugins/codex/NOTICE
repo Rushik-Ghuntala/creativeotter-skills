@@ -1,0 +1,15 @@
+CreativeOtter Skills
+Copyright 2026 Rushik
+
+Derived portions include Creative Claw skills published by Creative Claw Co.
+Copyright 2026 Creative Claw Co.
+Licensed under the Apache License, Version 2.0. See LICENSE.
+
+Original repository: https://github.com/CreativeClawCo/creative-claw-marketplace
+Pinned commit: 9a611714f425047e44de916eac7d778804a188fa
+
+CreativeOtter adaptations: names, connection instructions, client packaging,
+capability checks, model discovery, quote/approval rules, feedback privacy,
+private asset handling, provenance validation and repository build tooling.
+Modified files are marked and listed in provenance/adaptation.json.
+No affiliation or endorsement by the upstream publisher is implied.

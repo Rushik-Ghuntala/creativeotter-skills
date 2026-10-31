@@ -1,0 +1,8 @@
+# CreativeOtter adaptation, 2026-11-01. MCP dependency is added by a connected package build.
+interface:
+  display_name: CreativeOtter — Create UGC Ad
+  short_description: Create a scripted UGC product video
+  default_prompt: Use $creativeotter-create-ugc-ad to make a convincing UGC
+    product ad from my product and creator references.
+policy:
+  allow_implicit_invocation: true

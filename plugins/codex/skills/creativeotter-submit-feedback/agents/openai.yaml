@@ -1,0 +1,8 @@
+# CreativeOtter adaptation, 2026-11-01. MCP dependency is added by a connected package build.
+interface:
+  display_name: CreativeOtter — Submit Feedback
+  short_description: Report product and quality feedback to the team
+  default_prompt: Use $creativeotter-submit-feedback to send my feedback about
+    this issue or request to the CreativeOtter team.
+policy:
+  allow_implicit_invocation: true

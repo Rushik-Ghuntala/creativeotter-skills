@@ -1,0 +1,9 @@
+{
+  "version": "0.1.0",
+  "client": "claude",
+  "skill_count": 21,
+  "mode": "instructions-only",
+  "mcp_url": null,
+  "backend_tested": false,
+  "marketplace_approved": false
+}
