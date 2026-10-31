@@ -1,7 +1,7 @@
 {
   "name": "creativeotter",
   "version": "0.4.0",
-  "description": "CreativeOtter native-first media workflows with optional reviewed API fallback and a private library.",
+  "description": "CreativeOtter native-first media workflows with optional API fallback and a private library.",
   "author": {
     "name": "Rushik",
     "email": "rushisoni2003@gmail.com"
@@ -22,7 +22,7 @@
   "interface": {
     "displayName": "CreativeOtter",
     "shortDescription": "Create media with CreativeOtter",
-    "longDescription": "21 creative workflows with mandatory credit approval for native and API generation. Prefer suitable native engines to reduce operating cost; all execution requires configured backend billing and current capabilities.",
+    "longDescription": "21 creative workflows with direct image generation on request. Native and API images spend CreativeOtter credits automatically after a balance check. Prefer suitable native engines; execution requires configured backend billing and current capabilities.",
     "developerName": "Rushik",
     "category": "Creativity",
     "capabilities": [

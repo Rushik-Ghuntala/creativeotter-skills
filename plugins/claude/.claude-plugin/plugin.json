@@ -1,7 +1,7 @@
 {
   "name": "creativeotter",
   "version": "0.4.0",
-  "description": "CreativeOtter native-first media workflows with optional reviewed API fallback and a private library.",
+  "description": "CreativeOtter native-first media workflows with optional API fallback and a private library.",
   "author": {
     "name": "Rushik",
     "email": "rushisoni2003@gmail.com"
