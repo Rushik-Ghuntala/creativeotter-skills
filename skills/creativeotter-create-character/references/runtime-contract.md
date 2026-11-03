@@ -33,6 +33,18 @@ For two or more saved images, carousel slides or campaign outputs, call `show_im
 
 Keep the branded gallery as the primary combined presentation when the host supports MCP Apps. Do not replace it with a host Canvas, artifact slideshow or raw Markdown image gallery. Keep final prose brief and let the widget present the images. If the gallery tool is missing from this chat's tool catalog, call `get_capabilities` once to read the server’s `gallery_endpoint` and confirm its current capabilities. This call does not itself refresh the host’s cached tool catalog. If it is still missing, build the authenticated CreativeOtter gallery link with `items=native:<generation-id>,provider:<quote-id>,...` in the exact requested order and a URL-encoded `title`. Use only IDs from the explicitly requested saved set; do not search for or automatically add other private images. Present that branded gallery link and explain that refreshing the MCP connection enables its embedded tool. Do not replace the saved set with Canvas or a generic host gallery. A UI discovery failure never authorizes regeneration. The host may independently show native tool previews while generation runs; our gallery presents the saved CreativeOtter results.
 
+## Saved Studio records
+
+Studio operations are available only when exposed by the connected backend. A local website update does not prove the production connector was deployed. Use current tool schemas and returned IDs.
+
+- `manage_themes` saves brand colors, typography, tone and an owned logo asset ID. Load the intended kit before constructing a generation prompt; do not invent automatic brand application.
+- `manage_characters` saves character direction and an owned canonical reference asset ID. It does not train a model, create a voice clone or guarantee identity consistency. Use fictional characters, the user's own likeness or explicitly authorized likenesses.
+- `manage_projects` handles campaign, film and music briefs. `manage_storyboards` saves a film's explicitly ordered visual/narration shots. Planning and saving these records are not media generation.
+- `manage_voice_presets` saves language, voice direction and scripts; a preset is not a provider voice. Browser auditions are unsaved browser previews. If speech, cloning, music, video or rendering tools are unavailable, explain that media execution is unavailable; do not label a saved brief as generated output.
+- `assign_project_asset` attributes only the exact saved assets requested by the user. One asset belongs to at most one project. Read the project's historical assigned charges; assignment does not charge again or alter the original ledger. A planning budget target is not an enforced spending cap.
+
+List/get before an ambiguous update; preserve the intended existing ID. Archive/restore are reversible and do not delete saved media. Direct account settings and teammate invitations belong in the authenticated app, not assistant tools. Do not expand workspace access through a creative-record operation.
+
 ## Delivery, ledger and privacy
 
 Report the execution source and authoritative quoted/reserved/charged/released credit state. Historical legacy records with no charge are not a current free tier. Never invent a credit balance, fixed price, trial, retention or refund promise. A quote is not a charge; a reservation reduces available credits before execution. Confirmed saved delivery settles it once.

@@ -1,15 +1,14 @@
 ---
 name: creativeotter-budget-projects
-description: Organize CreativeOtter generation costs by client or production using enabled budget-project tools. Use to assign work, inspect spend or manage a stated production budget.
+description: Organize CreativeOtter saved work by client or project and inspect original attributed credit costs.
 ---
 
-# Budget projects
+# Project costs
 
-CreativeOtter adaptation, 2026-11-01. Read [the runtime contract](references/runtime-contract.md).
+CreativeOtter adaptation, 2026-11-04. Read [the runtime contract](references/runtime-contract.md).
 
-1. Check that budget-project operations are enabled. Find an existing project before creating a new label; use IDs/slugs returned by current tools.
-2. Associate requested work with that project only through supported fields. Do not silently proceed if a requested project cannot be resolved. A tracking label is not necessarily an enforced spending cap: state which limits the backend actually enforces.
-3. Obtain quotes for every paid operation, including keyframes, speech, editing and assembly. Keep their total within the user's requested budget and server-enforced limits. Do not silently reduce quality or substitute models to fit.
-4. For past work, identify exact jobs/assets, confirm an ambiguous selection and use the advertised assignment tool. Avoid reassigning unrelated activity.
-5. Report recorded reservations, settled charges, releases and refunds without counting transactions twice. Missing amounts are unknown. Use returned display units; do not invent membership rates or currency conversions.
-6. Rename/archive only within the requested scope. Use a project view if supported; otherwise provide a concise text summary. A missing widget is not a missing ledger, and a failed job alone does not prove zero charge.
+Use `manage_projects` when exposed. List the relevant section (projects for campaigns, films for films, music for track briefs), then get the intended record. Save the requested name/brief with its matching data.kind and reuse its ID on updates. Budget targets use integer 1/1000-credit units and are planning targets, not enforced spending caps. State that distinction when a user sets a limit; no automatic per-chat project attribution is implemented.
+
+For already saved work, use `assign_project_asset` only with the exact project and asset IDs requested. An asset has at most one project assignment. Existing assignments are never silently moved; ask to resolve an ambiguous intended destination. Assignment is free and does not change the original credit ledger. Project details return the historical assigned charge total, which must not be added to account spending again.
+
+Future generation still needs its own current quote, sufficient credits and execution claim. A project record is not a spending authorization. Do not promise tracking of unassigned work, subscriptions, provider-dollar conversions or refunds absent authoritative tool data. Archive or restore only the requested project; saved media and historical charges remain available.

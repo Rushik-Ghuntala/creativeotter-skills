@@ -10,9 +10,9 @@ CreativeOtter adaptation, 2026-11-01. Follow [the runtime contract](runtime-cont
 | One generated image/video | `generate_image`, `generate_video` |
 | Speech, music and sound effects | `generate_speech`, `generate_music`, `generate_sound_effect` |
 | Current jobs | `check_job` |
-| Private uploads and assets | `get_upload_url`, `confirm_upload`, `search_assets`, `show_media`, `load_image`, `update_asset` |
+| Private uploads and assets | `create_upload_url`, `complete_upload`, `manage_assets` |
 | Current account and ledger | `manage_account` |
-| Reusable brand, identity and project state | Advertised theme, Character, Film and budget-project tools |
+| Reusable brand, identity and project state | `manage_themes`, `manage_characters`, `manage_projects`, `manage_storyboards`, `manage_voice_presets`, `assign_project_asset`, when exposed |
 | Existing media processing | Advertised trim, caption, audio, reframe and assembly tools |
 | Explicit code-based rendering | `render_html_image`, `render_html_video`, optionally `generate_html_video` |
 | Requested product feedback | `submit_feedback`, only after explicit user request |
