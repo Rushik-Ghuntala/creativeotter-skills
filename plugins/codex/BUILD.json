@@ -1,5 +1,5 @@
 {
-  "version": "0.5.0",
+  "version": "0.5.1",
   "client": "codex",
   "skill_count": 21,
   "mode": "instructions-only",

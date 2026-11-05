@@ -2,6 +2,14 @@
 
 CreativeOtter adaptation, 2026-11-01. This contract takes precedence over inherited model examples.
 
+## Connection recovery
+
+A loaded skill or an installed plugin is not proof that its MCP connection is authenticated in this chat. When account or billing tools are absent, check the assistant's actual connection state before suggesting a restart. Have the user sign in through the existing CreativeOtter connection and explicitly select media access when needed. A website login alone does not connect an assistant. Do not add a duplicate manual connection when the plugin already supplies one.
+
+Validate the live connection with `manage_account` and `get_capabilities` without spending credits. Account-only permission exposes account tools; saved-media and generation tools require the separately approved media permission. A CLI showing stored OAuth credentials is not proof that a live request works. Do not claim that an active chat's tools were refreshed merely because a separate diagnostic client works.
+
+For manual Codex sign-in, use the existing server name with `codex mcp login creativeotter --scopes openid,email,offline_access`. In Claude Code use `/mcp` and authenticate CreativeOtter; in Claude's remote connector settings use Connect or Reconnect. Never edit an OAuth authorization URL, invent a callback, copy raw tokens, or use another account to bypass a failed connection. A scope error needs a compatible sign-in request/server fix, not repeated restarts. Let the host refresh expiring tokens normally. Reconnect after revoked access or cleared credentials; reload/start a fresh chat only when authentication works but the host still retains an older tool catalog.
+
 ## Generate on explicit request
 
 Native-first reduces CreativeOtter operating cost. **Native and API generation both spend CreativeOtter credits.** An available host tool, missing provider key, zero backend inference cost or `media_generation: false` never authorizes free CreativeOtter execution. Account reads, planning and reference uploads are not generation.
