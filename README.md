@@ -2,7 +2,7 @@
 
 Shared media-production skills with separate **Codex** and **Claude Code** plugin packages. Includes all **21 adapted skills**, their prompting references and rendering assets, plus an unchanged, hash-verified upstream snapshot.
 
-**Status:** paid native-first routing, version 0.5.1. Prefer a suitable native engine to lower operating cost; native and API generation both spend CreativeOtter credits. New native work requires a priced quote and a single execution claim that reserves credits directly on user request before the host tool runs. A missing connection, price or balance stops generation. The committed packages have no active MCP endpoint; build a connected package for the actual backend. No public directory approval is implied.
+**Status:** paid native-first routing, version 0.5.2. Prefer a suitable native engine to lower operating cost; native and API generation both spend CreativeOtter credits. New native work requires a priced quote and a single execution claim that reserves credits directly on user request before the host tool runs. A missing connection, price or balance stops generation. The default `plugins/` folders have no active MCP endpoint; the release test-kit ZIP below connects to the deployed backend. No public directory approval is implied.
 
 ## Repository layout
 
@@ -17,12 +17,27 @@ plugins/claude/          Self-contained Claude Code package
 .claude-plugin/          Claude Code repository marketplace
 config/plugin.json       Our package identity/version; no active MCP URL
 scripts/                 Adapt, build, validate and ZIP tooling
+releases/                Versioned connected test-kit ZIP and checksum
 tests/                   Offline package/endpoint regression tests
 provenance/              Adapted file hashes and source mapping
 vendor/creative-claw/    Untouched pinned upstream snapshot and provenance
 ```
 
 Next.js, Supabase, provider adapters, database migrations and billing belong in the separate product/backend repository. This repository never stores service credentials or private research/chat records.
+
+## Download the connected test kit
+
+[Download CreativeOtter test kit v0.5.2](releases/creativeotter-test-kit-v0.5.2.zip) and its [SHA-256 checksum](releases/creativeotter-test-kit-v0.5.2.zip.sha256). Extract the ZIP and start with its README. It contains connected Codex and Claude Code plugins, local marketplaces, Cursor/VS Code configuration adapters, portable MCP setup and read-only test prompts. Each plugin includes all 21 skills. The public endpoint is `https://creativeotter-app.vercel.app/api/mcp`; each assistant completes its own OAuth sign-in.
+
+This is a multi-client test kit, not a universal plugin format. Hosts need remote OAuth MCP support, and inline media UI depends on the client. No credentials, account data, free credits or auto-running generations are included. See the [kit guide source](templates/test-kit/README.md) and [compatibility evidence](templates/test-kit/docs/COMPATIBILITY.md). The default repository plugins remain instructions-only.
+
+Rebuild the versioned ZIP tracked in this codebase:
+
+```sh
+npm run package:test-kit
+```
+
+The release profile is `config/test-kit.json`. Packaging uses allowlisted sources and a stable file order/timestamp, includes per-file checksums and license/provenance, and does not contact the backend. CI rebuilds the ZIP and checks that it matches the committed artifact. Tests extract it and verify contents, client formats and reproducibility. Do not overwrite an existing assistant configuration; merge only the CreativeOtter server entry. No global client settings are changed by building this kit.
 
 ## Build and validate
 

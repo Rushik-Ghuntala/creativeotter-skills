@@ -1,7 +1,7 @@
 {
   "source_repository": "https://github.com/CreativeClawCo/creative-claw-marketplace",
   "source_commit": "9a611714f425047e44de916eac7d778804a188fa",
-  "adaptation_version": "0.5.1",
+  "adaptation_version": "0.5.2",
   "adapted_on": "2026-11-01",
   "skill_count": 21,
   "note": "Modified files carry adaptation notices. Original snapshot and license remain unchanged. Source-null files are original CreativeOtter additions.",
