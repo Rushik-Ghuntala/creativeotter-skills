@@ -1,7 +1,7 @@
 {
   "source_repository": "https://github.com/CreativeClawCo/creative-claw-marketplace",
   "source_commit": "9a611714f425047e44de916eac7d778804a188fa",
-  "adaptation_version": "0.8.1",
+  "adaptation_version": "0.8.2",
   "adapted_on": "2026-11-06",
   "skill_count": 21,
   "note": "Current entry points and reachable maintained resources only. Historical model guides and assets remain unchanged in vendor/creative-claw/upstream, outside active packages. Modified files retain provenance; source-null files are CreativeOtter additions.",
@@ -577,7 +577,7 @@
       "source": "upstream/plugins/creative-claw/skills/creativeclaw-render-html/SKILL.md",
       "path": "skills/creativeotter-render-html/SKILL.md",
       "source_sha256": "35acd41ba9ceef84bc13982366a29eab1c89d6a049b8472490213d73ab6fd850",
-      "sha256": "ec8508c70e76da30d7bd910e25782bd6e9f97f70d3bfcc91dc7cf7233051e4df",
+      "sha256": "15d3d8a03876642a7771a4dcd7547632141dfa0d0087ade576d0c46d5e099ecf",
       "modified": true
     },
     {

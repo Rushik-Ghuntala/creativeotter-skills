@@ -9,3 +9,5 @@ This repository contains adapted skills and plugin packages only. It contains no
 - Run `npm run verify` before committing. Do not run paid generations, install global plugins, deploy a backend or publish directory listings as part of repository maintenance unless requested.
 - Keep only CreativeOtter operational branding in adapted skills. Upstream names belong in immutable source and legal/provenance documentation. Do not upload project research, account information, secrets or chat history.
 - Git identity is repository-local: Rushik <rushisoni2003@gmail.com>. Do not change global Git configuration.
+
+- Keep distributable plugin/release directories latest-only: after successful packaging, remove obsolete CreativeOtter ZIPs and matching checksums. Keep the current packages for each supported client. Old releases can be recovered from Git history; do not accumulate them in the current checkout.

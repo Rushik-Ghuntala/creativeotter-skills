@@ -3,7 +3,7 @@ import { spawnSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 import { build } from './build-plugins.mjs';
-import { ROOT, assert, files, hash, json, validateMcpUrl, write } from './lib.mjs';
+import { ROOT, pruneOldArchives, assert, files, hash, json, validateMcpUrl, write } from './lib.mjs';
 
 const folderName = 'creativeotter-test-kit';
 const epoch = new Date('2000-01-01T00:00:00Z');
@@ -85,6 +85,7 @@ export const packageTestKit = async ({ staging, archives, mcpUrl, marketplaceNam
   assert(result.status === 0, result.stderr || result.error?.message || 'Install zip to create the test kit.');
   const sha256 = hash(await readFile(archive));
   await write(archive + '.sha256', `${sha256}  ${path.basename(archive)}\n`);
+  await pruneOldArchives(archives, config.version);
   return { kit, archive, sha256, file_count: packaged.length };
 };
 

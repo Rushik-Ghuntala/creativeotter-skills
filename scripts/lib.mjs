@@ -1,4 +1,4 @@
-import { readdir, readFile, mkdir, writeFile } from 'node:fs/promises';
+import { readdir, readFile, mkdir, writeFile, rm } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 import { createHash } from 'node:crypto';
@@ -33,3 +33,17 @@ export function validateMcpUrl(value) {
   assert(!/(^|\.)example\.(com|org|net)$/.test(u.hostname), 'Use the real deployed endpoint, not an example domain.');
   return u.href;
 }
+
+// Prune only versioned CreativeOtter archives after the replacement was built.
+export const pruneOldArchives = async (directory, version) => {
+  assert(/^\d+\.\d+\.\d+$/.test(version), 'A release version is required.');
+  const removed = [];
+  for (const entry of await readdir(directory, { withFileTypes: true })) {
+    const match = /^creativeotter-.+-v(\d+\.\d+\.\d+)\.zip(?:\.sha256)?$/.exec(entry.name);
+    if (entry.isFile() && match && match[1] !== version) {
+      await rm(path.join(directory, entry.name));
+      removed.push(entry.name);
+    }
+  }
+  return removed;
+};

@@ -2,7 +2,7 @@ import { chmod, copyFile, cp, mkdir, readFile, rm, utimes } from 'node:fs/promis
 import { spawnSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
-import { ROOT, assert, files, hash, json, write } from './lib.mjs';
+import { ROOT, pruneOldArchives, assert, files, hash, json, write } from './lib.mjs';
 
 export const normalizeRegisteredAppId = value => {
   assert(typeof value === 'string', 'Supply the registered remote app ID from this ChatGPT account.');
@@ -59,6 +59,7 @@ export const packageChatgptWeb = async ({ appId, staging, archives }) => {
   assert(zipped.status === 0, zipped.stderr || 'Web plugin ZIP creation failed.');
   const sha256 = hash(await readFile(archive));
   await write(archive + '.sha256', `${sha256}  ${path.basename(archive)}\n`);
+  await pruneOldArchives(archives, config.version);
   return { root, archive, sha256, registered_app_id: id, file_count: entries.length };
 };
 
