@@ -12,7 +12,8 @@
       "manage_themes",
       "manage_projects",
       "manage_storyboards",
-      "manage_voice_presets"
+      "manage_voice_presets",
+      "discover_brand_assets"
     ]
   },
   "creativeotter-generate-image": {
@@ -35,7 +36,8 @@
       "check_job",
       "show_image_gallery",
       "get_native_generation",
-      "report_native_outcome"
+      "report_native_outcome",
+      "discover_brand_assets"
     ]
   },
   "creativeotter-product-photoshoot": {
@@ -47,7 +49,8 @@
       "manage_assets",
       "manage_themes",
       "show_image_gallery",
-      "assign_project_asset"
+      "assign_project_asset",
+      "discover_brand_assets"
     ]
   },
   "creativeotter-create-avatar": {
@@ -99,7 +102,8 @@
     "prompt": "Help me get started with CreativeOtter.",
     "tools": [
       "manage_account",
-      "get_capabilities"
+      "get_capabilities",
+      "discover_brand_assets"
     ]
   },
   "creativeotter-submit-feedback": {
@@ -238,7 +242,8 @@
       "prepare_render",
       "render_design",
       "get_render",
-      "list_renders"
+      "list_renders",
+      "discover_brand_assets"
     ]
   }
 }

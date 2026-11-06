@@ -1,6 +1,6 @@
 {
-  "checked_on": "2026-11-06",
-  "backend_version": "0.10.1",
+  "checked_on": "2026-11-07",
+  "backend_version": "0.11.0",
   "note": "Tools/list schemas, including opt-in rendering with only its discovery flag enabled, exported from backend code using an in-memory transport. No account data, credentials, database calls or generation.",
   "tools": [
     {
@@ -162,6 +162,29 @@
         "required": [
           "filename",
           "mime_type"
+        ],
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      }
+    },
+    {
+      "name": "discover_brand_assets",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "website_url": {
+            "type": "string",
+            "minLength": 4,
+            "maxLength": 2048
+          },
+          "max_assets": {
+            "default": 6,
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 8
+          }
+        },
+        "required": [
+          "website_url"
         ],
         "$schema": "http://json-schema.org/draft-07/schema#"
       }
