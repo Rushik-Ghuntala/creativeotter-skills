@@ -44,7 +44,7 @@ test('the extracted multi-client ZIP is complete, credential-free and reproducib
       assert.ok((await readFile(path.join(base, 'LICENSE'))).equals(await readFile(path.join(ROOT, 'LICENSE'))));
       assert.ok((await readFile(path.join(base, 'NOTICE'))).equals(await readFile(path.join(ROOT, 'NOTICE'))));
     }
-    for (const [label, manifest] of [['chatgpt-codex', '.codex-plugin/plugin.json'], ['claude', '.claude-plugin/plugin.json']]) {
+    for (const [label, manifest] of [['codex-desktop', '.codex-plugin/plugin.json'], ['claude', '.claude-plugin/plugin.json']]) {
       const archive = path.join(kit, 'install', `creativeotter-${label}-v${config.version}.zip`);
       const listing = spawnSync('unzip', ['-Z1', archive], { encoding: 'utf8' });
       assert.equal(listing.status, 0, listing.stderr);

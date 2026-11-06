@@ -10,7 +10,7 @@ Includes 21 skills in each complete Codex and Claude Code plugin, per-client con
 
 | Assistant | Package / setup |
 | --- | --- |
-| ChatGPT / Codex | `install/creativeotter-chatgpt-codex-v{{VERSION}}.zip`, or local `plugins/codex/` |
+| Codex desktop / CLI | `install/creativeotter-codex-desktop-v{{VERSION}}.zip`, or local `plugins/codex/` |
 | Claude Code / compatible Claude plugin upload | `install/creativeotter-claude-v{{VERSION}}.zip`, or `plugins/claude/` |
 | Claude chat / Cowork remote connector | Add the MCP endpoint and sign in; ZIP upload availability depends on the client |
 | Grok Bot | Add the remote MCP endpoint through the Bot; see below |
@@ -53,9 +53,15 @@ Merge the `creativeotter` entry from `adapters/cursor/mcp.json` into your projec
 
 Merge `adapters/vscode/mcp.json` into `.vscode/mcp.json`. Start/trust the server through VS Code's MCP controls and complete OAuth. This format uses `servers`, while Cursor uses `mcpServers`; keep the correct format and preserve other entries. Tool use requires an MCP-capable chat session permitted by your organization.
 
-## ChatGPT and Claude remote connections
+## ChatGPT web and Claude remote connections
 
-Use the client's custom remote MCP/connector/plugin controls to add `{{MCP_URL}}`, choose OAuth, then sign in to CreativeOtter. For Claude, use Customize > Connectors > Add custom connector. If asked how to identify the OAuth client, choose **Register automatically** for this backend's dynamic registration flow. For ChatGPT, use Plugins > Add custom MCP server if that control is available. These web/desktop connector flows are separate from installing a Claude Code or Codex plugin folder. Client plan, admin policy and available features determine whether local plugins or custom remote MCP can be used.
+**ChatGPT web:** this kit's Codex ZIP bundles direct MCP settings and can be classified **Desktop only**, even though the endpoint is online. Use Plugins > Add > Add custom MCP server to register `{{MCP_URL}}` with OAuth and automatic/DCR registration. Install and connect that remote plugin, then test it in a new web chat. This path provides the hosted tools and previews.
+
+For all 21 skills in a web package, first register the app in the intended account/workspace, then run `npm run package:chatgpt-web -- --app-id <actual-registered-app-id>` in the skills repository. That separate ZIP references the registered app and omits direct MCP declarations. The app must be available to the target user; the ZIP does not create or authorize it. Do not invent or reuse another workspace's app reference. A new package still needs a live web import test. Do not upload the Codex desktop ZIP expecting it to enable web chat.
+
+**Claude chat/Desktop/Cowork:** add `{{MCP_URL}}` through the client's remote connector controls and complete OAuth. This is separate from a Claude Code plugin install. Client and admin policies determine availability.
+
+Official guidance: [ChatGPT web and MCP](https://learn.chatgpt.com/docs/extend/mcp), [registered app references and desktop-only imports](https://learn.chatgpt.com/docs/enterprise/plugin-management).
 
 ## Grok Bot and Grok Build
 

@@ -9,7 +9,7 @@ This is a multi-client test kit, not a guarantee that every AI accepts one plugi
 | Cursor | Remote MCP JSON | Configuration follows official documentation; actual Cursor sign-in not tested by packaging |
 | VS Code / Copilot | Remote MCP JSON with `servers` | Configuration follows official documentation; actual Copilot sign-in not tested by packaging |
 | Claude chat/Desktop/Cowork | Custom remote connector URL | Configure in the app; Claude Code installation does not create this connector |
-| ChatGPT | Custom remote MCP URL, where available | Requires the client's custom MCP controls and account/admin access; no public directory approval claimed |
+| ChatGPT web | Register remote MCP with OAuth; optional separate skills ZIP bound to its registered app | The Codex ZIP is desktop-only in the observed web import. A registered remote app and a web package without direct MCP declarations require their own live test. |
 | Grok Bot | Custom remote MCP URL and bundled skill references | Official custom-server setup documented; CreativeOtter sign-in and embedded UI not yet tested there |
 | Grok Build | Claude-compatible plugin directory | Format documented by xAI; live CreativeOtter connection not tested there |
 | Other assistants | Endpoint and portable config example; skill folders | Requires compatible OAuth MCP and optional skills support; not tested individually |
@@ -30,3 +30,5 @@ Official format/setup references checked 2026-11-06:
 
 - [Grok Bot connections](https://docs.x.ai/grok-bot/computer-and-apps)
 - [Grok Build plugin compatibility](https://docs.x.ai/build/features/skills-plugins-marketplaces)
+
+A laptop icon or “Open in desktop app” means the imported package cannot be used in ChatGPT web. The v0.5.3 archive named `chatgpt-codex` was misleading: it bundled direct MCP settings. New kits label that archive `codex-desktop` and provide a separate registered-app web packaging command.

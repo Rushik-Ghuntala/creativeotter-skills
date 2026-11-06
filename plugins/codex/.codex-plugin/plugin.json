@@ -1,6 +1,6 @@
 {
   "name": "creativeotter",
-  "version": "0.5.3",
+  "version": "0.5.4",
   "description": "CreativeOtter native-first media workflows with optional API fallback and a private library.",
   "author": {
     "name": "Rushik",

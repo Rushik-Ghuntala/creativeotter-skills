@@ -43,7 +43,7 @@ export const packageTestKit = async ({ staging, archives, mcpUrl, marketplaceNam
   }
   // Each inner ZIP is directly installable: manifests are at the archive root.
   const installArchives = {};
-  for (const [client, label] of [['codex', 'chatgpt-codex'], ['claude', 'claude']]) {
+  for (const [client, label] of [['codex', 'codex-desktop'], ['claude', 'claude']]) {
     const root = path.join(kit, 'plugins', client);
     const inputs = (await files(root)).sort();
     for (const file of inputs) { await chmod(file, 0o644); await utimes(file, epoch, epoch); }
