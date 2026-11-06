@@ -226,6 +226,9 @@
     "prompt": "Animate my headline and logo for a short launch announcement.",
     "tools": [
       "get_capabilities",
+      "manage_themes",
+      "manage_characters",
+      "manage_assets",
       "save_motion_project",
       "revise_motion_project",
       "prepare_motion_upload",

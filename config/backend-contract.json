@@ -1,6 +1,6 @@
 {
   "checked_on": "2026-11-06",
-  "backend_version": "0.10.0",
+  "backend_version": "0.10.1",
   "note": "Tools/list schemas, including opt-in rendering with only its discovery flag enabled, exported from backend code using an in-memory transport. No account data, credentials, database calls or generation.",
   "tools": [
     {
@@ -1269,6 +1269,31 @@
             "format": "uuid",
             "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
           },
+          "assets": {
+            "default": [],
+            "maxItems": 12,
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "asset_id": {
+                  "type": "string",
+                  "format": "uuid",
+                  "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+                },
+                "path": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 180
+                }
+              },
+              "required": [
+                "asset_id",
+                "path"
+              ],
+              "additionalProperties": false
+            }
+          },
           "changes": {
             "minItems": 1,
             "maxItems": 128,
@@ -1396,6 +1421,31 @@
               "required": [
                 "path",
                 "content"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "assets": {
+            "default": [],
+            "maxItems": 12,
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "asset_id": {
+                  "type": "string",
+                  "format": "uuid",
+                  "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+                },
+                "path": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 180
+                }
+              },
+              "required": [
+                "asset_id",
+                "path"
               ],
               "additionalProperties": false
             }

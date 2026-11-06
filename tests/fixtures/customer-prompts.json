@@ -596,6 +596,70 @@
         }
       ],
       "expected_behavior": "Transfer the supplied existing ZIP to its private upload URL, validate it, and show a short friendly project summary. No npm scripts, render, credits spent or raw source dump."
+    },
+    {
+      "skill": "creativeotter-render-html",
+      "prompt": "Make a quick launch animation for spaceoffice.ai.",
+      "schema_examples_only": true,
+      "steps": [
+        {
+          "tool": "get_capabilities",
+          "arguments": {}
+        },
+        {
+          "tool": "manage_themes",
+          "arguments": {
+            "action": "list"
+          }
+        },
+        {
+          "tool": "manage_characters",
+          "arguments": {
+            "action": "list"
+          }
+        },
+        {
+          "tool": "manage_assets",
+          "arguments": {
+            "action": "list",
+            "kind": "reference",
+            "limit": 50
+          }
+        },
+        {
+          "tool": "manage_assets",
+          "arguments": {
+            "action": "get",
+            "asset_id": "10000000-0000-4000-8000-000000000002"
+          }
+        },
+        {
+          "tool": "save_motion_project",
+          "arguments": {
+            "title": "One brief. Your AI team.",
+            "settings": {
+              "width": 1920,
+              "height": 1080,
+              "duration_seconds": 6,
+              "fps": 30
+            },
+            "request_key": "10000000-0000-4000-8000-000000000003",
+            "files": [
+              {
+                "path": "index.html",
+                "content": "<!doctype html><html><head><script src=\"https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js\"></script></head><body><main data-composition-id=\"launch\" data-width=\"1920\" data-height=\"1080\" data-duration=\"6\"><h1>One brief. Your AI team.</h1><img id=\"lead\" src=\"assets/hydrogen.webp\" alt=\"Hydrogen, the SpaceOffice project manager\"></main><script>window.__timelines={launch:gsap.timeline({paused:true}).fromTo(\"#lead\",{y:80,opacity:0},{y:0,opacity:1,duration:1})}</script></body></html>"
+              }
+            ],
+            "assets": [
+              {
+                "asset_id": "10000000-0000-4000-8000-000000000002",
+                "path": "assets/hydrogen.webp"
+              }
+            ]
+          }
+        }
+      ],
+      "expected_behavior": "Discover and visually inspect the actual brand logo and agents from relevant saved records or the supplied website. Use their exact artwork, with no invented initial avatars, signed URLs in source, unrelated brand references or paid image generation. Bundle privately, inspect loaded source frames, then quote/render only the requested video. User reply is short and friendly."
     }
   ],
   "image_call_examples": [
