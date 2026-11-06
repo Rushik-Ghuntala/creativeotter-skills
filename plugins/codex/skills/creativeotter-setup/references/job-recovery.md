@@ -1,14 +1,16 @@
-# Job recovery
+# Recover an existing image operation
 
-CreativeOtter adaptation, 2026-11-01. Follow [the runtime contract](runtime-contract.md).
+CreativeOtter adaptation, 2026-11-06. Follow [the runtime contract](runtime-contract.md).
+
+For provider work use check_job with quote_id. For native work use get_native_generation with generation_id. Never pass a provider job ID to check_job or infer a generation ID from an asset ID.
 
 | State | Action |
 | --- | --- |
-| Awaiting approval | This is an unstarted quote. For an explicit generation request, claim native execution or call the provider generation tool immediately. An estimate-only request stops without spending. Do not poll an unstarted quote. |
-| Queued / submitting / running | Keep the same job ID. Check only when needed, following `retry_after`. Report unfinished work when a bounded check is insufficient. |
-| Submission unknown | The provider may already have accepted it. Reconcile the existing job through the advertised status/support flow. Do not create a replacement. |
-| Ingesting / ingestion retry | The provider output may exist. Allow storage recovery for this job; never regenerate merely to obtain a downloadable file. |
-| Succeeded | Deliver the saved asset and current preview/download link. A provider URL without confirmed ingestion is not durable fulfillment. |
-| Failed / rejected / cancelled | Report the actual state and known ledger evidence. A replacement requires a new quote and applicable authorization. Do not evade moderation or promise refunds. |
+| Unstarted quote / awaiting_approval | For a previously explicit image request start once through claim_native_generation or generate_image. An estimate-only request stops; do not poll a quote or ask for an extra browser approval. |
+| Queued / submitting / submitted / generating / saving | Read the same operation as needed; retain its quote/generation ID. Do not create a replacement. |
+| needs_reconciliation / unknown outcome | Inspect the existing operation. Report interrupted native work with report_native_outcome using its execution token. Do not self-refund, switch engines or start again. |
+| save_failed / awaiting_upload | Retry delivery or status recovery for the existing output. Do not regenerate just to obtain a downloadable file. |
+| succeeded | Show only the confirmed private saved output and current preview/download links. |
+| failed / cancelled / expired | Report the actual outcome and known credit state. A new attempt requires a user request covering it and a fresh supported quote. |
 
-Retain completed assets and all relevant job IDs in a multi-step production. Resume from saved project state instead of restarting finished shots. Missing charge/refund values are unknown. Use `manage_account` activity for billing questions, not inferred balance differences.
+A lost native claim does not authorize another host call. A successful upload needs complete_native_output before fulfillment is confirmed. A failure is not proof of a refund. For billing questions read manage_account activity rather than inferring charges from balance changes.

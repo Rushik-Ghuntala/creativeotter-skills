@@ -1,8 +1,8 @@
-# CreativeOtter adaptation, 2026-11-01. MCP dependency is added by a connected package build.
+# CreativeOtter adaptation, 2026-11-06. Generated from current workflow metadata.
 interface:
-  display_name: "CreativeOtter — Voice Cloning"
-  short_description: "Record, clone and reuse your own voice"
-  default_prompt: "Use $creativeotter-clone-voice to create and audition my
-    consented voice clone."
+  display_name: "CreativeOtter — Prepare a consented voice project"
+  short_description: "Prepare an authorized voice project without cloning"
+  default_prompt: "Use $creativeotter-clone-voice to help with this request: Can I
+    use my own voice for a future ad?"
 policy:
   allow_implicit_invocation: true

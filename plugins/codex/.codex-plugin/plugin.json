@@ -1,7 +1,7 @@
 {
   "name": "creativeotter",
-  "version": "0.5.4",
-  "description": "CreativeOtter native-first media workflows with optional API fallback and a private library.",
+  "version": "0.6.1",
+  "description": "CreativeOtter image creation, private saved images, brand and character records, and creative project planning.",
   "author": {
     "name": "Rushik",
     "email": "rushisoni2003@gmail.com"
@@ -21,8 +21,8 @@
   "mcpServers": "./.mcp.json",
   "interface": {
     "displayName": "CreativeOtter",
-    "shortDescription": "Create media with CreativeOtter",
-    "longDescription": "21 creative workflows with direct image generation on request. Native and API images spend CreativeOtter credits automatically after a balance check. Prefer suitable native engines; execution requires configured backend billing and current capabilities.",
+    "shortDescription": "Images and creative planning",
+    "longDescription": "Create and edit images, browse private saved work, reuse brand and character references, and plan creative projects. Both native and API images spend CreativeOtter credits through the current backend workflow. Video, audio, media processing and rendering skills currently support preparation only.",
     "developerName": "Rushik",
     "category": "Creativity",
     "capabilities": [

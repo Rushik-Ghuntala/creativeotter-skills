@@ -1,30 +1,22 @@
 ---
 name: creativeotter-generate-image
-description: Generate or edit one image with native-first CreativeOtter routing and an optional provider fallback. Use for a single image or correction; use product-photoshoot for a campaign or create-avatar for a reusable identity.
+description: "Create or edit one image through CreativeOtter, using a suitable native image tool or the available provider model. Use for social posts, ads, illustrations and image corrections."
 ---
 
-# Generate image
+# Create or edit an image
 
-CreativeOtter adaptation, 2026-11-01. Read [the hybrid runtime contract](references/runtime-contract.md).
+CreativeOtter adaptation, 2026-11-06. Follow [the runtime contract](references/runtime-contract.md).
 
-## Choose execution
+Resolve the subject, intended use, ratio, exact copy, references and details to preserve. Read [image direction](references/image-direction.md). Use [private uploads](references/platform-upload.md) for new references and `manage_assets` for saved ones.
 
-Resolve the subject, purpose, ratio, exact text, references and must-preserve details. Inspect actual native image tools and preserve any explicit model requirement. Native-first reduces operating cost; customers still spend CreativeOtter credits.
+Check actual host image tools. Prefer a suitable native image tool that meets any explicitly requested model. `resolve_generation_route` can help select the route; its result does not authorize execution. If model availability is unclear, use `get_capabilities`, `list_models` with category image, and `get_model_params` for a returned available model. The currently implemented provider model is `image/nano-banana-2`; never send an unsupported model or operation to these tools.
 
-Before invoking a host-native generator, follow the [paid native sequence](references/runtime-contract.md): `prepare_native_generation` → successful `claim_native_generation`, which reserves credits automatically. An explicit generation request needs no additional browser approval or chat confirmation; an estimate-only request stops before claiming. Use only the fixed inputs returned by the claim. Missing funds, pricing or connection stops generation; do not deliver an unbilled native substitute.
+Native route: call `prepare_native_generation` with the exact prompt, real host, references, supported image MIME, a stable UUID request_key and only an actually reported model name (otherwise null). For an explicit image request, immediately call `claim_native_generation` with the returned generation_id. Only claimed=true with a reservation and execution token authorizes one native call using the returned fixed inputs. Save its existing bytes through `create_native_output`, the returned upload instructions, then `complete_native_output`, using that same generation_id and execution_token. Failed saving is not a reason to regenerate.
 
-After the one authorized native call, inspect the result, transfer the existing bytes through `create_native_output` and `complete_native_output` with the execution token, and report the actual saved/charged state. A failed upload is not permission for a second take. Report failed/unknown native outcomes for reconciliation; do not self-refund or switch engines.
+Provider route: `estimate_generation` accepts operation image, model `image/nano-banana-2`, prompt, aspect_ratio (1:1, 4:5, 16:9 or 9:16), resolution 1K and up to 14 distinct ready reference_asset_ids. It quotes exactly one image. For an explicit generation request immediately call `generate_image` with quote_id only. Check this existing operation with `check_job({quote_id})`, never job_id. Editing uses reference_asset_ids and the changed prompt through the same quote flow; no separate edit tool exists.
 
-## Provider branch
+For any price question obtain a fresh non-spending quote for the intended image route and read its credit_units and credit_status. Customer pricing is credit_units divided by the account's display scale (currently 1000 units per credit). Report CreativeOtter credits, not estimated_cost_label, max_cost_micro_usd, a provider cost, budget limit or an invented dollar/rupee conversion. These provider estimates are internal operating costs, not the retail price. If the credit quote is unavailable, say the customer price could not be confirmed. Do not reuse a historical charge as a current quote.
 
-If a native tool is absent/unsuitable or a specific available provider model was requested, discover it through `list_models` and inspect `get_model_params`. Follow only its live schema; packaged [image guides](references/images/index.md) are prompting references, not model availability or pricing promises.
+Estimate-only requests stop after the quote. A model the user explicitly requested but that neither route can supply needs a clear limitation and alternative, not silent substitution. Do not add another take after refusal, uncertainty or upload failure. Use [recovery](references/job-recovery.md).
 
-Obtain a bound `estimate_generation` quote for exact inputs and owned reference assets. Open `generate_image` using only the quote field declared by its schema. For an explicit generation request, call it immediately to reserve credits and start the image; no browser approval is required. For estimate-only requests, return the quote without executing. Keep its quote/job IDs, use [recovery guidance](references/job-recovery.md), and inspect only confirmed saved output. No fallback after a safety refusal, unknown native outcome, or successful native result merely because saving failed.
-
-## Show multiple saved results
-
-After multiple requested images have been saved, or when asked to show existing images together, call `show_image_gallery` in the original slide order. Follow [multi-image delivery](references/runtime-contract.md). Use the CreativeOtter embedded gallery for the combined result, with no new generation or credit charge. If its tool is missing from an older chat, follow the runtime contract’s discovery refresh and exact-ID branded gallery link.
-
-## Prompt construction
-
-Specify deliverable, subject, composition, preservation requirements, environment, lighting, materials, exact quoted copy and exclusions. Use ordered reference roles. For an edit, preserve the source ratio unless reframing was requested and describe the smallest change. Native and provider tools can have different aspect/edit/transparency limits; verify rather than assuming interchangeability. A provider keyframe or extra take is another paid operation with its own quote within user-requested scope.
+Confirm saved output before saying ready. For several completed images use `show_image_gallery` with the returned generation/source pairs, in requested order. Viewing saved images never requires a new quote or generation.

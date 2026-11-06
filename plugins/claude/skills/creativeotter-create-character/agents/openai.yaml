@@ -1,8 +1,8 @@
-# CreativeOtter adaptation, 2026-11-01. MCP dependency is added by a connected package build.
+# CreativeOtter adaptation, 2026-11-06. Generated from current workflow metadata.
 interface:
-  display_name: "CreativeOtter — Create Character"
-  short_description: "Create a reusable visual character and voice"
-  default_prompt: "Use $creativeotter-create-character to create and save a
-    consistent character from my brief and references."
+  display_name: "CreativeOtter — Save a reusable character"
+  short_description: "Save and reuse character appearance and references"
+  default_prompt: "Use $creativeotter-create-character to help with this request:
+    Save this mascot for my future posts."
 policy:
   allow_implicit_invocation: true

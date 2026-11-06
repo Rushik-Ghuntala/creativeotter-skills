@@ -1,0 +1,954 @@
+{
+  "checked_on": "2026-11-06",
+  "backend_version": "0.8.10",
+  "note": "Public tools/list schemas exported from backend code using an in-memory transport. No account data, credentials, database calls or generation.",
+  "tools": [
+    {
+      "name": "assign_project_asset",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_id": {
+            "type": "string",
+            "format": "uuid",
+            "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+          },
+          "asset_id": {
+            "type": "string",
+            "format": "uuid",
+            "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+          }
+        },
+        "required": [
+          "project_id",
+          "asset_id"
+        ],
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      }
+    },
+    {
+      "name": "check_job",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "quote_id": {
+            "type": "string",
+            "format": "uuid",
+            "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+          }
+        },
+        "required": [
+          "quote_id"
+        ],
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      }
+    },
+    {
+      "name": "claim_native_generation",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "generation_id": {
+            "type": "string",
+            "format": "uuid",
+            "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+          }
+        },
+        "required": [
+          "generation_id"
+        ],
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      }
+    },
+    {
+      "name": "complete_native_output",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "generation_id": {
+            "type": "string",
+            "format": "uuid",
+            "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+          },
+          "execution_token": {
+            "type": "string",
+            "format": "uuid",
+            "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+          }
+        },
+        "required": [
+          "generation_id",
+          "execution_token"
+        ],
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      }
+    },
+    {
+      "name": "complete_upload",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "asset_id": {
+            "type": "string",
+            "format": "uuid",
+            "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+          }
+        },
+        "required": [
+          "asset_id"
+        ],
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      }
+    },
+    {
+      "name": "create_native_output",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "generation_id": {
+            "type": "string",
+            "format": "uuid",
+            "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+          },
+          "execution_token": {
+            "type": "string",
+            "format": "uuid",
+            "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+          }
+        },
+        "required": [
+          "generation_id",
+          "execution_token"
+        ],
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      }
+    },
+    {
+      "name": "create_upload_url",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "filename": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 160
+          },
+          "mime_type": {
+            "type": "string",
+            "enum": [
+              "image/png",
+              "image/jpeg",
+              "image/webp"
+            ]
+          }
+        },
+        "required": [
+          "filename",
+          "mime_type"
+        ],
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      }
+    },
+    {
+      "name": "estimate_generation",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "operation": {
+            "default": "image",
+            "type": "string",
+            "const": "image"
+          },
+          "model": {
+            "default": "image/nano-banana-2",
+            "type": "string",
+            "const": "image/nano-banana-2"
+          },
+          "prompt": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 8000
+          },
+          "aspect_ratio": {
+            "default": "4:5",
+            "type": "string",
+            "enum": [
+              "1:1",
+              "4:5",
+              "16:9",
+              "9:16"
+            ]
+          },
+          "resolution": {
+            "default": "1K",
+            "type": "string",
+            "const": "1K"
+          },
+          "reference_asset_ids": {
+            "default": [],
+            "maxItems": 14,
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uuid",
+              "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+            }
+          },
+          "idempotency_key": {
+            "type": "string",
+            "format": "uuid",
+            "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+          }
+        },
+        "required": [
+          "prompt"
+        ],
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      }
+    },
+    {
+      "name": "generate_image",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "quote_id": {
+            "type": "string",
+            "format": "uuid",
+            "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+          }
+        },
+        "required": [
+          "quote_id"
+        ],
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      }
+    },
+    {
+      "name": "get_capabilities",
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      }
+    },
+    {
+      "name": "get_model_params",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "model": {
+            "type": "string",
+            "const": "image/nano-banana-2"
+          }
+        },
+        "required": [
+          "model"
+        ],
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      }
+    },
+    {
+      "name": "get_native_generation",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "generation_id": {
+            "type": "string",
+            "format": "uuid",
+            "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+          }
+        },
+        "required": [
+          "generation_id"
+        ],
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      }
+    },
+    {
+      "name": "list_models",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "category": {
+            "type": "string",
+            "const": "image"
+          }
+        },
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      }
+    },
+    {
+      "name": "manage_account",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "section": {
+            "default": "overview",
+            "type": "string",
+            "enum": [
+              "overview",
+              "activity",
+              "settings"
+            ]
+          }
+        },
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      }
+    },
+    {
+      "name": "manage_assets",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "action": {
+            "default": "list",
+            "type": "string",
+            "enum": [
+              "list",
+              "get",
+              "favorite"
+            ]
+          },
+          "asset_id": {
+            "type": "string",
+            "format": "uuid",
+            "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+          },
+          "favorite": {
+            "type": "boolean"
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "output",
+              "reference"
+            ]
+          },
+          "limit": {
+            "default": 50,
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 50
+          }
+        },
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      }
+    },
+    {
+      "name": "manage_characters",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "action": {
+            "default": "list",
+            "type": "string",
+            "enum": [
+              "list",
+              "get",
+              "save",
+              "archive",
+              "restore"
+            ]
+          },
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+          },
+          "data": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 80
+              },
+              "description": {
+                "default": "",
+                "type": "string",
+                "maxLength": 4000
+              },
+              "appearance": {
+                "default": "",
+                "type": "string",
+                "maxLength": 4000
+              },
+              "identity_type": {
+                "default": "fictional",
+                "type": "string",
+                "enum": [
+                  "fictional",
+                  "self",
+                  "authorized"
+                ]
+              },
+              "reference_asset_id": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "format": "uuid",
+                    "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              }
+            },
+            "required": [
+              "name",
+              "reference_asset_id"
+            ],
+            "additionalProperties": false
+          },
+          "include_archived": {
+            "default": false,
+            "type": "boolean"
+          }
+        },
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      }
+    },
+    {
+      "name": "manage_projects",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "action": {
+            "default": "list",
+            "type": "string",
+            "enum": [
+              "list",
+              "get",
+              "save",
+              "archive",
+              "restore"
+            ]
+          },
+          "section": {
+            "default": "projects",
+            "type": "string",
+            "enum": [
+              "projects",
+              "films",
+              "music"
+            ]
+          },
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+          },
+          "data": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 80
+              },
+              "description": {
+                "default": "",
+                "type": "string",
+                "maxLength": 8000
+              },
+              "kind": {
+                "default": "campaign",
+                "type": "string",
+                "enum": [
+                  "campaign",
+                  "film",
+                  "music"
+                ]
+              },
+              "status": {
+                "default": "draft",
+                "type": "string",
+                "enum": [
+                  "draft",
+                  "active",
+                  "complete"
+                ]
+              },
+              "budget_target_units": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "pattern": "^\\d{1,13}$"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "aspect_ratio": {
+                "default": "9:16",
+                "type": "string",
+                "enum": [
+                  "1:1",
+                  "4:5",
+                  "16:9",
+                  "9:16"
+                ]
+              },
+              "genre": {
+                "default": "",
+                "type": "string",
+                "maxLength": 80
+              },
+              "lyrics": {
+                "default": "",
+                "type": "string",
+                "maxLength": 8000
+              }
+            },
+            "required": [
+              "name",
+              "budget_target_units"
+            ],
+            "additionalProperties": false
+          },
+          "include_archived": {
+            "default": false,
+            "type": "boolean"
+          }
+        },
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      }
+    },
+    {
+      "name": "manage_storyboards",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "action": {
+            "default": "list",
+            "type": "string",
+            "enum": [
+              "list",
+              "save"
+            ]
+          },
+          "project_id": {
+            "type": "string",
+            "format": "uuid",
+            "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+          },
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+          },
+          "shot": {
+            "type": "object",
+            "properties": {
+              "position": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 1000
+              },
+              "prompt": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 4000
+              },
+              "narration": {
+                "default": "",
+                "type": "string",
+                "maxLength": 4000
+              },
+              "duration_seconds": {
+                "default": 5,
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 120
+              },
+              "reference_asset_id": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "format": "uuid",
+                    "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              }
+            },
+            "required": [
+              "position",
+              "prompt",
+              "reference_asset_id"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "required": [
+          "project_id"
+        ],
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      }
+    },
+    {
+      "name": "manage_themes",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "action": {
+            "default": "list",
+            "type": "string",
+            "enum": [
+              "list",
+              "get",
+              "save",
+              "archive",
+              "restore"
+            ]
+          },
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+          },
+          "data": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 80
+              },
+              "description": {
+                "default": "",
+                "type": "string",
+                "maxLength": 4000
+              },
+              "colors": {
+                "default": [],
+                "maxItems": 12,
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "^#[0-9a-fA-F]{6}$"
+                }
+              },
+              "font_family": {
+                "default": "",
+                "type": "string",
+                "maxLength": 100
+              },
+              "tone": {
+                "default": "",
+                "type": "string",
+                "maxLength": 500
+              },
+              "logo_asset_id": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "format": "uuid",
+                    "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              }
+            },
+            "required": [
+              "name",
+              "logo_asset_id"
+            ],
+            "additionalProperties": false
+          },
+          "include_archived": {
+            "default": false,
+            "type": "boolean"
+          }
+        },
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      }
+    },
+    {
+      "name": "manage_voice_presets",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "action": {
+            "default": "list",
+            "type": "string",
+            "enum": [
+              "list",
+              "get",
+              "save",
+              "archive",
+              "restore"
+            ]
+          },
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+          },
+          "data": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 80
+              },
+              "description": {
+                "default": "",
+                "type": "string",
+                "maxLength": 4000
+              },
+              "language": {
+                "default": "en-US",
+                "type": "string",
+                "minLength": 2,
+                "maxLength": 40
+              },
+              "script": {
+                "default": "",
+                "type": "string",
+                "maxLength": 8000
+              },
+              "style": {
+                "default": "",
+                "type": "string",
+                "maxLength": 500
+              }
+            },
+            "required": [
+              "name"
+            ],
+            "additionalProperties": false
+          },
+          "include_archived": {
+            "default": false,
+            "type": "boolean"
+          }
+        },
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      }
+    },
+    {
+      "name": "prepare_native_generation",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "prompt": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 8000
+          },
+          "aspect_ratio": {
+            "default": null,
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 32
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "resolution": {
+            "default": null,
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 32
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "reference_asset_ids": {
+            "default": [],
+            "maxItems": 14,
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uuid",
+              "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+            }
+          },
+          "host": {
+            "type": "string",
+            "enum": [
+              "codex",
+              "chatgpt",
+              "claude",
+              "other"
+            ]
+          },
+          "reported_model": {
+            "default": null,
+            "anyOf": [
+              {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 120
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "mime_type": {
+            "default": "image/png",
+            "type": "string",
+            "enum": [
+              "image/png",
+              "image/jpeg",
+              "image/webp"
+            ]
+          },
+          "request_key": {
+            "type": "string",
+            "format": "uuid",
+            "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+          }
+        },
+        "required": [
+          "prompt",
+          "host",
+          "request_key"
+        ],
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      }
+    },
+    {
+      "name": "report_native_outcome",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "generation_id": {
+            "type": "string",
+            "format": "uuid",
+            "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+          },
+          "execution_token": {
+            "type": "string",
+            "format": "uuid",
+            "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+          },
+          "detail": {
+            "type": "string",
+            "maxLength": 350
+          }
+        },
+        "required": [
+          "generation_id",
+          "execution_token",
+          "detail"
+        ],
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      }
+    },
+    {
+      "name": "resolve_generation_route",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "operation": {
+            "default": "image",
+            "type": "string",
+            "enum": [
+              "image",
+              "video",
+              "speech",
+              "music",
+              "sound_effects",
+              "editing"
+            ]
+          },
+          "native_status": {
+            "default": "unknown",
+            "type": "string",
+            "enum": [
+              "available",
+              "unavailable",
+              "unknown"
+            ]
+          },
+          "native_satisfies_request": {
+            "default": false,
+            "type": "boolean"
+          },
+          "requested_model": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 120
+          },
+          "native_matches_requested_model": {
+            "default": false,
+            "type": "boolean"
+          },
+          "native_failure": {
+            "default": "none",
+            "type": "string",
+            "enum": [
+              "none",
+              "technical",
+              "unsupported",
+              "safety",
+              "unknown_outcome"
+            ]
+          }
+        },
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      }
+    },
+    {
+      "name": "show_image_gallery",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "default": "Your images",
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 120
+          },
+          "generations": {
+            "minItems": 1,
+            "maxItems": 20,
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "generation_id": {
+                  "type": "string",
+                  "format": "uuid",
+                  "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+                },
+                "execution_source": {
+                  "type": "string",
+                  "enum": [
+                    "native",
+                    "provider"
+                  ]
+                }
+              },
+              "required": [
+                "generation_id",
+                "execution_source"
+              ],
+              "additionalProperties": false
+            }
+          }
+        },
+        "required": [
+          "generations"
+        ],
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      }
+    }
+  ]
+}

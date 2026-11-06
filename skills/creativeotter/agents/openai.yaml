@@ -1,8 +1,8 @@
-# CreativeOtter adaptation, 2026-11-01. MCP dependency is added by a connected package build.
+# CreativeOtter adaptation, 2026-11-06. Generated from current workflow metadata.
 interface:
-  display_name: "CreativeOtter — AI Media Studio"
-  short_description: "Route complete image, video, voice, and film work"
-  default_prompt: "Use $creativeotter to choose and run the right CreativeOtter
-    workflow for my request."
+  display_name: "CreativeOtter — CreativeOtter"
+  short_description: "Images, saved work and creative project planning"
+  default_prompt: "Use $creativeotter to help with this request: Check my
+    CreativeOtter account."
 policy:
   allow_implicit_invocation: true

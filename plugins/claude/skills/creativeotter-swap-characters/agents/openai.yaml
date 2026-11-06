@@ -1,8 +1,8 @@
-# CreativeOtter adaptation, 2026-11-01. MCP dependency is added by a connected package build.
+# CreativeOtter adaptation, 2026-11-06. Generated from current workflow metadata.
 interface:
-  display_name: "CreativeOtter — Swap Characters"
-  short_description: "Swap people in an existing video with your Characters"
-  default_prompt: "Use $creativeotter-swap-characters to put my Character into
-    this video in place of the person on screen."
+  display_name: "CreativeOtter — Plan an authorized video recast"
+  short_description: "Prepare a video recast brief without rendering"
+  default_prompt: "Use $creativeotter-swap-characters to help with this request:
+    Can I put my mascot into this video?"
 policy:
   allow_implicit_invocation: true

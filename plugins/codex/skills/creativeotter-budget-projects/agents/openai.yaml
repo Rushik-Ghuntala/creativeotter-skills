@@ -1,8 +1,8 @@
-# CreativeOtter adaptation, 2026-11-01. MCP dependency is added by a connected package build.
+# CreativeOtter adaptation, 2026-11-06. Generated from current workflow metadata.
 interface:
-  display_name: "CreativeOtter — Budget Projects"
-  short_description: "Track spend per client or job and show each project's cost"
-  default_prompt: "Use $creativeotter-budget-projects to track the cost of this
-    work in a budget project."
+  display_name: "CreativeOtter — Organize projects and costs"
+  short_description: "Organize saved work and inspect project image costs"
+  default_prompt: "Use $creativeotter-budget-projects to help with this request:
+    Group these saved images under my bakery campaign."
 policy:
   allow_implicit_invocation: true

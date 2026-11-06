@@ -1,8 +1,8 @@
-# CreativeOtter adaptation, 2026-11-01. MCP dependency is added by a connected package build.
+# CreativeOtter adaptation, 2026-11-06. Generated from current workflow metadata.
 interface:
-  display_name: "CreativeOtter — Submit Feedback"
-  short_description: "Report product and quality feedback to the team"
-  default_prompt: "Use $creativeotter-submit-feedback to send my feedback about
-    this issue or request to the CreativeOtter team."
+  display_name: "CreativeOtter — Prepare product feedback"
+  short_description: "Draft a clear product or media quality report"
+  default_prompt: "Use $creativeotter-submit-feedback to help with this request:
+    Help me report a problem with this image."
 policy:
   allow_implicit_invocation: true

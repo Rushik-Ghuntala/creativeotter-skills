@@ -1,8 +1,8 @@
-# CreativeOtter adaptation, 2026-11-01. MCP dependency is added by a connected package build.
+# CreativeOtter adaptation, 2026-11-06. Generated from current workflow metadata.
 interface:
-  display_name: "CreativeOtter — Product Photoshoot"
-  short_description: "Create a consistent campaign-ready product shoot"
-  default_prompt: "Use $creativeotter-product-photoshoot to create a polished set
-    of product images from my references."
+  display_name: "CreativeOtter — Product image sets"
+  short_description: "Coordinated product photos and carousel image sets"
+  default_prompt: "Use $creativeotter-product-photoshoot to help with this
+    request: Make three product photos using these references."
 policy:
   allow_implicit_invocation: true

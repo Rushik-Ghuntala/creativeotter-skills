@@ -1,14 +1,14 @@
 ---
 name: creativeotter-budget-projects
-description: Organize CreativeOtter saved work by client or project and inspect original attributed credit costs.
+description: "Group CreativeOtter saved images by client or project and read original attributed credit costs. Budget targets are planning targets, not automatic spending caps."
 ---
 
-# Project costs
+# Organize projects and costs
 
-CreativeOtter adaptation, 2026-11-04. Read [the runtime contract](references/runtime-contract.md).
+CreativeOtter adaptation, 2026-11-06. Follow [the runtime contract](references/runtime-contract.md).
 
-Use `manage_projects` when exposed. List the relevant section (projects for campaigns, films for films, music for track briefs), then get the intended record. Save the requested name/brief with its matching data.kind and reuse its ID on updates. Budget targets use integer 1/1000-credit units and are planning targets, not enforced spending caps. State that distinction when a user sets a limit; no automatic per-chat project attribution is implemented.
+Use `manage_projects` to list/get or save the requested campaign (section projects, data.kind campaign), film (films/film) or music brief (music/music). Include id for an update. See [Studio records](references/studio-records.md).
 
-For already saved work, use `assign_project_asset` only with the exact project and asset IDs requested. An asset has at most one project assignment. Existing assignments are never silently moved; ask to resolve an ambiguous intended destination. Assignment is free and does not change the original credit ledger. Project details return the historical assigned charge total, which must not be added to account spending again.
+Use `manage_assets` to identify only the intended saved outputs. `assign_project_asset` accepts project_id and asset_id, not generation or quote IDs. Resolve ambiguous selections or an existing assignment before moving work. One asset can belong to at most one project.
 
-Future generation still needs its own current quote, sufficient credits and execution claim. A project record is not a spending authorization. Do not promise tracking of unassigned work, subscriptions, provider-dollar conversions or refunds absent authoritative tool data. Archive or restore only the requested project; saved media and historical charges remain available.
+Read the project's returned assigned charge total. Assignment never creates a charge and must not add historical costs to spending again. Budget_target_units is a decimal string in 1/1000-credit units (or null); a requested 100-credit target is 100000 units. Explain that it does not enforce a cap. No automatic per-chat attribution, subscription billing, provider-dollar conversion or refund tool exists. Archive/restore only requested project records.

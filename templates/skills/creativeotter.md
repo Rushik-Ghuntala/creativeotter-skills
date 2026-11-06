@@ -1,45 +1,18 @@
 ---
 name: creativeotter
-description: Route mixed media and workspace requests through CreativeOtter. Use for connection checks, account overview, activity or settings, several media types, onboarding, saved assets, themes or budgets; use a focused skill for one clear media outcome.
+description: "Use CreativeOtter for image creation, saved images, brand kits, characters, account questions and creative project planning. Route a specific media request to its focused skill."
 ---
 
 # CreativeOtter
 
-CreativeOtter adaptation, 2026-11-01. Read [the runtime contract](references/runtime-contract.md) and [shared execution guidance](references/workflow-basics.md) before tools. They define the CreativeOtter integration; inherited examples do not establish available models, prices or UI.
+CreativeOtter adaptation, 2026-11-06. Follow [the runtime contract](references/runtime-contract.md).
 
-Use suitable native host tools first under the hybrid runtime contract. Inspect the real host inventory; do not require a provider key for an available native tool. Use the configured `creativeotter` connection for mandatory credit authorization before native or API generation, account data and saved delivery. Missing billing must stop generation. `get_capabilities` describes our backend, not the host’s native inventory. Do not substitute another external plugin’s similarly named tools.
+Use the authenticated CreativeOtter connection, not another media plugin. Current execution supports images; video, speech, music, sound effects, media processing and code rendering are planning-only. Read [tool routing](references/tool-catalog.md) when a tool choice is unclear. Check live capabilities when availability or permissions are uncertain.
 
-Keep customer replies short and use image names or positions. Internal IDs and technical diagnostics stay inside tools unless explicitly requested; follow the runtime contract’s customer-facing reply guidance.
+For saved images, use `manage_assets` with action list, kind output and the requested limit, then pass their returned gallery_reference values to `show_image_gallery`. For a particular saved image, use its returned asset ID with action get. Do not open the account panel for a gallery request.
 
-## Choose the workflow
+For connection, balance or activity questions use `manage_account` with section overview, activity or settings. It is read-only; it cannot change settings, buy credits or refund charges.
 
-| Outcome | Skill |
-| --- | --- |
-| One image or image edit | `creativeotter-generate-image` |
-| Coordinated product images | `creativeotter-product-photoshoot` |
-| One generated, extended or transformed video | `creativeotter-generate-video` |
-| Script, shot list and storyboard | `creativeotter-plan-video` |
-| Multi-shot film | `creativeotter-build-film` |
-| Creator-style product ad | `creativeotter-create-ugc-ad` |
-| Several ad variants | `creativeotter-ad-variations` |
-| Narration, dialogue or a designed synthetic voice | `creativeotter-generate-voiceover` |
-| Consented personal voice clone | `creativeotter-clone-voice` |
-| New music | `creativeotter-generate-music` |
-| Sound effects, Foley and ambience | `creativeotter-generate-sound-effects` |
-| Reusable avatar and identity sheet | `creativeotter-create-avatar` |
-| Save or update a Character | `creativeotter-create-character` |
-| Select social highlights from existing footage | `creativeotter-create-reels` |
-| Edit existing video or audio | `creativeotter-edit-media` |
-| Recast people in existing footage | `creativeotter-swap-characters` |
-| Explicit HTML/CSS or motion-graphics rendering | `creativeotter-render-html` |
-| Track production/client spend | `creativeotter-budget-projects` |
-| Guided first run | `creativeotter-setup` |
-| Explicitly requested product feedback report | `creativeotter-submit-feedback` |
+Use the image skill for a new image, edit or current image price quote, product-photoshoot for coordinated images, and create-avatar for an identity sheet. Use create-character to store an existing identity. Brand kits use `manage_themes`; projects and scripts use `manage_projects`, `manage_storyboards` or `manage_voice_presets` as described in [Studio records](references/studio-records.md).
 
-Use the focused skill's relevant references, not every guide. Model names do not change the owning outcome. Prefer a clear user outcome over broad media routing. If designed motion versus filmed-looking footage is materially unclear, ask one question.
-
-For connection checks, account overview, balance, activity or settings, call `manage_account` with the relevant section and follow [account guidance](references/workflows/account.md). A capabilities-only response does not open the account panel. In UI-capable hosts, let the returned interactive panel present the details and keep accompanying prose brief. In other hosts, summarize the returned data and include its account link. For assets, themes and project state, use only their enabled tools. Curated examples require an advertised catalog; none is provided by this repository. Feedback and optional attribution require explicit user authorization.
-
-## Production pattern
-
-Resolve the brief and references, inspect native capabilities and preserve explicit model requirements. Prefer a suitable native engine, obtain its credit quote and immediately claim execution to reserve credits before the native tool runs. For provider fallback, select an enabled model, quote all requested paid steps and start them directly within the user-requested scope. Preserve IDs, inspect confirmed outputs and organize assets. Reuse completed work and approved identity anchors across shots. Do not silently add keyframes, auditions, variants or generative repairs outside the requested scope. A completed asset must be confirmed by the server; a job ID alone is unfinished.
+Preserve the user's requested count, model and outcome. Keep IDs and execution details inside tools. Show the branded account/gallery result with a short helpful reply. When a media operation is unavailable, explain that simply and offer an appropriate script, shot list or edit plan; do not silently create paid still images instead.

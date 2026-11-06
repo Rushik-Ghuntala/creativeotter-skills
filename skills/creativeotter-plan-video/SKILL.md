@@ -1,16 +1,14 @@
 ---
 name: creativeotter-plan-video
-description: Plan a CreativeOtter film as a reusable brief, ordered visual shot list and narration, without generating footage.
+description: "Write a video brief, script and ordered shot list, and save a CreativeOtter film storyboard when requested. This workflow does not generate footage or speech."
 ---
 
-# Plan a film
+# Plan a video
 
-CreativeOtter adaptation, 2026-11-04. Read [the runtime contract](references/runtime-contract.md).
+CreativeOtter adaptation, 2026-11-06. Follow [the runtime contract](references/runtime-contract.md).
 
-Resolve the intended audience, format, length, story and any fixed dialogue from the user's brief. Reuse their approved decisions. Produce useful shot direction and continuity anchors; do not generate footage for a planning-only request.
+Resolve audience, format, length, story and fixed dialogue from the brief. Produce clear visual direction, narration and durations, preserving continuity. Planning-only requests never authorize paid keyframes, clips or voiceovers.
 
-When the connected tools advertise Studio planning, use `manage_projects` with section films and data.kind film to save the agreed brief. Find and reuse an existing film ID for updates. Save individual ordered shots using `manage_storyboards` with the film's project_id, explicit position, visual prompt, exact narration, duration_seconds and optional owned reference_asset_id. Reuse a returned shot ID to update it; a duplicate ordinal is an error rather than permission to append another shot. Read the saved storyboard to confirm order and duration. Link the returned CreativeOtter Studio film page when useful.
+When the user asks to save or continue a film, use `manage_projects` section films, data.kind film. Find the intended existing record first. Save shots through `manage_storyboards` with project_id and shot containing position, prompt, narration, duration_seconds and reference_asset_id (owned image or null). Use id to update an existing shot and list again to verify order; a duplicate position is not a request to append another shot. See [Studio records](references/studio-records.md).
 
-Planning and reference assignment do not spend credits. A budget_target_units value is a planning target, not an enforced cap. Creating actual keyframes, speech or clips requires separately available priced execution tools within the user's requested scope. If video or audio execution is disabled, retain the plan and say which steps remain unavailable. Never call an image billing claim to authorize video or narration.
-
-If Studio planning tools are absent, provide the plan in chat and explain that it was not persisted. Do not invent a film ID, completion state or saved storyboard.
+Current video, speech and assembly services are unavailable. A saved storyboard is a plan, not a rendered film. State that limit if production was requested; offer the useful plan without pretending footage exists. If tools are absent, provide the plan in chat and say it has not been saved. Budget targets are planning values, not spending caps.

@@ -1,8 +1,8 @@
-# CreativeOtter adaptation, 2026-11-01. MCP dependency is added by a connected package build.
+# CreativeOtter adaptation, 2026-11-06. Generated from current workflow metadata.
 interface:
-  display_name: "CreativeOtter Setup"
-  short_description: "Guided first run: your first on-brand video"
-  default_prompt: "Use $creativeotter-setup to show me what CreativeOtter can do
-    and walk me through my first video."
+  display_name: "CreativeOtter — Get started with CreativeOtter"
+  short_description: "Connect your account and tour available features"
+  default_prompt: "Use $creativeotter-setup to help with this request: Help me get
+    started with CreativeOtter."
 policy:
   allow_implicit_invocation: true

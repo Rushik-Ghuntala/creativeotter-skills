@@ -1,5 +1,3 @@
-# Asynchronous jobs
+# Image progress
 
-CreativeOtter adaptation, 2026-11-01.
-
-Follow [job recovery](job-recovery.md) and [the runtime contract](runtime-contract.md). Preserve the exact job identifier returned by the configured tool. Use `check_job` only when exposed, after generation starts and when a downstream step or user status request needs it. Respect returned polling intervals and stop after bounded checks with an honest pending status. Do not assume an inline widget will track the job. Save the final workspace asset ID and use a current signed media link for delivery.
+CreativeOtter adaptation, 2026-11-06. Follow [job recovery](job-recovery.md). Only provider image jobs and native image delivery are implemented. Retain the returned quote_id or generation_id; never invent IDs or treat a returned operation as finished media. The embedded image panel can monitor progress; read existing status as needed without resubmitting generation. Report an unresolved operation truthfully.

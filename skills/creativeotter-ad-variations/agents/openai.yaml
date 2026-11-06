@@ -1,8 +1,8 @@
-# CreativeOtter adaptation, 2026-11-01. MCP dependency is added by a connected package build.
+# CreativeOtter adaptation, 2026-11-06. Generated from current workflow metadata.
 interface:
-  display_name: "CreativeOtter — Ad Variations"
-  short_description: "Make a numbered set of video ad variations"
-  default_prompt: "Use $creativeotter-ad-variations to turn my product shot into
-    five 9:16 ad variations with different hooks."
+  display_name: "CreativeOtter — Plan advertisement variations"
+  short_description: "Develop ad hook variations and production plans"
+  default_prompt: "Use $creativeotter-ad-variations to help with this request:
+    Give me five different hooks for this coffee ad."
 policy:
   allow_implicit_invocation: true

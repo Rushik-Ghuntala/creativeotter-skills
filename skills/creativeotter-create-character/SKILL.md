@@ -1,14 +1,14 @@
 ---
 name: creativeotter-create-character
-description: Save, inspect or update a reusable CreativeOtter character and its canonical reference image; use create-avatar for a newly generated identity sheet.
+description: "Save, inspect or update an existing CreativeOtter character and its ready reference image. Use create-avatar to generate a new identity sheet."
 ---
 
-# Reusable characters
+# Save a reusable character
 
-CreativeOtter adaptation, 2026-11-04. Read [the runtime contract](references/runtime-contract.md).
+CreativeOtter adaptation, 2026-11-06. Follow [the runtime contract](references/runtime-contract.md).
 
-Use the connected backend's `manage_characters` when available. `action: list` finds existing identities; `get` reads one ID. For `save`, use its current `data` schema: name, description, stable appearance, identity_type and an owned reference_asset_id. Pass `id` to update the intended existing record. Omit id only for a requested new character. A reference is a ready private CreativeOtter asset, not a local path or arbitrary URL. Upload through the current private asset tools when needed.
+Use `manage_characters` with action list/get before an ambiguous save. New requested identities use action save without id; updates include the actual existing id. Data fields are name, description, appearance, identity_type (fictional, self or authorized) and reference_asset_id (a ready owned asset ID, or null when no image is supplied). See [Studio records](references/studio-records.md).
 
-Keep stable face, proportions, materials, outfit and distinctive details in appearance. Keep temporary actions and shot direction in generation prompts. Only save fictional identities, the user's own likeness or another person's likeness with permission. Saving a record does not generate an identity sheet, train a visual model or clone a voice. New image generation follows the priced native-first workflow before execution.
+Use `manage_assets` to identify the intended ready image. Do not substitute a generation ID or arbitrary image URL. Upload an attached reference with the supported image upload flow if needed. Recording stable direction does not generate a new image, train an identity model or clone a voice.
 
-For future generations, load this saved character, inspect its canonical reference, and include the owned reference ID in the actual generation inputs. Do not claim that merely saving a character applies it automatically to all models. Archive or restore the exact requested record through the advertised action; no permanent deletion is implemented by this tool. Voice cloning and speech require separate enabled adapters and applicable consent.
+Only store fictional identities, the user's own likeness or an authorized likeness. Preserve existing fields on updates. Archive/restore only the requested record. To reuse a character in a later image, read its reference and include it in the actual generation inputs. Saving alone does not apply it automatically.

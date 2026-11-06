@@ -1,8 +1,8 @@
-# CreativeOtter adaptation, 2026-11-01. MCP dependency is added by a connected package build.
+# CreativeOtter adaptation, 2026-11-06. Generated from current workflow metadata.
 interface:
-  display_name: "CreativeOtter — Plan Video"
-  short_description: "Plan scripts, shots, and clean storyboard frames"
-  default_prompt: "Use $creativeotter-plan-video to turn this idea into an
-    approved script, shot list, and storyboard."
+  display_name: "CreativeOtter — Plan a video"
+  short_description: "Plan scripts and save ordered film storyboards"
+  default_prompt: "Use $creativeotter-plan-video to help with this request: Plan a
+    six-shot video for my bakery launch."
 policy:
   allow_implicit_invocation: true

@@ -1,0 +1,588 @@
+{
+  "note": "Offline contract examples with synthetic IDs. These do not run a language model or execute tools. Live customer-prompt tests are recorded separately.",
+  "cases": [
+    {
+      "skill": "creativeotter",
+      "prompt": "How many credits do I have left?",
+      "schema_examples_only": true,
+      "steps": [
+        {
+          "tool": "manage_account",
+          "arguments": {
+            "section": "overview"
+          }
+        }
+      ],
+      "expected_behavior": "Use live balance; short customer reply with no internal IDs."
+    },
+    {
+      "skill": "creativeotter-generate-image",
+      "prompt": "How much would one bakery Instagram image cost? Please do not make it.",
+      "schema_examples_only": true,
+      "steps": [
+        {
+          "tool": "get_capabilities",
+          "arguments": {}
+        },
+        {
+          "tool": "list_models",
+          "arguments": {
+            "category": "image"
+          }
+        },
+        {
+          "tool": "get_model_params",
+          "arguments": {
+            "model": "image/nano-banana-2"
+          }
+        },
+        {
+          "tool": "estimate_generation",
+          "arguments": {
+            "operation": "image",
+            "model": "image/nano-banana-2",
+            "prompt": "A warm bakery Instagram image",
+            "aspect_ratio": "4:5",
+            "resolution": "1K",
+            "reference_asset_ids": [],
+            "idempotency_key": "20000000-0000-4000-8000-000000000002"
+          }
+        }
+      ],
+      "expected_behavior": "Quote only; no execution, native claim or provider submission."
+    },
+    {
+      "skill": "creativeotter-product-photoshoot",
+      "prompt": "Show my three saved product photos together again.",
+      "schema_examples_only": true,
+      "steps": [
+        {
+          "tool": "manage_assets",
+          "arguments": {
+            "action": "list",
+            "kind": "output",
+            "limit": 3
+          }
+        },
+        {
+          "tool": "show_image_gallery",
+          "arguments": {
+            "title": "Your product photos",
+            "generations": [
+              {
+                "execution_source": "native",
+                "generation_id": "20000000-0000-4000-8000-000000000002"
+              },
+              {
+                "execution_source": "native",
+                "generation_id": "20000000-0000-4000-8000-000000000003"
+              },
+              {
+                "execution_source": "provider",
+                "generation_id": "20000000-0000-4000-8000-000000000004"
+              }
+            ]
+          }
+        }
+      ],
+      "expected_behavior": "Use returned gallery references in order. No regeneration, account panel or spending."
+    },
+    {
+      "skill": "creativeotter-create-avatar",
+      "prompt": "Save this approved otter mascot for future posts.",
+      "schema_examples_only": true,
+      "steps": [
+        {
+          "tool": "manage_assets",
+          "arguments": {
+            "action": "get",
+            "asset_id": "10000000-0000-4000-8000-000000000001"
+          }
+        },
+        {
+          "tool": "manage_characters",
+          "arguments": {
+            "action": "save",
+            "data": {
+              "name": "Bakery otter",
+              "appearance": "Friendly brown otter wearing a cream apron",
+              "identity_type": "fictional",
+              "reference_asset_id": "10000000-0000-4000-8000-000000000001"
+            }
+          }
+        }
+      ],
+      "expected_behavior": "Save the existing approved image, not a new generation. Use asset ID, not generation ID."
+    },
+    {
+      "skill": "creativeotter-create-character",
+      "prompt": "Change my mascot description to say it wears a green apron.",
+      "schema_examples_only": true,
+      "steps": [
+        {
+          "tool": "manage_characters",
+          "arguments": {
+            "action": "get",
+            "id": "30000000-0000-4000-8000-000000000003"
+          }
+        },
+        {
+          "tool": "manage_characters",
+          "arguments": {
+            "action": "save",
+            "id": "30000000-0000-4000-8000-000000000003",
+            "data": {
+              "name": "Bakery otter",
+              "appearance": "Green apron",
+              "reference_asset_id": "10000000-0000-4000-8000-000000000001"
+            }
+          }
+        }
+      ],
+      "expected_behavior": "Preserve existing fields, update intended record. No trained-model or cloned-voice claim."
+    },
+    {
+      "skill": "creativeotter-plan-video",
+      "prompt": "Save a six-shot launch-video plan, without making any footage.",
+      "schema_examples_only": true,
+      "steps": [
+        {
+          "tool": "manage_projects",
+          "arguments": {
+            "action": "save",
+            "section": "films",
+            "data": {
+              "name": "Bakery launch",
+              "kind": "film",
+              "budget_target_units": null
+            }
+          }
+        },
+        {
+          "tool": "manage_storyboards",
+          "arguments": {
+            "action": "save",
+            "project_id": "30000000-0000-4000-8000-000000000003",
+            "shot": {
+              "position": 1,
+              "prompt": "Morning light over the bakery counter",
+              "narration": "Start your morning here",
+              "duration_seconds": 5,
+              "reference_asset_id": null
+            }
+          }
+        },
+        {
+          "tool": "manage_storyboards",
+          "arguments": {
+            "action": "save",
+            "project_id": "30000000-0000-4000-8000-000000000003",
+            "shot": {
+              "position": 2,
+              "prompt": "Fresh coffee being poured",
+              "narration": "Start your morning here",
+              "duration_seconds": 5,
+              "reference_asset_id": null
+            }
+          }
+        },
+        {
+          "tool": "manage_storyboards",
+          "arguments": {
+            "action": "save",
+            "project_id": "30000000-0000-4000-8000-000000000003",
+            "shot": {
+              "position": 3,
+              "prompt": "Golden croissant close-up",
+              "narration": "Start your morning here",
+              "duration_seconds": 5,
+              "reference_asset_id": null
+            }
+          }
+        },
+        {
+          "tool": "manage_storyboards",
+          "arguments": {
+            "action": "save",
+            "project_id": "30000000-0000-4000-8000-000000000003",
+            "shot": {
+              "position": 4,
+              "prompt": "Baker arranging pastries",
+              "narration": "Start your morning here",
+              "duration_seconds": 5,
+              "reference_asset_id": null
+            }
+          }
+        },
+        {
+          "tool": "manage_storyboards",
+          "arguments": {
+            "action": "save",
+            "project_id": "30000000-0000-4000-8000-000000000003",
+            "shot": {
+              "position": 5,
+              "prompt": "Friends enjoying breakfast",
+              "narration": "Start your morning here",
+              "duration_seconds": 5,
+              "reference_asset_id": null
+            }
+          }
+        },
+        {
+          "tool": "manage_storyboards",
+          "arguments": {
+            "action": "save",
+            "project_id": "30000000-0000-4000-8000-000000000003",
+            "shot": {
+              "position": 6,
+              "prompt": "Bakery name and welcome",
+              "narration": "Start your morning here",
+              "duration_seconds": 5,
+              "reference_asset_id": null
+            }
+          }
+        },
+        {
+          "tool": "manage_storyboards",
+          "arguments": {
+            "action": "list",
+            "project_id": "30000000-0000-4000-8000-000000000003"
+          }
+        }
+      ],
+      "expected_behavior": "Save planned ordered shots only; no clips, audio or keyframes generated."
+    },
+    {
+      "skill": "creativeotter-budget-projects",
+      "prompt": "Put this saved image into my bakery campaign and set a 100-credit target.",
+      "schema_examples_only": true,
+      "steps": [
+        {
+          "tool": "manage_projects",
+          "arguments": {
+            "action": "list",
+            "section": "projects"
+          }
+        },
+        {
+          "tool": "manage_projects",
+          "arguments": {
+            "action": "save",
+            "section": "projects",
+            "data": {
+              "name": "Bakery campaign",
+              "kind": "campaign",
+              "budget_target_units": "100000"
+            }
+          }
+        },
+        {
+          "tool": "assign_project_asset",
+          "arguments": {
+            "project_id": "30000000-0000-4000-8000-000000000003",
+            "asset_id": "10000000-0000-4000-8000-000000000001"
+          }
+        }
+      ],
+      "expected_behavior": "Use existing assignment only as requested. Explain target is not an enforced cap; no new charge."
+    },
+    {
+      "skill": "creativeotter-setup",
+      "prompt": "What can I make with CreativeOtter today?",
+      "schema_examples_only": true,
+      "steps": [
+        {
+          "tool": "manage_account",
+          "arguments": {
+            "section": "overview"
+          }
+        },
+        {
+          "tool": "get_capabilities",
+          "arguments": {}
+        }
+      ],
+      "expected_behavior": "Describe available images/library/planning; do not offer video/audio generation or create samples."
+    },
+    {
+      "skill": "creativeotter-submit-feedback",
+      "prompt": "Please report that my image download failed.",
+      "schema_examples_only": true,
+      "steps": [],
+      "expected_behavior": "Draft report and state it has not been sent; no feedback tool exists."
+    },
+    {
+      "skill": "creativeotter-generate-voiceover",
+      "prompt": "Save this warm welcome script for my next ad.",
+      "schema_examples_only": true,
+      "steps": [
+        {
+          "tool": "manage_voice_presets",
+          "arguments": {
+            "action": "save",
+            "data": {
+              "name": "Bakery welcome",
+              "language": "en-US",
+              "style": "Warm and welcoming",
+              "script": "Fresh mornings start here"
+            }
+          }
+        }
+      ],
+      "expected_behavior": "Save text direction only; do not claim an audio file."
+    },
+    {
+      "skill": "creativeotter-clone-voice",
+      "prompt": "Clone my voice for this advertisement.",
+      "schema_examples_only": true,
+      "steps": [
+        {
+          "tool": "get_capabilities",
+          "arguments": {}
+        }
+      ],
+      "expected_behavior": "Explain unavailable; do not collect audio, request microphone or call an image quote."
+    },
+    {
+      "skill": "creativeotter-generate-music",
+      "prompt": "Save a cheerful instrumental music brief for my cafe.",
+      "schema_examples_only": true,
+      "steps": [
+        {
+          "tool": "manage_projects",
+          "arguments": {
+            "action": "save",
+            "section": "music",
+            "data": {
+              "name": "Cafe mornings",
+              "kind": "music",
+              "genre": "Cheerful acoustic",
+              "lyrics": "Instrumental, light guitar and soft percussion",
+              "budget_target_units": null
+            }
+          }
+        }
+      ],
+      "expected_behavior": "Save a music brief, not a generated track."
+    },
+    {
+      "skill": "creativeotter-generate-sound-effects",
+      "prompt": "Make a gentle coffee-pouring sound.",
+      "schema_examples_only": true,
+      "steps": [
+        {
+          "tool": "get_capabilities",
+          "arguments": {}
+        }
+      ],
+      "expected_behavior": "Explain unavailable execution in plain language; offer an appropriate draft or plan. No generation, unsupported tool, provider call or image substitution."
+    },
+    {
+      "skill": "creativeotter-generate-video",
+      "prompt": "Make a video of my mascot waving.",
+      "schema_examples_only": true,
+      "steps": [
+        {
+          "tool": "get_capabilities",
+          "arguments": {}
+        }
+      ],
+      "expected_behavior": "Explain unavailable execution in plain language; offer an appropriate draft or plan. No generation, unsupported tool, provider call or image substitution."
+    },
+    {
+      "skill": "creativeotter-build-film",
+      "prompt": "Create a finished 30-second bakery launch film.",
+      "schema_examples_only": true,
+      "steps": [
+        {
+          "tool": "get_capabilities",
+          "arguments": {}
+        }
+      ],
+      "expected_behavior": "Explain unavailable execution in plain language; offer an appropriate draft or plan. No generation, unsupported tool, provider call or image substitution."
+    },
+    {
+      "skill": "creativeotter-create-ugc-ad",
+      "prompt": "Make a presenter video promoting my new coffee.",
+      "schema_examples_only": true,
+      "steps": [
+        {
+          "tool": "get_capabilities",
+          "arguments": {}
+        }
+      ],
+      "expected_behavior": "Explain unavailable execution in plain language; offer an appropriate draft or plan. No generation, unsupported tool, provider call or image substitution."
+    },
+    {
+      "skill": "creativeotter-ad-variations",
+      "prompt": "Render five video ads with different opening hooks.",
+      "schema_examples_only": true,
+      "steps": [
+        {
+          "tool": "get_capabilities",
+          "arguments": {}
+        }
+      ],
+      "expected_behavior": "Explain unavailable execution in plain language; offer an appropriate draft or plan. No generation, unsupported tool, provider call or image substitution."
+    },
+    {
+      "skill": "creativeotter-create-reels",
+      "prompt": "Cut my long interview into three captioned Reels.",
+      "schema_examples_only": true,
+      "steps": [
+        {
+          "tool": "get_capabilities",
+          "arguments": {}
+        }
+      ],
+      "expected_behavior": "Explain unavailable execution in plain language; offer an appropriate draft or plan. No generation, unsupported tool, provider call or image substitution."
+    },
+    {
+      "skill": "creativeotter-edit-media",
+      "prompt": "Remove the background noise from this recording.",
+      "schema_examples_only": true,
+      "steps": [
+        {
+          "tool": "get_capabilities",
+          "arguments": {}
+        }
+      ],
+      "expected_behavior": "Explain unavailable execution in plain language; offer an appropriate draft or plan. No generation, unsupported tool, provider call or image substitution."
+    },
+    {
+      "skill": "creativeotter-swap-characters",
+      "prompt": "Put my mascot in place of the presenter in this clip.",
+      "schema_examples_only": true,
+      "steps": [
+        {
+          "tool": "get_capabilities",
+          "arguments": {}
+        }
+      ],
+      "expected_behavior": "Explain unavailable execution in plain language; offer an appropriate draft or plan. No generation, unsupported tool, provider call or image substitution."
+    },
+    {
+      "skill": "creativeotter-render-html",
+      "prompt": "Render this title animation as a video.",
+      "schema_examples_only": true,
+      "steps": [
+        {
+          "tool": "get_capabilities",
+          "arguments": {}
+        }
+      ],
+      "expected_behavior": "Explain unavailable execution in plain language; offer an appropriate draft or plan. No generation, unsupported tool, provider call or image substitution."
+    }
+  ],
+  "image_call_examples": [
+    {
+      "tool": "resolve_generation_route",
+      "arguments": {
+        "operation": "image",
+        "native_status": "available",
+        "native_satisfies_request": true
+      }
+    },
+    {
+      "tool": "prepare_native_generation",
+      "arguments": {
+        "prompt": "A warm bakery Instagram post",
+        "host": "codex",
+        "reported_model": null,
+        "request_key": "20000000-0000-4000-8000-000000000002",
+        "mime_type": "image/png",
+        "reference_asset_ids": []
+      }
+    },
+    {
+      "tool": "claim_native_generation",
+      "arguments": {
+        "generation_id": "20000000-0000-4000-8000-000000000002"
+      }
+    },
+    {
+      "tool": "create_native_output",
+      "arguments": {
+        "generation_id": "20000000-0000-4000-8000-000000000002",
+        "execution_token": "40000000-0000-4000-8000-000000000004"
+      }
+    },
+    {
+      "tool": "complete_native_output",
+      "arguments": {
+        "generation_id": "20000000-0000-4000-8000-000000000002",
+        "execution_token": "40000000-0000-4000-8000-000000000004"
+      }
+    },
+    {
+      "tool": "get_native_generation",
+      "arguments": {
+        "generation_id": "20000000-0000-4000-8000-000000000002"
+      }
+    },
+    {
+      "tool": "report_native_outcome",
+      "arguments": {
+        "generation_id": "20000000-0000-4000-8000-000000000002",
+        "execution_token": "40000000-0000-4000-8000-000000000004",
+        "detail": "Fixture interruption"
+      }
+    },
+    {
+      "tool": "generate_image",
+      "arguments": {
+        "quote_id": "20000000-0000-4000-8000-000000000002"
+      }
+    },
+    {
+      "tool": "check_job",
+      "arguments": {
+        "quote_id": "20000000-0000-4000-8000-000000000002"
+      }
+    },
+    {
+      "tool": "create_upload_url",
+      "arguments": {
+        "filename": "product.png",
+        "mime_type": "image/png"
+      }
+    },
+    {
+      "tool": "complete_upload",
+      "arguments": {
+        "asset_id": "10000000-0000-4000-8000-000000000001"
+      }
+    },
+    {
+      "tool": "manage_themes",
+      "arguments": {
+        "action": "save",
+        "data": {
+          "name": "Bakery",
+          "colors": [
+            "#173D32"
+          ],
+          "font_family": "Inter",
+          "tone": "Warm",
+          "logo_asset_id": null
+        }
+      }
+    },
+    {
+      "tool": "manage_assets",
+      "arguments": {
+        "action": "favorite",
+        "asset_id": "10000000-0000-4000-8000-000000000001",
+        "favorite": true
+      }
+    }
+  ],
+  "pricing_response_example": {
+    "credit_units": "16000",
+    "credit_status": "quoted",
+    "estimated_cost_label": "$0.08 max estimate",
+    "max_cost_micro_usd": "80000",
+    "units_per_credit": 1000,
+    "expected_customer_credits": "16"
+  }
+}

@@ -1,7 +1,7 @@
 {
   "name": "creativeotter",
-  "version": "0.5.4",
-  "description": "CreativeOtter native-first media workflows with optional API fallback and a private library.",
+  "version": "0.6.1",
+  "description": "CreativeOtter image creation, private saved images, brand and character records, and creative project planning.",
   "author": {
     "name": "Rushik",
     "email": "rushisoni2003@gmail.com"

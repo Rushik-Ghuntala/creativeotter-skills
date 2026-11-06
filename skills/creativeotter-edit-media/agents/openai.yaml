@@ -1,9 +1,8 @@
-# CreativeOtter adaptation, 2026-11-01. MCP dependency is added by a connected package build.
+# CreativeOtter adaptation, 2026-11-06. Generated from current workflow metadata.
 interface:
-  display_name: "CreativeOtter — Edit Existing Media"
-  short_description: "Trim, cut, reframe, caption, and add intros to media"
-  default_prompt: "Use $creativeotter-edit-media to edit my existing footage or
-    recording (cuts, framing, captions, audio, or an intro/outro) and deliver
-    the finished result."
+  display_name: "CreativeOtter — Plan edits to existing video or audio"
+  short_description: "Prepare video and audio edits without rendering"
+  default_prompt: "Use $creativeotter-edit-media to help with this request: Help
+    me shorten this video and add captions."
 policy:
   allow_implicit_invocation: true

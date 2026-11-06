@@ -1,0 +1,231 @@
+{
+  "creativeotter": {
+    "title": "CreativeOtter",
+    "description": "Use CreativeOtter for image creation, saved images, brand kits, characters, account questions and creative project planning. Route a specific media request to its focused skill.",
+    "short_description": "Images, saved work and creative project planning",
+    "prompt": "Check my CreativeOtter account.",
+    "tools": [
+      "get_capabilities",
+      "manage_account",
+      "manage_assets",
+      "show_image_gallery",
+      "manage_themes",
+      "manage_projects",
+      "manage_storyboards",
+      "manage_voice_presets"
+    ]
+  },
+  "creativeotter-generate-image": {
+    "title": "Create or edit an image",
+    "description": "Create or edit one image through CreativeOtter, using a suitable native image tool or the available provider model. Use for social posts, ads, illustrations and image corrections.",
+    "short_description": "Create and edit images with private saved delivery",
+    "prompt": "Create an Instagram post for my bakery.",
+    "tools": [
+      "manage_assets",
+      "resolve_generation_route",
+      "get_capabilities",
+      "list_models",
+      "get_model_params",
+      "prepare_native_generation",
+      "claim_native_generation",
+      "create_native_output",
+      "complete_native_output",
+      "estimate_generation",
+      "generate_image",
+      "check_job",
+      "show_image_gallery",
+      "get_native_generation",
+      "report_native_outcome"
+    ]
+  },
+  "creativeotter-product-photoshoot": {
+    "title": "Product image sets",
+    "description": "Create a coordinated set of product images or carousel slides through the supported CreativeOtter image workflow, reusing product and brand references.",
+    "short_description": "Coordinated product photos and carousel image sets",
+    "prompt": "Make three product photos using these references.",
+    "tools": [
+      "manage_assets",
+      "manage_themes",
+      "show_image_gallery",
+      "assign_project_asset"
+    ]
+  },
+  "creativeotter-create-avatar": {
+    "title": "Create a reusable avatar",
+    "description": "Create an avatar or character sheet using CreativeOtter image generation, then save its approved image as a reusable character. Voice and talking-video generation are not available.",
+    "short_description": "Make an avatar and save its approved identity",
+    "prompt": "Create a friendly otter mascot for my bakery.",
+    "tools": [
+      "manage_characters",
+      "manage_assets"
+    ]
+  },
+  "creativeotter-create-character": {
+    "title": "Save a reusable character",
+    "description": "Save, inspect or update an existing CreativeOtter character and its ready reference image. Use create-avatar to generate a new identity sheet.",
+    "short_description": "Save and reuse character appearance and references",
+    "prompt": "Save this mascot for my future posts.",
+    "tools": [
+      "manage_characters",
+      "manage_assets"
+    ]
+  },
+  "creativeotter-plan-video": {
+    "title": "Plan a video",
+    "description": "Write a video brief, script and ordered shot list, and save a CreativeOtter film storyboard when requested. This workflow does not generate footage or speech.",
+    "short_description": "Plan scripts and save ordered film storyboards",
+    "prompt": "Plan a six-shot video for my bakery launch.",
+    "tools": [
+      "get_capabilities",
+      "manage_projects",
+      "manage_storyboards"
+    ]
+  },
+  "creativeotter-budget-projects": {
+    "title": "Organize projects and costs",
+    "description": "Group CreativeOtter saved images by client or project and read original attributed credit costs. Budget targets are planning targets, not automatic spending caps.",
+    "short_description": "Organize saved work and inspect project image costs",
+    "prompt": "Group these saved images under my bakery campaign.",
+    "tools": [
+      "manage_projects",
+      "manage_assets",
+      "assign_project_asset"
+    ]
+  },
+  "creativeotter-setup": {
+    "title": "Get started with CreativeOtter",
+    "description": "Help users connect CreativeOtter and discover its currently enabled image, library and planning features. A setup request does not authorize paid samples.",
+    "short_description": "Connect your account and tour available features",
+    "prompt": "Help me get started with CreativeOtter.",
+    "tools": [
+      "manage_account",
+      "get_capabilities"
+    ]
+  },
+  "creativeotter-submit-feedback": {
+    "title": "Prepare product feedback",
+    "description": "Draft a CreativeOtter product or media-quality report when explicitly requested. Direct feedback submission is not implemented.",
+    "short_description": "Draft a clear product or media quality report",
+    "prompt": "Help me report a problem with this image.",
+    "tools": []
+  },
+  "creativeotter-generate-voiceover": {
+    "title": "Plan narration or dialogue",
+    "description": "Prepare narration, dialogue and reusable voice direction for CreativeOtter. Speech generation and synthetic voice design are not yet implemented.",
+    "short_description": "Write narration and save reusable voice direction",
+    "prompt": "Write a warm welcome voiceover for my bakery.",
+    "tools": [
+      "get_capabilities",
+      "manage_voice_presets"
+    ]
+  },
+  "creativeotter-clone-voice": {
+    "title": "Prepare a consented voice project",
+    "description": "Explain what is needed for an authorized voice-cloning project. CreativeOtter voice cloning and audio upload are not implemented; do not collect recordings for this workflow.",
+    "short_description": "Prepare an authorized voice project without cloning",
+    "prompt": "Can I use my own voice for a future ad?",
+    "tools": [
+      "get_capabilities",
+      "manage_voice_presets"
+    ]
+  },
+  "creativeotter-generate-music": {
+    "title": "Plan music and lyrics",
+    "description": "Write music briefs or lyrics and save them in CreativeOtter. Music generation, remixing and audio downloads are not implemented.",
+    "short_description": "Develop lyrics and save a music production brief",
+    "prompt": "Write a cheerful jingle idea for my bakery.",
+    "tools": [
+      "get_capabilities",
+      "manage_projects"
+    ]
+  },
+  "creativeotter-generate-sound-effects": {
+    "title": "Plan sound effects",
+    "description": "Write sound-effect and ambience briefs for CreativeOtter. Sound-effect generation and audio rendering are not currently implemented.",
+    "short_description": "Describe sound effects and plan their timing",
+    "prompt": "Plan gentle cafe ambience for this advertisement.",
+    "tools": [
+      "get_capabilities"
+    ]
+  },
+  "creativeotter-generate-video": {
+    "title": "Plan a video clip",
+    "description": "Develop a single video clip concept, prompt or animation plan. CreativeOtter video generation, extensions, lip-sync and source transformations are not implemented.",
+    "short_description": "Plan a video clip while generation is unavailable",
+    "prompt": "Plan an animation of this mascot waving hello.",
+    "tools": [
+      "get_capabilities"
+    ]
+  },
+  "creativeotter-build-film": {
+    "title": "Plan a complete film",
+    "description": "Plan a multi-shot CreativeOtter film with script, continuity and storyboard. Footage, speech, audio mixing and final assembly are not implemented.",
+    "short_description": "Develop a complete film script and storyboard",
+    "prompt": "Plan a short launch film for my new cafe.",
+    "tools": [
+      "get_capabilities",
+      "manage_projects",
+      "manage_storyboards"
+    ]
+  },
+  "creativeotter-create-ugc-ad": {
+    "title": "Plan a creator-style ad",
+    "description": "Write a creator-style product ad script and shot plan. CreativeOtter presenter video, speech, lip-sync and assembled UGC production are not implemented.",
+    "short_description": "Write a creator-style product ad and shot plan",
+    "prompt": "Write a 20-second creator-style ad for my coffee.",
+    "tools": [
+      "get_capabilities",
+      "manage_characters",
+      "manage_themes",
+      "manage_projects",
+      "manage_storyboards"
+    ]
+  },
+  "creativeotter-ad-variations": {
+    "title": "Plan advertisement variations",
+    "description": "Develop alternative ad hooks, scripts and shot plans. CreativeOtter video ad generation, voice replacement and caption rendering are not implemented.",
+    "short_description": "Develop ad hook variations and production plans",
+    "prompt": "Give me five different hooks for this coffee ad.",
+    "tools": [
+      "get_capabilities",
+      "manage_projects"
+    ]
+  },
+  "creativeotter-create-reels": {
+    "title": "Plan short clips from existing video",
+    "description": "Suggest Reel or short-video cuts from supplied footage or a transcript. CreativeOtter transcription, video cutting, reframing and subtitle rendering are not implemented.",
+    "short_description": "Plan short social clips from existing footage",
+    "prompt": "Which three moments would make good Reels?",
+    "tools": [
+      "get_capabilities"
+    ]
+  },
+  "creativeotter-edit-media": {
+    "title": "Plan edits to existing video or audio",
+    "description": "Explain or draft cuts, captions, framing, audio and assembly edits for existing media. CreativeOtter video/audio processing is not implemented; image edits use generate-image.",
+    "short_description": "Prepare video and audio edits without rendering",
+    "prompt": "Help me shorten this video and add captions.",
+    "tools": [
+      "get_capabilities"
+    ]
+  },
+  "creativeotter-swap-characters": {
+    "title": "Plan an authorized video recast",
+    "description": "Prepare an authorized character-replacement brief for an existing video. CreativeOtter face swaps, character recasting and motion transfer are not implemented.",
+    "short_description": "Prepare a video recast brief without rendering",
+    "prompt": "Can I put my mascot into this video?",
+    "tools": [
+      "get_capabilities",
+      "manage_characters"
+    ]
+  },
+  "creativeotter-render-html": {
+    "title": "Prepare HTML layouts and motion designs",
+    "description": "Draft HTML/CSS layouts or motion-graphics compositions when explicitly requested. CreativeOtter code-to-image and video rendering services are not implemented.",
+    "short_description": "Draft exact layouts and motion graphics source",
+    "prompt": "Draft an animated title card for my launch.",
+    "tools": [
+      "get_capabilities"
+    ]
+  }
+}

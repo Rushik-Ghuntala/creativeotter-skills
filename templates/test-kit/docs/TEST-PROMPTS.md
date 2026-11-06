@@ -41,3 +41,15 @@ This requests a new paid image. The backend currently charges 16 CreativeOtter c
 ## If a connection fails
 
 Use the existing CreativeOtter connection's sign-in or reconnect control. Do not add a second duplicate connection or regenerate an image just to repair its preview. Some clients require tool discovery to refresh after permissions change.
+
+## Backend-aligned everyday prompts
+
+Use the current skill version in a fresh chat. Begin with read-only requests:
+
+- “Show my three latest saved images together. Don't make any new ones.”
+- “How much would one Instagram picture for my bakery cost? Just tell me the price.”
+- “Can CreativeOtter make a video of my mascot waving?”
+- “Can it record a welcome message in my own voice?”
+- “Plan a six-shot cafe launch film, but don't generate or save anything.”
+
+Expected: saved gallery only, an unexecuted image estimate, clear video/voice limitations, and a useful written plan. Never label a written plan as generated media. Record any actual quoted/reserved/charged state; do not create images for a display-only test. These prompts are separate from the offline schema examples in the source repository.

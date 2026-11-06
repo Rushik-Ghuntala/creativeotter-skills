@@ -1,8 +1,8 @@
-# CreativeOtter adaptation, 2026-11-01. MCP dependency is added by a connected package build.
+# CreativeOtter adaptation, 2026-11-06. Generated from current workflow metadata.
 interface:
-  display_name: "CreativeOtter — Create UGC Ad"
-  short_description: "Create a scripted UGC product video"
-  default_prompt: "Use $creativeotter-create-ugc-ad to make a convincing UGC
-    product ad from my product and creator references."
+  display_name: "CreativeOtter — Plan a creator-style ad"
+  short_description: "Write a creator-style product ad and shot plan"
+  default_prompt: "Use $creativeotter-create-ugc-ad to help with this request:
+    Write a 20-second creator-style ad for my coffee."
 policy:
   allow_implicit_invocation: true

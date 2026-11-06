@@ -1,8 +1,8 @@
-# CreativeOtter adaptation, 2026-11-01. MCP dependency is added by a connected package build.
+# CreativeOtter adaptation, 2026-11-06. Generated from current workflow metadata.
 interface:
-  display_name: "CreativeOtter — Generate Image"
-  short_description: "Generate or edit images with smart model routing"
-  default_prompt: "Use $creativeotter-generate-image to create or edit this image
-    with the right model."
+  display_name: "CreativeOtter — Create or edit an image"
+  short_description: "Create and edit images with private saved delivery"
+  default_prompt: "Use $creativeotter-generate-image to help with this request:
+    Create an Instagram post for my bakery."
 policy:
   allow_implicit_invocation: true

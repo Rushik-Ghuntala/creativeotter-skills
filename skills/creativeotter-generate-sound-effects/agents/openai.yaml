@@ -1,8 +1,8 @@
-# CreativeOtter adaptation, 2026-11-01. MCP dependency is added by a connected package build.
+# CreativeOtter adaptation, 2026-11-06. Generated from current workflow metadata.
 interface:
-  display_name: "CreativeOtter: Generate Sound Effects"
-  short_description: "Create Foley, ambience, loops, and sound effects"
-  default_prompt: "Use $creativeotter-generate-sound-effects to create a polished
-    sound effect for this request."
+  display_name: "CreativeOtter — Plan sound effects"
+  short_description: "Describe sound effects and plan their timing"
+  default_prompt: "Use $creativeotter-generate-sound-effects to help with this
+    request: Plan gentle cafe ambience for this advertisement."
 policy:
   allow_implicit_invocation: true

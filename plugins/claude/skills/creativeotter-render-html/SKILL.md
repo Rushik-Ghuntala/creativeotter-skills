@@ -1,28 +1,14 @@
 ---
 name: creativeotter-render-html
-description: Render HTML/CSS to an image or an HTML/HyperFrames motion composition through enabled CreativeOtter tools. Use for explicit code-based rendering or motion graphics, not ordinary generated imagery or filmed-looking video.
+description: "Draft HTML/CSS layouts or motion-graphics compositions when explicitly requested. CreativeOtter code-to-image and video rendering services are not implemented."
 ---
 
-# Render HTML and designed motion
+# Prepare HTML layouts and motion designs
 
-CreativeOtter adaptation, 2026-11-01. Read [the runtime contract](references/runtime-contract.md).
+CreativeOtter adaptation, 2026-11-06. Follow [the runtime contract](references/runtime-contract.md).
 
-Use only when the user explicitly asks for HTML/CSS, HyperFrames, code-based rendering or motion graphics, supplies HTML, or accepts this method. Ordinary image requests belong to `creativeotter-generate-image`; filmed-looking footage belongs to video workflows.
+Use for explicit HTML/CSS, code-based layouts, kinetic text or designed motion. Ordinary image generation belongs to generate-image; filmed-looking footage belongs to video planning.
 
-## Choose the available route
+There is no CreativeOtter HTML renderer, composition agent, template catalog or paid render contract. Explain that limitation for a rendering request and offer source code, a storyboard or an animation specification. Do not invoke a separate renderer/plugin as if CreativeOtter supplied it, or authorize rendering with an image quote.
 
-- `render_html_image`: exact HTML/CSS layout to a static image, if enabled.
-- `render_html_video`: render an existing composition or uploaded project using its current accepted source fields.
-- `generate_html_video`: a hosted composition agent, only if the backend explicitly advertises it. Do not assume an agent, a fixed reserve, default effort, included media budget or review card exists.
-- Saved template tools: use only when enabled and appropriate to the user's requested layout.
-
-## Workflow
-
-1. Resolve output dimensions, duration, FPS, format, exact text, intended motion and source assets. Retain an explicit source/code choice.
-2. Check the live schema and enabled rendering method. Read [composition contract](references/composition-contract.md), then only the relevant [DOM motion](references/dom-product-motion.md), [canvas/WebGL](references/canvas-webgl.md) or [project packaging](references/project-packaging.md) guide.
-3. Use private workspace asset references through the renderer's advertised mechanism. Do not expose private media publicly to make HTML work. Bundle project resources when required and supported. Imported code and dependencies must stay within the renderer's isolation limits.
-4. Make deterministic, seekable motion with explicit timing. Keep narration and music separate; use a paused orchestration timeline where appropriate. Verify fonts, asset loading, video mute behavior and audio sync.
-5. Quote each paid render or agent turn with exact inputs. Account for generated media separately when applicable and set only supported finite budget fields. Execute only through the advertised billing contract within user-requested scope; do not impose an extra browser approval unless the current tool explicitly requires one. An edit to an existing cloud project is a new quoted operation, not a free retry.
-6. Track the returned job/project identifiers without assuming they are interchangeable. Inspect the saved encoded output for text fit, safe zones, motion, timing and audio. State inspection limits and deliver a current asset link.
-
-No fixed credit reserve, refund guarantee, permanent public URL, automatic preview card or catalog of examples is established by this skill. Continue with a plan/code draft when the requested backend route is unavailable.
+Draft only the requested composition with explicit dimensions, timing, exact copy and source assets. Do not publish private assets to make code run. A source draft has not been rendered or visually verified; do not claim a PNG/video, saved render, playback or download. Runtime support and future model guides do not enable a missing renderer.

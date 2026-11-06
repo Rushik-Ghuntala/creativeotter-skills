@@ -1,40 +1,18 @@
 ---
 name: creativeotter-product-photoshoot
-description: "Create a coherent set of campaign-ready product images with CreativeOtter. Use for packshots, ecommerce sets, lifestyle scenes, launch campaigns, or several images that must preserve the same product and brand."
+description: "Create a coordinated set of product images or carousel slides through the supported CreativeOtter image workflow, reusing product and brand references."
 ---
 
-> CreativeOtter adaptation, 2026-11-01. Before using this workflow, read [the runtime contract](references/runtime-contract.md). Prefer suitable native engines, but require a CreativeOtter credit quote and paid execution claim directly on explicit user request before native tools. Missing billing stops generation. Provider-specific steps below apply only to enabled CreativeOtter API fallback, with current schemas and bound quotes, starting requested images without extra browser approval. Native execution follows its own host schema; inherited examples do not establish availability or pricing.
+# Product image sets
 
+CreativeOtter adaptation, 2026-11-06. Follow [the runtime contract](references/runtime-contract.md).
 
-# Product Photoshoot
+Create the requested image set, preserving product shape, label, color, materials and approved copy. Resolve count and intended placements from the user's brief; ask only for consequential missing details. A request for several images authorizes that count, not extra hero drafts or retries.
 
+Find saved references with `manage_assets` action list, kind reference; the current library has no text search or tag filter. Match returned labels and inspect the intended assets, or ask when ambiguous. Import new images through [private uploads](references/platform-upload.md). Load the requested brand with `manage_themes` list/get; [Studio records](references/studio-records.md) defines its fields.
 
+Write a compact shot list: for example hero, detail and lifestyle. Follow [image direction](references/image-direction.md) and the generate-image skill's exact paid image workflow for each requested image. Use the current model catalog, not inherited model recommendations. Pass only owned reference_asset_ids. A saved brand must actually be included in the prompt; saving it does not automatically apply it.
 
-Read [shared execution guidance](references/workflow-basics.md) once per task before using tools. It covers existing authorization, model discovery, bound quotes and direct requested execution, imports, and recovery.
+Review each output for product accuracy and consistency. Reuse the original anchors and an approved hero when appropriate. Corrections requiring another generation need that additional scope from the user.
 
-Produce a consistent image set, not a collection of unrelated prompts. The product's geometry, label, color, materials, and brand treatment are the locked anchors.
-
-## Prepare
-
-1. Confirm the channel, audience, aspect ratios, number of deliverables, background requirements, required copy, and product details that must be exact.
-2. Use `search_assets` to find existing product references, logos, and campaign assets. Import missing references with the platform upload flow.
-3. Call `get_theme` for branded work and identify the usable palette, typography, tone, and logo rules.
-4. Write a compact shot list, such as hero, clean packshot, detail macro, in-use lifestyle, scale/context, and campaign variation. Include only shots the user needs.
-
-Conduct the workflow in the user's language and preserve all approved product and campaign copy exactly.
-
-## Generate
-
-1. Use a current bound quote; no fixed rate or entitlement is established here.
-2. Keep targeted product corrections on `image/nano-banana-2` (Nano Banana 2) first. Escalate to `image/gpt-image-2.5-sunburst` only when complex composition or exact typography materially benefits. Use `image/seedream-5-pro` when the user explicitly requests Seedream. After a model moderation refusal, Seedream may also be offered as the tool's suggested alternative, with user confirmation before another paid generation; it applies its own safety checks and may still reject the request.
-3. Discover with `list_models({ category: "image" })` only when selecting a model; fetch missing settings with `get_model_params` and reuse them across the set. Estimate planned images only when the user asks about cost or sets a budget.
-4. Establish a hero direction, reusing an approved reference when supplied. Follow requested review stages; once the user approves the complete set, generate the remaining shots. Repeat locked product facts and use the selected hero as a reference where supported.
-5. Preserve exact quoted copy, reference labels, dialogue, timecodes, colors, and approved layout or edit constraints in the prompt.
-
-## Quality control
-
-Compare every image against the source product for silhouette, proportions, cap or closure, logo, label text, materials, colors, and reflections. Also check shadows, contact with surfaces, crop safety, and consistency across the set. Reject attractive images that misrepresent the product.
-
-Tag approved assets consistently with product, campaign, shot type, aspect ratio, and status so video and UGC workflows can reuse them.
-
-For video, save a neutral packshot and a label/logo close-up as named anchors. Generate video keyframes at the video's ratio, not the campaign ratio.
+Once saved, collect the actual gallery_reference pairs and open `show_image_gallery` in slide order. Use `assign_project_asset` only if the user asked to group these exact assets in a known project. The library supports favorites, not renaming or tagging tools. Do not promise an automatic ZIP download of the full set; show the supported per-image downloads.

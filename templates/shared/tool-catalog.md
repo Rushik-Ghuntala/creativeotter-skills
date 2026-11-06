@@ -1,22 +1,19 @@
-# Tool routing reference
+# Current tool routing
 
-CreativeOtter adaptation, 2026-11-01. Follow [the runtime contract](runtime-contract.md). This is a map of intended tool roles, not proof that they are implemented. Use only tools actually exposed by the configured CreativeOtter connection.
+CreativeOtter adaptation, 2026-11-06. This inventory matches backend 0.8.10. Actual permissions and tool discovery still govern each connection.
 
-| Capability | Tools to look for when enabled |
+| Purpose | Implemented tools |
 | --- | --- |
-| Available operations and defaults | `get_capabilities` |
-| Model discovery and parameters | `list_models`, `get_model_params` |
-| Quotes and requested execution | `estimate_generation`, the selected execution tool, returned operation IDs |
-| One generated image/video | `generate_image`, `generate_video` |
-| Speech, music and sound effects | `generate_speech`, `generate_music`, `generate_sound_effect` |
-| Current jobs | `check_job` |
-| Private uploads and assets | `create_upload_url`, `complete_upload`, `manage_assets` |
-| Current account and ledger | `manage_account` |
-| Reusable brand, identity and project state | `manage_themes`, `manage_characters`, `manage_projects`, `manage_storyboards`, `manage_voice_presets`, `assign_project_asset`, when exposed |
-| Existing media processing | Advertised trim, caption, audio, reframe and assembly tools |
-| Explicit code-based rendering | `render_html_image`, `render_html_video`, optionally `generate_html_video` |
-| Requested product feedback | `submit_feedback`, only after explicit user request |
+| Availability and account | `get_capabilities`, `manage_account` |
+| Image routing and provider schemas | `resolve_generation_route`, `list_models`, `get_model_params` |
+| Provider image quote/start/status | `estimate_generation`, `generate_image`, `check_job` |
+| Native image quote/claim | `prepare_native_generation`, `claim_native_generation` |
+| Save or recover native image | `create_native_output`, `complete_native_output`, `get_native_generation`, `report_native_outcome` |
+| Private image references | `create_upload_url`, `complete_upload` |
+| Saved image library and presentation | `manage_assets`, `show_image_gallery` |
+| Brand, identity and voice-direction records | `manage_themes`, `manage_characters`, `manage_voice_presets` |
+| Campaign/film/music briefs, shot plans and attribution | `manage_projects`, `manage_storyboards`, `assign_project_asset` |
 
-No examples catalog, inline viewer, Studio or host-native import is guaranteed. Use tool schemas for fields; never infer a usable legacy alias. Every paid processing, cloning or rendering operation also needs the server's quote/reservation/execution contract. Read current account activity for charges; a quote is not a charge record.
+The model catalog accepts category image only. get_model_params accepts the returned provider model `image/nano-banana-2`; quote fields are prompt, aspect_ratio, resolution and owned reference_asset_ids. generate_image and check_job each accept quote_id, not job_id. Native claims use generation_id; saving additionally needs execution_token. These are different IDs and cannot be inferred from an asset ID.
 
-For displaying multiple saved image results, use `show_image_gallery` with ordered generation IDs and execution sources. This opens the CreativeOtter-branded MCP Apps gallery and is read-only; it never generates or charges credits.
+Other media categories have no executable backend tools or pricing contract. Do not translate a missing video, speech, music or rendering tool into an image call. Do not use inherited aliases for asset search, character creation, brand reads, film assembly, feedback or provider jobs. Use the actual schema for every call. See [Studio fields](studio-records.md), [uploads](platform-upload.md) and [recovery](job-recovery.md) when relevant.
