@@ -29,7 +29,7 @@ export async function build({ out = path.join(ROOT, 'plugins'), mcpUrl = null, m
         ...base, skills: './skills/', mcpServers: './.mcp.json',
         interface: {
           displayName: config.displayName, shortDescription: 'Images and creative planning',
-          longDescription: 'Create and edit images, browse private saved work, reuse brand and character references, and plan creative projects. Both native and API images spend CreativeOtter credits through the current backend workflow. Video, audio, media processing and rendering skills currently support preparation only.',
+          longDescription: 'Create and edit images, browse private saved work, reuse brand and character references, and plan creative projects. Both native and API images spend CreativeOtter credits through the current backend workflow. Motion graphics and animations use the opt-in HyperFrames/GSAP renderer with private editable project ZIPs and bundled audio/video when enabled; still images use the image workflow. Filmed video, audio and general media processing currently support preparation only.',
           developerName: config.author.name, category: 'Creativity', capabilities: ['Read', 'Write'],
           composerIcon: './assets/icon.png', logo: './assets/icon.png',
           defaultPrompt: ['Create one image from this brief.', 'Help me plan a short product video.'],

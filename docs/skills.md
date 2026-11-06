@@ -1,6 +1,6 @@
 # Skill inventory
 
-All 21 adapted skills match the implemented image and Studio tools. Video/audio/editing/rendering skills support preparation only; installing them does not enable generation. Current native and provider image work both require the live credit workflow. The original copied snapshot remains unchanged outside active packages.
+All 21 adapted skills match the implemented image and Studio tools. Motion graphics use the opt-in HyperFrames renderer when configured; filmed video and generated audio/editing skills support preparation only. Installing skills does not enable a worker, pricing or generation. Current native and provider image work both require the live credit workflow. The original copied snapshot remains unchanged outside active packages.
 
 | Skill | Purpose |
 | --- | --- |
@@ -21,7 +21,7 @@ All 21 adapted skills match the implemented image and Studio tools. Video/audio/
 | `creativeotter-generate-voiceover` | Prepare narration, dialogue and reusable voice direction for CreativeOtter. Speech generation and synthetic voice design are not yet implemented. |
 | `creativeotter-plan-video` | Write a video brief, script and ordered shot list, and save a CreativeOtter film storyboard when requested. This workflow does not generate footage or speech. |
 | `creativeotter-product-photoshoot` | Create a coordinated set of product images or carousel slides through the supported CreativeOtter image workflow, reusing product and brand references. |
-| `creativeotter-render-html` | Draft HTML/CSS layouts or motion-graphics compositions when explicitly requested. CreativeOtter code-to-image and video rendering services are not implemented. |
+| `creativeotter-render-html` | Create and revise motion-graphics videos with animated typography, shapes, transitions and logo reveals. Use for animated graphic designs, not still images or filmed footage. |
 | `creativeotter-setup` | Help users connect CreativeOtter and discover its currently enabled image, library and planning features. A setup request does not authorize paid samples. |
 | `creativeotter-submit-feedback` | Draft a CreativeOtter product or media-quality report when explicitly requested. Direct feedback submission is not implemented. |
 | `creativeotter-swap-characters` | Prepare an authorized character-replacement brief for an existing video. CreativeOtter face swaps, character recasting and motion transfer are not implemented. |

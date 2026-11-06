@@ -1,8 +1,8 @@
 # CreativeOtter adaptation, 2026-11-06. Generated from current workflow metadata.
 interface:
-  display_name: "CreativeOtter — Prepare HTML layouts and motion designs"
-  short_description: "Draft exact layouts and motion graphics source"
-  default_prompt: "Use $creativeotter-render-html to help with this request: Draft
-    an animated title card for my launch."
+  display_name: "CreativeOtter — Create motion graphics and animations"
+  short_description: "Create animated graphics, text and logo reveals"
+  default_prompt: "Use $creativeotter-render-html to help with this request:
+    Animate my headline and logo for a short launch announcement."
 policy:
   allow_implicit_invocation: true

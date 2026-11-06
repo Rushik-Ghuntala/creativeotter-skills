@@ -2,7 +2,7 @@
 
 Shared media-production skills with separate **Codex** and **Claude Code** plugin packages. Includes all **21 adapted skills**, their prompting references and rendering assets, plus an unchanged, hash-verified upstream snapshot.
 
-**Status:** paid native-first routing, version 0.6.1. Prefer a suitable native engine to lower operating cost; native and API generation both spend CreativeOtter credits. New native work requires a priced quote and a single execution claim that reserves credits directly on user request before the host tool runs. A missing connection, price or balance stops generation. The default `plugins/` folders have no active MCP endpoint; the release test-kit ZIP below connects to the deployed backend. No public directory approval is implied.
+**Status:** skills version 0.7.1. Backend 0.9.0 adds opt-in HTML/CSS PNG and short CSS motion MP4 rendering, tested locally; production rendering requires its own enabled worker and workspace pricing. Paid native-first image routing remains unchanged. Prefer a suitable native engine to lower operating cost; native and API generation both spend CreativeOtter credits. New native work requires a priced quote and a single execution claim that reserves credits directly on user request before the host tool runs. A missing connection, price or balance stops generation. The default `plugins/` folders have no active MCP endpoint; the release test-kit ZIP below connects to the deployed backend. No public directory approval is implied.
 
 ## Repository layout
 
@@ -27,7 +27,7 @@ Next.js, Supabase, provider adapters, database migrations and billing belong in 
 
 ## Download the connected test kit
 
-[Download CreativeOtter test kit v0.6.1](releases/creativeotter-test-kit-v0.6.1.zip) and its [SHA-256 checksum](releases/creativeotter-test-kit-v0.6.1.zip.sha256). Extract the ZIP and start with its README. Its `install/` folder contains separate Codex desktop and Claude plugin ZIPs with manifests at the archive root. It contains connected Codex and Claude Code plugins, local marketplaces, Cursor/VS Code configuration adapters, portable MCP setup and read-only test prompts. Each plugin includes all 21 skills. The public endpoint is `https://creativeotter-app.vercel.app/api/mcp`; each assistant completes its own OAuth sign-in.
+[Download CreativeOtter test kit v0.7.1](releases/creativeotter-test-kit-v0.7.1.zip) and its [SHA-256 checksum](releases/creativeotter-test-kit-v0.7.1.zip.sha256). Extract the ZIP and start with its README. Its `install/` folder contains separate Codex desktop and Claude plugin ZIPs with manifests at the archive root. It contains connected Codex and Claude Code plugins, local marketplaces, Cursor/VS Code configuration adapters, portable MCP setup and read-only test prompts. Each plugin includes all 21 skills. The public endpoint is `https://creativeotter-app.vercel.app/api/mcp`; each assistant completes its own OAuth sign-in.
 
 This is a multi-client test kit, not a universal plugin format. Hosts need remote OAuth MCP support, and inline media UI depends on the client. No credentials, account data, free credits or auto-running generations are included. See the [kit guide source](templates/test-kit/README.md) and [compatibility evidence](templates/test-kit/docs/COMPATIBILITY.md). The default repository plugins remain instructions-only.
 
@@ -120,7 +120,7 @@ npm run build
 npm run package:chatgpt-web -- --app-id asdk_app_<actual-registered-app-id>
 ```
 
-The builder accepts the registered app reference, not a generic uploaded plugin ID. It includes all 21 skills, `.app.json` and a manifest `apps` reference, with no direct MCP declarations or raw skill-tool dependency bindings. Output is `releases/creativeotter-chatgpt-web-v0.6.1.zip`. Account/workspace access, OAuth and live web testing remain required. No public listing is created.
+The builder accepts the registered app reference, not a generic uploaded plugin ID. It includes all 21 skills, `.app.json` and a manifest `apps` reference, with no direct MCP declarations or raw skill-tool dependency bindings. Output is `releases/creativeotter-chatgpt-web-v0.7.1.zip`. Account/workspace access, OAuth and live web testing remain required. No public listing is created.
 
 The corrected v0.5.4 web archive was imported and tested in a browser account with its registered connection: account panel, three-image gallery, navigation, refresh and an existing-image download worked. See [web testing evidence](docs/chatgpt-web-testing.md). This does not make the account-scoped reference available to unrelated users.
 
@@ -129,3 +129,5 @@ The corrected v0.5.4 web archive was imported and tested in a browser account wi
 All 21 entry points and UI descriptions reflect image execution, saved-image tools and Studio records. Video/audio/processing/rendering workflows offer preparation only; they do not imply available execution. Active packages contain only reachable maintained references.
 
 `npm run check:backend -- /absolute/path/to/creativeotter-app` compares the public tool input schemas exported through an in-memory MCP transport without account credentials or database access. Review changes before intentionally refreshing `config/backend-contract.json` with `--write`. `npm run verify` validates the immutable original snapshot, generated packages and example calls against these actual schemas. `tests/fixtures/customer-prompts.json` covers everyday requests across all 21 workflows; its examples are offline schema tests, not proof of model behavior or paid generation. Live prompt tests are recorded separately.
+
+The HTML/motion skill is reserved for animated graphics and motion-video output (MP4). Static posters, graphics and all other still images use the image-generation skill. Existing logos/images may be supplied as animation ingredients.

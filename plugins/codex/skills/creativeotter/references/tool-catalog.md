@@ -1,9 +1,12 @@
 # Current tool routing
 
-CreativeOtter adaptation, 2026-11-06. This inventory matches backend 0.8.10. Actual permissions and tool discovery still govern each connection.
+CreativeOtter adaptation, 2026-11-06. This inventory matches backend 0.10.0 (including opt-in rendering). Actual permissions and tool discovery still govern each connection.
 
 | Purpose | Implemented tools |
 | --- | --- |
+| Opt-in HyperFrames motion MP4 and legacy CSS layouts | `prepare_render`, `render_design`, `get_render`, `list_renders` |
+| Private editable motion projects | `save_motion_project`, `get_motion_project`, `list_motion_projects`, `revise_motion_project` |
+| Complete project ZIP upload | `prepare_motion_upload`, `confirm_motion_upload` |
 | Availability and account | `get_capabilities`, `manage_account` |
 | Image routing and provider schemas | `resolve_generation_route`, `list_models`, `get_model_params` |
 | Provider image quote/start/status | `estimate_generation`, `generate_image`, `check_job` |
@@ -16,4 +19,6 @@ CreativeOtter adaptation, 2026-11-06. This inventory matches backend 0.8.10. Act
 
 The model catalog accepts category image only. get_model_params accepts the returned provider model `image/nano-banana-2`; quote fields are prompt, aspect_ratio, resolution and owned reference_asset_ids. generate_image and check_job each accept quote_id, not job_id. Native claims use generation_id; saving additionally needs execution_token. These are different IDs and cannot be inferred from an asset ID.
 
-Other media categories have no executable backend tools or pricing contract. Do not translate a missing video, speech, music or rendering tool into an image call. Do not use inherited aliases for asset search, character creation, brand reads, film assembly, feedback or provider jobs. Use the actual schema for every call. See [Studio fields](studio-records.md), [uploads](platform-upload.md) and [recovery](job-recovery.md) when relevant.
+The creativeotter-render-html skill uses these render tools only for animated MP4 output. Its low-level PNG option is not the skill’s still-image workflow; route all still images to creativeotter-generate-image.
+
+The render tools are registered only when the backend rendering gate is enabled; workspace availability and prices additionally require a live worker and opt-in configuration. Other media categories have no executable backend tools or pricing contract. Do not translate a missing video, speech or music tool into an image call. Do not use inherited aliases for asset search, character creation, brand reads, film assembly, feedback or provider jobs. Use the actual schema for every call. See [Studio fields](studio-records.md), [uploads](platform-upload.md) and [recovery](job-recovery.md) when relevant.

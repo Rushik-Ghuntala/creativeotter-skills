@@ -1,7 +1,7 @@
 {
   "checked_on": "2026-11-06",
-  "backend_version": "0.8.10",
-  "note": "Public tools/list schemas exported from backend code using an in-memory transport. No account data, credentials, database calls or generation.",
+  "backend_version": "0.10.0",
+  "note": "Tools/list schemas, including opt-in rendering with only its discovery flag enabled, exported from backend code using an in-memory transport. No account data, credentials, database calls or generation.",
   "tools": [
     {
       "name": "assign_project_asset",
@@ -96,6 +96,23 @@
         },
         "required": [
           "asset_id"
+        ],
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      }
+    },
+    {
+      "name": "confirm_motion_upload",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "revision_id": {
+            "type": "string",
+            "format": "uuid",
+            "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+          }
+        },
+        "required": [
+          "revision_id"
         ],
         "$schema": "http://json-schema.org/draft-07/schema#"
       }
@@ -248,6 +265,23 @@
       }
     },
     {
+      "name": "get_motion_project",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "revision_id": {
+            "type": "string",
+            "format": "uuid",
+            "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+          }
+        },
+        "required": [
+          "revision_id"
+        ],
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      }
+    },
+    {
       "name": "get_native_generation",
       "inputSchema": {
         "type": "object",
@@ -265,6 +299,23 @@
       }
     },
     {
+      "name": "get_render",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "render_id": {
+            "type": "string",
+            "format": "uuid",
+            "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+          }
+        },
+        "required": [
+          "render_id"
+        ],
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      }
+    },
+    {
       "name": "list_models",
       "inputSchema": {
         "type": "object",
@@ -272,6 +323,36 @@
           "category": {
             "type": "string",
             "const": "image"
+          }
+        },
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      }
+    },
+    {
+      "name": "list_motion_projects",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "limit": {
+            "default": 20,
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 40
+          }
+        },
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      }
+    },
+    {
+      "name": "list_renders",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "limit": {
+            "default": 10,
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 20
           }
         },
         "$schema": "http://json-schema.org/draft-07/schema#"
@@ -735,6 +816,98 @@
       }
     },
     {
+      "name": "prepare_motion_upload",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 120
+          },
+          "settings": {
+            "type": "object",
+            "properties": {
+              "width": {
+                "type": "integer",
+                "minimum": 128,
+                "maximum": 1920
+              },
+              "height": {
+                "type": "integer",
+                "minimum": 128,
+                "maximum": 1920
+              },
+              "duration_seconds": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 30
+              },
+              "fps": {
+                "default": 30,
+                "anyOf": [
+                  {
+                    "type": "number",
+                    "const": 12
+                  },
+                  {
+                    "type": "number",
+                    "const": 24
+                  },
+                  {
+                    "type": "number",
+                    "const": 25
+                  },
+                  {
+                    "type": "number",
+                    "const": 30
+                  }
+                ]
+              }
+            },
+            "required": [
+              "width",
+              "height",
+              "duration_seconds"
+            ],
+            "additionalProperties": false
+          },
+          "request_key": {
+            "type": "string",
+            "format": "uuid",
+            "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+          },
+          "change_summary": {
+            "default": "",
+            "type": "string",
+            "maxLength": 300
+          },
+          "source_sha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "source_bytes": {
+            "type": "integer",
+            "minimum": 22,
+            "maximum": 26214400
+          },
+          "parent_id": {
+            "type": "string",
+            "format": "uuid",
+            "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+          }
+        },
+        "required": [
+          "title",
+          "settings",
+          "request_key",
+          "source_sha256",
+          "source_bytes"
+        ],
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      }
+    },
+    {
       "name": "prepare_native_generation",
       "inputSchema": {
         "type": "object",
@@ -824,6 +997,125 @@
       }
     },
     {
+      "name": "prepare_render",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 120
+          },
+          "format": {
+            "type": "string",
+            "enum": [
+              "png",
+              "mp4"
+            ]
+          },
+          "html": {
+            "default": "",
+            "type": "string",
+            "maxLength": 24000
+          },
+          "css": {
+            "default": "",
+            "type": "string",
+            "maxLength": 12000
+          },
+          "width": {
+            "type": "integer",
+            "minimum": 128,
+            "maximum": 1920
+          },
+          "height": {
+            "type": "integer",
+            "minimum": 128,
+            "maximum": 1920
+          },
+          "duration_seconds": {
+            "default": 4,
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 30
+          },
+          "fps": {
+            "default": 24,
+            "anyOf": [
+              {
+                "type": "number",
+                "const": 12
+              },
+              {
+                "type": "number",
+                "const": 24
+              },
+              {
+                "type": "number",
+                "const": 25
+              },
+              {
+                "type": "number",
+                "const": 30
+              }
+            ]
+          },
+          "asset_ids": {
+            "default": [],
+            "maxItems": 4,
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uuid",
+              "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+            }
+          },
+          "engine": {
+            "type": "string",
+            "enum": [
+              "css",
+              "hyperframes"
+            ]
+          },
+          "revision_id": {
+            "type": "string",
+            "format": "uuid",
+            "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+          },
+          "request_key": {
+            "type": "string",
+            "format": "uuid",
+            "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+          }
+        },
+        "required": [
+          "title",
+          "format",
+          "width",
+          "height",
+          "request_key"
+        ],
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      }
+    },
+    {
+      "name": "render_design",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "render_id": {
+            "type": "string",
+            "format": "uuid",
+            "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+          }
+        },
+        "required": [
+          "render_id"
+        ],
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      }
+    },
+    {
       "name": "report_native_outcome",
       "inputSchema": {
         "type": "object",
@@ -902,6 +1194,219 @@
             ]
           }
         },
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      }
+    },
+    {
+      "name": "revise_motion_project",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 120
+          },
+          "settings": {
+            "type": "object",
+            "properties": {
+              "width": {
+                "type": "integer",
+                "minimum": 128,
+                "maximum": 1920
+              },
+              "height": {
+                "type": "integer",
+                "minimum": 128,
+                "maximum": 1920
+              },
+              "duration_seconds": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 30
+              },
+              "fps": {
+                "default": 30,
+                "anyOf": [
+                  {
+                    "type": "number",
+                    "const": 12
+                  },
+                  {
+                    "type": "number",
+                    "const": 24
+                  },
+                  {
+                    "type": "number",
+                    "const": 25
+                  },
+                  {
+                    "type": "number",
+                    "const": 30
+                  }
+                ]
+              }
+            },
+            "required": [
+              "width",
+              "height",
+              "duration_seconds"
+            ],
+            "additionalProperties": false
+          },
+          "request_key": {
+            "type": "string",
+            "format": "uuid",
+            "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+          },
+          "change_summary": {
+            "default": "",
+            "type": "string",
+            "maxLength": 300
+          },
+          "parent_id": {
+            "type": "string",
+            "format": "uuid",
+            "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+          },
+          "changes": {
+            "minItems": 1,
+            "maxItems": 128,
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "path": {
+                  "type": "string"
+                },
+                "content": {
+                  "type": "string",
+                  "maxLength": 512000
+                }
+              },
+              "required": [
+                "path",
+                "content"
+              ]
+            }
+          }
+        },
+        "required": [
+          "title",
+          "settings",
+          "request_key",
+          "parent_id",
+          "changes"
+        ],
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      }
+    },
+    {
+      "name": "save_motion_project",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 120
+          },
+          "settings": {
+            "type": "object",
+            "properties": {
+              "width": {
+                "type": "integer",
+                "minimum": 128,
+                "maximum": 1920
+              },
+              "height": {
+                "type": "integer",
+                "minimum": 128,
+                "maximum": 1920
+              },
+              "duration_seconds": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 30
+              },
+              "fps": {
+                "default": 30,
+                "anyOf": [
+                  {
+                    "type": "number",
+                    "const": 12
+                  },
+                  {
+                    "type": "number",
+                    "const": 24
+                  },
+                  {
+                    "type": "number",
+                    "const": 25
+                  },
+                  {
+                    "type": "number",
+                    "const": 30
+                  }
+                ]
+              }
+            },
+            "required": [
+              "width",
+              "height",
+              "duration_seconds"
+            ],
+            "additionalProperties": false
+          },
+          "request_key": {
+            "type": "string",
+            "format": "uuid",
+            "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+          },
+          "change_summary": {
+            "default": "",
+            "type": "string",
+            "maxLength": 300
+          },
+          "files": {
+            "minItems": 1,
+            "maxItems": 128,
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "path": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 180
+                },
+                "content": {
+                  "type": "string",
+                  "maxLength": 700000
+                },
+                "encoding": {
+                  "default": "utf8",
+                  "type": "string",
+                  "enum": [
+                    "utf8",
+                    "base64"
+                  ]
+                }
+              },
+              "required": [
+                "path",
+                "content"
+              ],
+              "additionalProperties": false
+            }
+          }
+        },
+        "required": [
+          "title",
+          "settings",
+          "request_key",
+          "files"
+        ],
         "$schema": "http://json-schema.org/draft-07/schema#"
       }
     },

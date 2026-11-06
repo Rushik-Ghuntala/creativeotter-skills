@@ -1,6 +1,6 @@
 {
   "name": "creativeotter",
-  "version": "0.6.1",
+  "version": "0.8.0",
   "description": "CreativeOtter image creation, private saved images, brand and character records, and creative project planning.",
   "author": {
     "name": "Rushik",
@@ -22,7 +22,7 @@
   "interface": {
     "displayName": "CreativeOtter",
     "shortDescription": "Images and creative planning",
-    "longDescription": "Create and edit images, browse private saved work, reuse brand and character references, and plan creative projects. Both native and API images spend CreativeOtter credits through the current backend workflow. Video, audio, media processing and rendering skills currently support preparation only.",
+    "longDescription": "Create and edit images, browse private saved work, reuse brand and character references, and plan creative projects. Both native and API images spend CreativeOtter credits through the current backend workflow. Motion graphics and animations use the opt-in HyperFrames/GSAP renderer with private editable project ZIPs and bundled audio/video when enabled; still images use the image workflow. Filmed video, audio and general media processing currently support preparation only.",
     "developerName": "Rushik",
     "category": "Creativity",
     "capabilities": [

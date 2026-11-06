@@ -23,12 +23,12 @@ try {const result=await client.listTools(); process.stdout.write(JSON.stringify(
 finally {await client.close();await server.close()}
 `;
 const tools = JSON.parse(execFileSync(process.execPath, ['--conditions=react-server', '--import', path.join(app,'node_modules/tsx/dist/loader.mjs'), '--input-type=module', '-e', script], {
-  cwd: app, encoding: 'utf8', env: {...process.env, NEXT_PUBLIC_SUPABASE_URL:'https://schema-fixture.supabase.co', NEXT_PUBLIC_SUPABASE_ANON_KEY:'schema-fixture'},
+  cwd: app, encoding: 'utf8', env: {...process.env, NEXT_PUBLIC_SUPABASE_URL:'https://schema-fixture.supabase.co', NEXT_PUBLIC_SUPABASE_ANON_KEY:'schema-fixture', CREATIVEOTTER_RENDERING_ENABLED:'true'},
 }));
 const file = path.join(ROOT,'config/backend-contract.json');
 if (args[1] === '--write') {
   const version = JSON.parse(await readFile(path.join(app,'package.json'),'utf8')).version;
-  await write(file,{checked_on:'2026-11-06',backend_version:version,note:'Public tools/list schemas exported from backend code using an in-memory transport. No account data, credentials, database calls or generation.',tools});
+  await write(file,{checked_on:'2026-11-06',backend_version:version,note:'Tools/list schemas, including opt-in rendering with only its discovery flag enabled, exported from backend code using an in-memory transport. No account data, credentials, database calls or generation.',tools});
 } else {
   assert(JSON.stringify((await json(file)).tools) === JSON.stringify(tools), 'Backend schemas changed: review adaptations, then intentionally refresh the contract.');
 }

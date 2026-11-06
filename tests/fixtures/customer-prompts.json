@@ -463,15 +463,139 @@
     },
     {
       "skill": "creativeotter-render-html",
-      "prompt": "Render this title animation as a video.",
+      "prompt": "Make my bakery headline pop with animated text and moving shapes.",
       "schema_examples_only": true,
       "steps": [
         {
           "tool": "get_capabilities",
           "arguments": {}
+        },
+        {
+          "tool": "save_motion_project",
+          "arguments": {
+            "title": "Fresh mornings start here.",
+            "settings": {
+              "width": 864,
+              "height": 1080,
+              "duration_seconds": 4,
+              "fps": 30
+            },
+            "request_key": "10000000-0000-4000-8000-000000000001",
+            "files": [
+              {
+                "path": "index.html",
+                "content": "<!doctype html><html><head><script src=\"https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js\"></script></head><body><main data-composition-id=\"bakery\" data-width=\"864\" data-height=\"1080\" data-duration=\"4\"><h1>Fresh mornings start here.</h1></main><script>window.__timelines={bakery:gsap.timeline({paused:true}).fromTo(\"h1\",{y:80,opacity:0},{y:0,opacity:1,duration:1})}</script></body></html>"
+              }
+            ]
+          }
+        },
+        {
+          "tool": "prepare_render",
+          "arguments": {
+            "title": "Fresh mornings start here.",
+            "format": "mp4",
+            "html": "",
+            "css": "",
+            "width": 864,
+            "height": 1080,
+            "duration_seconds": 4,
+            "fps": 30,
+            "asset_ids": [],
+            "request_key": "10000000-0000-4000-8000-000000000001",
+            "engine": "hyperframes",
+            "revision_id": "10000000-0000-4000-8000-000000000001"
+          }
+        },
+        {
+          "tool": "render_design",
+          "arguments": {
+            "render_id": "10000000-0000-4000-8000-000000000001"
+          }
+        },
+        {
+          "tool": "get_render",
+          "arguments": {
+            "render_id": "10000000-0000-4000-8000-000000000001"
+          }
+        },
+        {
+          "tool": "list_renders",
+          "arguments": {
+            "limit": 3
+          }
         }
       ],
-      "expected_behavior": "Explain unavailable execution in plain language; offer an appropriate draft or plan. No generation, unsupported tool, provider call or image substitution."
+      "expected_behavior": "Author a complete visibly animated HyperFrames project, save it without spending, quote and render its MP4 when enabled, then show the branded video panel. Use latest saved revisions for edits and preserve prior source/asset bytes. No PNG, extra approval, fal.ai call or developer-facing IDs."
+    },
+    {
+      "skill": "creativeotter-render-html",
+      "prompt": "Change the headline to Weekend treats are here, keep the music, and save a new version. Don\u2019t make another video yet.",
+      "schema_examples_only": true,
+      "steps": [
+        {
+          "tool": "list_motion_projects",
+          "arguments": {
+            "limit": 5
+          }
+        },
+        {
+          "tool": "get_motion_project",
+          "arguments": {
+            "revision_id": "10000000-0000-4000-8000-000000000001"
+          }
+        },
+        {
+          "tool": "revise_motion_project",
+          "arguments": {
+            "title": "Weekend treats are here",
+            "settings": {
+              "width": 864,
+              "height": 1080,
+              "duration_seconds": 4,
+              "fps": 30
+            },
+            "parent_id": "10000000-0000-4000-8000-000000000001",
+            "request_key": "10000000-0000-4000-8000-000000000001",
+            "change_summary": "Changed headline; kept existing music",
+            "changes": [
+              {
+                "path": "index.html",
+                "content": "<!doctype html><html><head><script src=\"https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js\"></script></head><body><main data-composition-id=\"bakery\" data-width=\"864\" data-height=\"1080\" data-duration=\"4\"><h1>Weekend treats are here</h1><audio id=\"music\" src=\"assets/music.wav\" data-start=\"0\" data-duration=\"4\" data-volume=\"0.25\"></audio></main><script>window.__timelines={bakery:gsap.timeline({paused:true}).fromTo(\"h1\",{y:80,opacity:0},{y:0,opacity:1,duration:1})}</script></body></html>"
+              }
+            ]
+          }
+        }
+      ],
+      "expected_behavior": "Find the current version, edit only the requested text source, preserve bundled music and prior versions, and save without rendering or spending credits. Refer to the project by name."
+    },
+    {
+      "skill": "creativeotter-render-html",
+      "prompt": "Use this animation project ZIP and show me what\u2019s inside before making a video.",
+      "schema_examples_only": true,
+      "steps": [
+        {
+          "tool": "prepare_motion_upload",
+          "arguments": {
+            "title": "My launch animation",
+            "settings": {
+              "width": 864,
+              "height": 1080,
+              "duration_seconds": 4,
+              "fps": 30
+            },
+            "request_key": "10000000-0000-4000-8000-000000000001",
+            "source_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+            "source_bytes": 1024
+          }
+        },
+        {
+          "tool": "confirm_motion_upload",
+          "arguments": {
+            "revision_id": "10000000-0000-4000-8000-000000000001"
+          }
+        }
+      ],
+      "expected_behavior": "Transfer the supplied existing ZIP to its private upload URL, validate it, and show a short friendly project summary. No npm scripts, render, credits spent or raw source dump."
     }
   ],
   "image_call_examples": [

@@ -35,7 +35,7 @@ export const packageChatgptWeb = async ({ appId, staging, archives }) => {
     interface: {
       ...manifest.interface,
       shortDescription: 'Your creative studio, inside ChatGPT',
-      longDescription: 'Create and edit images, view private saved images, and save brand, character and project plans. Video, speech, voice cloning, music, media processing and HTML rendering are not available; related skills provide planning only. Image quotes are customer CreativeOtter credits, not provider dollar costs. New images use your CreativeOtter credits.',
+      longDescription: 'Create and edit images, view private saved images, and save brand, character and project plans. Motion graphics and animations require the opt-in HTML/CSS renderer; still images use the image workflow. Filmed video, speech, voice cloning, music and general media processing remain planning-only. Image quotes are customer CreativeOtter credits, not provider dollar costs. New images use your CreativeOtter credits.',
       defaultPrompt: ['Check my CreativeOtter account.', 'Show my latest saved CreativeOtter images.'],
     },
   });

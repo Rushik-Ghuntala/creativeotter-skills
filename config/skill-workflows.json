@@ -220,12 +220,22 @@
     ]
   },
   "creativeotter-render-html": {
-    "title": "Prepare HTML layouts and motion designs",
-    "description": "Draft HTML/CSS layouts or motion-graphics compositions when explicitly requested. CreativeOtter code-to-image and video rendering services are not implemented.",
-    "short_description": "Draft exact layouts and motion graphics source",
-    "prompt": "Draft an animated title card for my launch.",
+    "title": "Create motion graphics and animations",
+    "description": "Create and revise motion-graphics videos with animated typography, shapes, transitions and logo reveals. Use for animated graphic designs, not still images or filmed footage.",
+    "short_description": "Create animated graphics, text and logo reveals",
+    "prompt": "Animate my headline and logo for a short launch announcement.",
     "tools": [
-      "get_capabilities"
+      "get_capabilities",
+      "save_motion_project",
+      "revise_motion_project",
+      "prepare_motion_upload",
+      "confirm_motion_upload",
+      "get_motion_project",
+      "list_motion_projects",
+      "prepare_render",
+      "render_design",
+      "get_render",
+      "list_renders"
     ]
   }
 }
