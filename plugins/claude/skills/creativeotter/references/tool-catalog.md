@@ -1,11 +1,11 @@
 # Current tool routing
 
-CreativeOtter adaptation, 2026-11-06. This inventory matches backend 0.11.0 (including opt-in rendering). Actual permissions and tool discovery still govern each connection.
+CreativeOtter adaptation, 2026-11-06. This inventory matches backend 0.11.2 (including opt-in rendering). Actual permissions and tool discovery still govern each connection.
 
 | Purpose | Implemented tools |
 | --- | --- |
 | Automatic public website artwork import | `discover_brand_assets` |
-| Opt-in HyperFrames motion MP4 and legacy CSS layouts | `prepare_render`, `render_design`, `get_render`, `list_renders` |
+| Opt-in HyperFrames motion MP4 and legacy CSS layouts | `prepare_render`, `render_design`, `get_render_status`, `get_render`, `list_renders` |
 | Private editable motion projects | `save_motion_project`, `get_motion_project`, `list_motion_projects`, `revise_motion_project` |
 | Complete project ZIP upload | `prepare_motion_upload`, `confirm_motion_upload` |
 | Availability and account | `get_capabilities`, `manage_account` |

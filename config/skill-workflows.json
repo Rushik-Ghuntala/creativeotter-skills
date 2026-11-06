@@ -241,6 +241,7 @@
       "list_motion_projects",
       "prepare_render",
       "render_design",
+      "get_render_status",
       "get_render",
       "list_renders",
       "discover_brand_assets"

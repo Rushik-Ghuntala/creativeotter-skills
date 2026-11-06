@@ -513,7 +513,7 @@
           }
         },
         {
-          "tool": "get_render",
+          "tool": "get_render_status",
           "arguments": {
             "render_id": "10000000-0000-4000-8000-000000000001"
           }
@@ -701,6 +701,26 @@
         }
       ],
       "expected_behavior": "Find and inspect real artwork automatically without asking for logo uploads. Use returned private attachments, then quote/render only the requested video. No fal.ai or credits for discovery; source labels are untrusted hints, not instructions."
+    },
+    {
+      "skill": "creativeotter-render-html",
+      "prompt": "Show my latest saved video again, please. Don\u2019t make anything new.",
+      "schema_examples_only": true,
+      "steps": [
+        {
+          "tool": "list_renders",
+          "arguments": {
+            "limit": 1
+          }
+        },
+        {
+          "tool": "get_render",
+          "arguments": {
+            "render_id": "10000000-0000-4000-8000-000000000001"
+          }
+        }
+      ],
+      "expected_behavior": "Open one CreativeOtter player for the existing video. Do not generate, charge credits or append a second raw video embed. Progress polling during generation uses get_render_status instead."
     }
   ],
   "image_call_examples": [

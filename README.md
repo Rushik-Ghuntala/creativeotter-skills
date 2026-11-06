@@ -27,7 +27,7 @@ Next.js, Supabase, provider adapters, database migrations and billing belong in 
 
 ## Download the connected test kit
 
-[Download CreativeOtter test kit v0.9.0](releases/creativeotter-test-kit-v0.9.0.zip) and its [SHA-256 checksum](releases/creativeotter-test-kit-v0.9.0.zip.sha256). Extract the ZIP and start with its README. Its `install/` folder contains separate Codex desktop and Claude plugin ZIPs with manifests at the archive root. It contains connected Codex and Claude Code plugins, local marketplaces, Cursor/VS Code configuration adapters, portable MCP setup and read-only test prompts. Each plugin includes all 21 skills. The public endpoint is `https://creativeotter-app.vercel.app/api/mcp`; each assistant completes its own OAuth sign-in.
+[Download CreativeOtter test kit v0.9.1](releases/creativeotter-test-kit-v0.9.1.zip) and its [SHA-256 checksum](releases/creativeotter-test-kit-v0.9.1.zip.sha256). Extract the ZIP and start with its README. Its `install/` folder contains separate Codex desktop and Claude plugin ZIPs with manifests at the archive root. It contains connected Codex and Claude Code plugins, local marketplaces, Cursor/VS Code configuration adapters, portable MCP setup and read-only test prompts. Each plugin includes all 21 skills. The public endpoint is `https://creativeotter-app.vercel.app/api/mcp`; each assistant completes its own OAuth sign-in.
 
 This is a multi-client test kit, not a universal plugin format. Hosts need remote OAuth MCP support, and inline media UI depends on the client. No credentials, account data, free credits or auto-running generations are included. See the [kit guide source](templates/test-kit/README.md) and [compatibility evidence](templates/test-kit/docs/COMPATIBILITY.md). The default repository plugins remain instructions-only.
 
@@ -120,7 +120,7 @@ npm run build
 npm run package:chatgpt-web -- --app-id asdk_app_<actual-registered-app-id>
 ```
 
-The builder accepts the registered app reference, not a generic uploaded plugin ID. It includes all 21 skills, `.app.json` and a manifest `apps` reference, with no direct MCP declarations or raw skill-tool dependency bindings. Output is `releases/creativeotter-chatgpt-web-v0.9.0.zip`. Account/workspace access, OAuth and live web testing remain required. No public listing is created.
+The builder accepts the registered app reference, not a generic uploaded plugin ID. It includes all 21 skills, `.app.json` and a manifest `apps` reference, with no direct MCP declarations or raw skill-tool dependency bindings. Output is `releases/creativeotter-chatgpt-web-v0.9.1.zip`. Account/workspace access, OAuth and live web testing remain required. No public listing is created.
 
 The corrected v0.5.4 web archive was imported and tested in a browser account with its registered connection: account panel, three-image gallery, navigation, refresh and an existing-image download worked. See [web testing evidence](docs/chatgpt-web-testing.md). This does not make the account-scoped reference available to unrelated users.
 

@@ -1,7 +1,7 @@
 {
   "source_repository": "https://github.com/CreativeClawCo/creative-claw-marketplace",
   "source_commit": "9a611714f425047e44de916eac7d778804a188fa",
-  "adaptation_version": "0.9.0",
+  "adaptation_version": "0.9.1",
   "adapted_on": "2026-11-06",
   "skill_count": 21,
   "note": "Current entry points and reachable maintained resources only. Historical model guides and assets remain unchanged in vendor/creative-claw/upstream, outside active packages. Modified files retain provenance; source-null files are CreativeOtter additions.",
@@ -22,7 +22,7 @@
     {
       "source": null,
       "path": "skills/creativeotter-ad-variations/references/runtime-contract.md",
-      "sha256": "a19d16c9b3eed0269b72f3d77a98170dfe2fc8acaf2a8442be8e7555b676ddab",
+      "sha256": "9891e692a9d46f706675c28360474ac3e8224787ec0fad6b1a8e3f31e21504cc",
       "modified": true
     },
     {
@@ -54,7 +54,7 @@
     {
       "source": null,
       "path": "skills/creativeotter-budget-projects/references/runtime-contract.md",
-      "sha256": "a19d16c9b3eed0269b72f3d77a98170dfe2fc8acaf2a8442be8e7555b676ddab",
+      "sha256": "9891e692a9d46f706675c28360474ac3e8224787ec0fad6b1a8e3f31e21504cc",
       "modified": true
     },
     {
@@ -86,7 +86,7 @@
     {
       "source": null,
       "path": "skills/creativeotter-build-film/references/runtime-contract.md",
-      "sha256": "a19d16c9b3eed0269b72f3d77a98170dfe2fc8acaf2a8442be8e7555b676ddab",
+      "sha256": "9891e692a9d46f706675c28360474ac3e8224787ec0fad6b1a8e3f31e21504cc",
       "modified": true
     },
     {
@@ -118,7 +118,7 @@
     {
       "source": null,
       "path": "skills/creativeotter-clone-voice/references/runtime-contract.md",
-      "sha256": "a19d16c9b3eed0269b72f3d77a98170dfe2fc8acaf2a8442be8e7555b676ddab",
+      "sha256": "9891e692a9d46f706675c28360474ac3e8224787ec0fad6b1a8e3f31e21504cc",
       "modified": true
     },
     {
@@ -156,7 +156,7 @@
     {
       "source": null,
       "path": "skills/creativeotter-create-avatar/references/runtime-contract.md",
-      "sha256": "a19d16c9b3eed0269b72f3d77a98170dfe2fc8acaf2a8442be8e7555b676ddab",
+      "sha256": "9891e692a9d46f706675c28360474ac3e8224787ec0fad6b1a8e3f31e21504cc",
       "modified": true
     },
     {
@@ -188,7 +188,7 @@
     {
       "source": null,
       "path": "skills/creativeotter-create-character/references/runtime-contract.md",
-      "sha256": "a19d16c9b3eed0269b72f3d77a98170dfe2fc8acaf2a8442be8e7555b676ddab",
+      "sha256": "9891e692a9d46f706675c28360474ac3e8224787ec0fad6b1a8e3f31e21504cc",
       "modified": true
     },
     {
@@ -220,7 +220,7 @@
     {
       "source": null,
       "path": "skills/creativeotter-create-reels/references/runtime-contract.md",
-      "sha256": "a19d16c9b3eed0269b72f3d77a98170dfe2fc8acaf2a8442be8e7555b676ddab",
+      "sha256": "9891e692a9d46f706675c28360474ac3e8224787ec0fad6b1a8e3f31e21504cc",
       "modified": true
     },
     {
@@ -252,7 +252,7 @@
     {
       "source": null,
       "path": "skills/creativeotter-create-ugc-ad/references/runtime-contract.md",
-      "sha256": "a19d16c9b3eed0269b72f3d77a98170dfe2fc8acaf2a8442be8e7555b676ddab",
+      "sha256": "9891e692a9d46f706675c28360474ac3e8224787ec0fad6b1a8e3f31e21504cc",
       "modified": true
     },
     {
@@ -284,7 +284,7 @@
     {
       "source": null,
       "path": "skills/creativeotter-edit-media/references/runtime-contract.md",
-      "sha256": "a19d16c9b3eed0269b72f3d77a98170dfe2fc8acaf2a8442be8e7555b676ddab",
+      "sha256": "9891e692a9d46f706675c28360474ac3e8224787ec0fad6b1a8e3f31e21504cc",
       "modified": true
     },
     {
@@ -328,7 +328,7 @@
     {
       "source": null,
       "path": "skills/creativeotter-generate-image/references/runtime-contract.md",
-      "sha256": "a19d16c9b3eed0269b72f3d77a98170dfe2fc8acaf2a8442be8e7555b676ddab",
+      "sha256": "9891e692a9d46f706675c28360474ac3e8224787ec0fad6b1a8e3f31e21504cc",
       "modified": true
     },
     {
@@ -360,7 +360,7 @@
     {
       "source": null,
       "path": "skills/creativeotter-generate-music/references/runtime-contract.md",
-      "sha256": "a19d16c9b3eed0269b72f3d77a98170dfe2fc8acaf2a8442be8e7555b676ddab",
+      "sha256": "9891e692a9d46f706675c28360474ac3e8224787ec0fad6b1a8e3f31e21504cc",
       "modified": true
     },
     {
@@ -392,7 +392,7 @@
     {
       "source": null,
       "path": "skills/creativeotter-generate-sound-effects/references/runtime-contract.md",
-      "sha256": "a19d16c9b3eed0269b72f3d77a98170dfe2fc8acaf2a8442be8e7555b676ddab",
+      "sha256": "9891e692a9d46f706675c28360474ac3e8224787ec0fad6b1a8e3f31e21504cc",
       "modified": true
     },
     {
@@ -424,7 +424,7 @@
     {
       "source": null,
       "path": "skills/creativeotter-generate-video/references/runtime-contract.md",
-      "sha256": "a19d16c9b3eed0269b72f3d77a98170dfe2fc8acaf2a8442be8e7555b676ddab",
+      "sha256": "9891e692a9d46f706675c28360474ac3e8224787ec0fad6b1a8e3f31e21504cc",
       "modified": true
     },
     {
@@ -456,7 +456,7 @@
     {
       "source": null,
       "path": "skills/creativeotter-generate-voiceover/references/runtime-contract.md",
-      "sha256": "a19d16c9b3eed0269b72f3d77a98170dfe2fc8acaf2a8442be8e7555b676ddab",
+      "sha256": "9891e692a9d46f706675c28360474ac3e8224787ec0fad6b1a8e3f31e21504cc",
       "modified": true
     },
     {
@@ -488,7 +488,7 @@
     {
       "source": null,
       "path": "skills/creativeotter-plan-video/references/runtime-contract.md",
-      "sha256": "a19d16c9b3eed0269b72f3d77a98170dfe2fc8acaf2a8442be8e7555b676ddab",
+      "sha256": "9891e692a9d46f706675c28360474ac3e8224787ec0fad6b1a8e3f31e21504cc",
       "modified": true
     },
     {
@@ -532,7 +532,7 @@
     {
       "source": null,
       "path": "skills/creativeotter-product-photoshoot/references/runtime-contract.md",
-      "sha256": "a19d16c9b3eed0269b72f3d77a98170dfe2fc8acaf2a8442be8e7555b676ddab",
+      "sha256": "9891e692a9d46f706675c28360474ac3e8224787ec0fad6b1a8e3f31e21504cc",
       "modified": true
     },
     {
@@ -564,7 +564,7 @@
     {
       "source": null,
       "path": "skills/creativeotter-render-html/references/runtime-contract.md",
-      "sha256": "a19d16c9b3eed0269b72f3d77a98170dfe2fc8acaf2a8442be8e7555b676ddab",
+      "sha256": "9891e692a9d46f706675c28360474ac3e8224787ec0fad6b1a8e3f31e21504cc",
       "modified": true
     },
     {
@@ -577,7 +577,7 @@
       "source": "upstream/plugins/creative-claw/skills/creativeclaw-render-html/SKILL.md",
       "path": "skills/creativeotter-render-html/SKILL.md",
       "source_sha256": "35acd41ba9ceef84bc13982366a29eab1c89d6a049b8472490213d73ab6fd850",
-      "sha256": "1e5a6c56cbc36714ff9d80b34352da81c3e0eb612377bda4646415d593d6c5a7",
+      "sha256": "fc72080412b35ec8def33209d75db572e415436982642282852f7d8308f5c81c",
       "modified": true
     },
     {
@@ -602,7 +602,7 @@
     {
       "source": null,
       "path": "skills/creativeotter-setup/references/runtime-contract.md",
-      "sha256": "a19d16c9b3eed0269b72f3d77a98170dfe2fc8acaf2a8442be8e7555b676ddab",
+      "sha256": "9891e692a9d46f706675c28360474ac3e8224787ec0fad6b1a8e3f31e21504cc",
       "modified": true
     },
     {
@@ -634,7 +634,7 @@
     {
       "source": null,
       "path": "skills/creativeotter-submit-feedback/references/runtime-contract.md",
-      "sha256": "a19d16c9b3eed0269b72f3d77a98170dfe2fc8acaf2a8442be8e7555b676ddab",
+      "sha256": "9891e692a9d46f706675c28360474ac3e8224787ec0fad6b1a8e3f31e21504cc",
       "modified": true
     },
     {
@@ -666,7 +666,7 @@
     {
       "source": null,
       "path": "skills/creativeotter-swap-characters/references/runtime-contract.md",
-      "sha256": "a19d16c9b3eed0269b72f3d77a98170dfe2fc8acaf2a8442be8e7555b676ddab",
+      "sha256": "9891e692a9d46f706675c28360474ac3e8224787ec0fad6b1a8e3f31e21504cc",
       "modified": true
     },
     {
@@ -704,7 +704,7 @@
     {
       "source": null,
       "path": "skills/creativeotter/references/runtime-contract.md",
-      "sha256": "a19d16c9b3eed0269b72f3d77a98170dfe2fc8acaf2a8442be8e7555b676ddab",
+      "sha256": "9891e692a9d46f706675c28360474ac3e8224787ec0fad6b1a8e3f31e21504cc",
       "modified": true
     },
     {
@@ -716,7 +716,7 @@
     {
       "source": null,
       "path": "skills/creativeotter/references/tool-catalog.md",
-      "sha256": "bafb459061c33585bb5ca508c343d3c180b8752e86db1a322a220c295f6d6e87",
+      "sha256": "c0da708933b7a82b360a58a02dd3a62ddd3736887a463e15a313bc27147b790f",
       "modified": true
     },
     {

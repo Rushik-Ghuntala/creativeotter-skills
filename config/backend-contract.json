@@ -1,6 +1,6 @@
 {
   "checked_on": "2026-11-07",
-  "backend_version": "0.11.0",
+  "backend_version": "0.11.2",
   "note": "Tools/list schemas, including opt-in rendering with only its discovery flag enabled, exported from backend code using an in-memory transport. No account data, credentials, database calls or generation.",
   "tools": [
     {
@@ -323,6 +323,23 @@
     },
     {
       "name": "get_render",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "render_id": {
+            "type": "string",
+            "format": "uuid",
+            "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+          }
+        },
+        "required": [
+          "render_id"
+        ],
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      }
+    },
+    {
+      "name": "get_render_status",
       "inputSchema": {
         "type": "object",
         "properties": {
