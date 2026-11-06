@@ -1,29 +1,43 @@
-# Read-only testing
+# Everyday test prompts
 
-## 1. Account connection
+These checks use existing work and spend no generation credits.
 
-> Use CreativeOtter get_capabilities and manage_account overview. Report the actual backend version, workspace ID, available/reserved credits and permissions. Do not generate, quote, claim, upload, spend credits, change settings or edit files.
+## Connect and check balance
 
-Expected: authenticated account and a real workspace. Account reads spend no generation credits. Record actual results rather than assuming a fixed version or balance.
+> Is my CreativeOtter account connected? How many credits do I have left?
 
-## 2. Shared workspace
+Expect a short answer with the actual balance. If sign-in is needed, complete the assistant's CreativeOtter connection first. Never copy another client's tokens.
 
-Repeat the account prompt in another assistant after signing in with the same CreativeOtter account. Workspace IDs and current credit state should agree. Different accounts should not expose each other's libraries. Do not copy tokens between clients.
+## Show saved images
 
-## 3. Existing image
+> Show my three latest saved CreativeOtter images together, please. Don't create anything new.
 
-Use only an ID returned for your own saved image:
+Expect the CreativeOtter gallery when the host supports it. Replies should use image names or positions, with no internal IDs or technical details. An empty library should be explained without generating a replacement.
 
-> Open my existing saved image with generation ID [your existing ID] and execution source [native or provider]. Use the appropriate existing-result tool or show_image_gallery. Do not create, quote, claim, regenerate, upload or spend credits. If the image is unavailable, report that error.
+## Select and download
 
-Replace the brackets with your own actual ID/source. Provider IDs are quote IDs. The kit deliberately contains no owner's private image IDs. Inline UI depends on the client; use the returned authenticated CreativeOtter link when it cannot render MCP Apps.
+> Open the second picture.
 
-## 4. Refresh and recovery
+> Download that picture for me, please.
 
-Close and reopen your assistant normally, then repeat the account read. The host should reuse/refresh OAuth when available. An intentionally disconnected connection should require sign-in again; do not revoke other clients merely to test this kit. Unsupported scopes, expired requests, and temporary service failures have different messages.
+Check that the selected image and downloaded file match. A link alone is not proof of a completed download. Viewing or downloading saved images should leave the balance unchanged.
 
-If skills are visible but tools are absent, inspect the actual MCP connection, its auth state and media permission before restarting. Website login alone does not connect the assistant. Reload discovery after permission changes. Avoid duplicate manual/plugin servers; start a new chat if the host keeps an old tool catalog.
+## Refresh the saved preview
 
-## Optional paid image test
+Leave the saved image open, switch away, then return later. The preview should recover without generating another image. In a host without embedded previews, use the returned CreativeOtter library link.
 
-Only request generation intentionally after the free connection checks pass. An explicit generation request authorizes that requested output and its configured CreativeOtter credit charge. No generation is part of the packaging test. Check current capabilities; bundled skill names do not guarantee that video, music, voice or every provider is enabled.
+## Repeat in another assistant
+
+Sign in with the same CreativeOtter account and repeat the account/gallery prompts. The same workspace library and current credit balance should be available. A different account must see only its own work.
+
+## Optional generation test — spends credits
+
+Only after the free checks pass, deliberately ask:
+
+> Create one Instagram image for my bakery using CreativeOtter. Use the headline “Fresh mornings start here.”
+
+This requests a new paid image. The backend currently charges 16 CreativeOtter credits for one standard native or API image; pricing may change, so use the live quote. The package does not include free credits. Skills for video, voice or music do not make those backend capabilities available.
+
+## If a connection fails
+
+Use the existing CreativeOtter connection's sign-in or reconnect control. Do not add a second duplicate connection or regenerate an image just to repair its preview. Some clients require tool discovery to refresh after permissions change.

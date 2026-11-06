@@ -4,19 +4,21 @@ This is a multi-client test kit, not a guarantee that every AI accepts one plugi
 
 | Client | Included route | Verification scope |
 | --- | --- | --- |
-| Codex | Complete plugin and local marketplace; MCP-only TOML | Prior live account/saved-image reads verified against backend 0.8.1; new ZIP build validated offline |
-| Claude Code | Complete plugin and marketplace; MCP-only JSON | Prior actual Claude desktop Code account read verified against backend 0.8.1; package validator used for ZIP output |
+| Codex | Complete plugin and local marketplace; MCP-only TOML | Live account, image, gallery and automatic preview recovery checked against backend 0.8.10 on 2026-11-06; ZIP contents validated offline |
+| Claude Code | Complete plugin and marketplace; MCP-only JSON | Live Claude desktop Code saved-gallery navigation, preview refresh and three downloads checked against backend 0.8.9 on 2026-11-06; ZIP contents validated offline |
 | Cursor | Remote MCP JSON | Configuration follows official documentation; actual Cursor sign-in not tested by packaging |
 | VS Code / Copilot | Remote MCP JSON with `servers` | Configuration follows official documentation; actual Copilot sign-in not tested by packaging |
 | Claude chat/Desktop/Cowork | Custom remote connector URL | Configure in the app; Claude Code installation does not create this connector |
 | ChatGPT | Custom remote MCP URL, where available | Requires the client's custom MCP controls and account/admin access; no public directory approval claimed |
+| Grok Bot | Custom remote MCP URL and bundled skill references | Official custom-server setup documented; CreativeOtter sign-in and embedded UI not yet tested there |
+| Grok Build | Claude-compatible plugin directory | Format documented by xAI; live CreativeOtter connection not tested there |
 | Other assistants | Endpoint and portable config example; skill folders | Requires compatible OAuth MCP and optional skills support; not tested individually |
 
 The Codex-default, Claude and generic OAuth protocol fixtures passed against backend 0.8.1 on 2026-11-05, including PKCE, refresh, account-only tool discovery, media discovery and revocation. Historical evidence is not a fresh test of every client or a promise of uptime. Package tests make no generation calls or account changes. The package metadata does not mark every host as verified.
 
 MCP Apps rendering and native media generation vary by host. Without inline UI, tools can still return structured results and authenticated web links. A missing host-native image engine needs an enabled backend provider route and its billing workflow; the ZIP does not supply an image model.
 
-Official format/setup references checked 2026-11-05:
+Official format/setup references checked 2026-11-06:
 
 - [OpenAI plugin packaging](https://developers.openai.com/plugins/build/plugins)
 - [Codex MCP setup](https://developers.openai.com/codex/mcp)
@@ -25,3 +27,6 @@ Official format/setup references checked 2026-11-05:
 - [Claude remote connectors](https://support.claude.com/en/articles/11175166-get-started-with-custom-connectors-using-remote-mcp)
 - [Cursor MCP](https://prod.cursor.com/docs/mcp)
 - [VS Code MCP configuration](https://code.visualstudio.com/docs/agents/reference/mcp-configuration)
+
+- [Grok Bot connections](https://docs.x.ai/grok-bot/computer-and-apps)
+- [Grok Build plugin compatibility](https://docs.x.ai/build/features/skills-plugins-marketplaces)

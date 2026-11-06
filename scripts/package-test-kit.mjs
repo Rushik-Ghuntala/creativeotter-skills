@@ -41,9 +41,26 @@ export const packageTestKit = async ({ staging, archives, mcpUrl, marketplaceNam
     const file = path.join(kit, name);
     await write(file, (await readFile(file, 'utf8')).replaceAll('{{MCP_URL}}', url).replaceAll('{{VERSION}}', config.version).replaceAll('{{MARKETPLACE}}', marketplaceName));
   }
+  // Each inner ZIP is directly installable: manifests are at the archive root.
+  const installArchives = {};
+  for (const [client, label] of [['codex', 'chatgpt-codex'], ['claude', 'claude']]) {
+    const root = path.join(kit, 'plugins', client);
+    const inputs = (await files(root)).sort();
+    for (const file of inputs) { await chmod(file, 0o644); await utimes(file, epoch, epoch); }
+    const relative = `install/creativeotter-${label}-v${config.version}.zip`;
+    const target = path.join(kit, relative);
+    await mkdir(path.dirname(target), { recursive: true });
+    const zipped = spawnSync('zip', ['-X', '-q', target, '-@'], {
+      cwd: root, input: inputs.map(file => path.relative(root, file).split(path.sep).join('/')).join('\n') + '\n',
+      encoding: 'utf8', env: { ...process.env, TZ: 'UTC' },
+    });
+    assert(zipped.status === 0, zipped.stderr || zipped.error?.message || 'Plugin ZIP creation failed.');
+    installArchives[client] = relative;
+  }
   await write(path.join(kit, 'TEST-KIT.json'), {
     product: config.displayName, version: config.version, mode: 'connected-test-kit',
     mcp_url: url, transport: 'streamable-http', authentication: 'OAuth via each host',
+    install_archives: installArchives,
     skill_count_per_plugin: 21, plugin_clients: ['codex', 'claude-code'],
     configuration_adapters: ['codex', 'claude-code', 'cursor', 'vscode', 'portable'],
     all_ai_compatibility_guaranteed: false, marketplace_approved: false,

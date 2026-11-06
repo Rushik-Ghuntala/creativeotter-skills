@@ -2,7 +2,7 @@
 
 Shared media-production skills with separate **Codex** and **Claude Code** plugin packages. Includes all **21 adapted skills**, their prompting references and rendering assets, plus an unchanged, hash-verified upstream snapshot.
 
-**Status:** paid native-first routing, version 0.5.2. Prefer a suitable native engine to lower operating cost; native and API generation both spend CreativeOtter credits. New native work requires a priced quote and a single execution claim that reserves credits directly on user request before the host tool runs. A missing connection, price or balance stops generation. The default `plugins/` folders have no active MCP endpoint; the release test-kit ZIP below connects to the deployed backend. No public directory approval is implied.
+**Status:** paid native-first routing, version 0.5.3. Prefer a suitable native engine to lower operating cost; native and API generation both spend CreativeOtter credits. New native work requires a priced quote and a single execution claim that reserves credits directly on user request before the host tool runs. A missing connection, price or balance stops generation. The default `plugins/` folders have no active MCP endpoint; the release test-kit ZIP below connects to the deployed backend. No public directory approval is implied.
 
 ## Repository layout
 
@@ -27,7 +27,7 @@ Next.js, Supabase, provider adapters, database migrations and billing belong in 
 
 ## Download the connected test kit
 
-[Download CreativeOtter test kit v0.5.2](releases/creativeotter-test-kit-v0.5.2.zip) and its [SHA-256 checksum](releases/creativeotter-test-kit-v0.5.2.zip.sha256). Extract the ZIP and start with its README. It contains connected Codex and Claude Code plugins, local marketplaces, Cursor/VS Code configuration adapters, portable MCP setup and read-only test prompts. Each plugin includes all 21 skills. The public endpoint is `https://creativeotter-app.vercel.app/api/mcp`; each assistant completes its own OAuth sign-in.
+[Download CreativeOtter test kit v0.5.3](releases/creativeotter-test-kit-v0.5.3.zip) and its [SHA-256 checksum](releases/creativeotter-test-kit-v0.5.3.zip.sha256). Extract the ZIP and start with its README. Its `install/` folder contains separate ChatGPT/Codex and Claude plugin ZIPs with manifests at the archive root. It contains connected Codex and Claude Code plugins, local marketplaces, Cursor/VS Code configuration adapters, portable MCP setup and read-only test prompts. Each plugin includes all 21 skills. The public endpoint is `https://creativeotter-app.vercel.app/api/mcp`; each assistant completes its own OAuth sign-in.
 
 This is a multi-client test kit, not a universal plugin format. Hosts need remote OAuth MCP support, and inline media UI depends on the client. No credentials, account data, free credits or auto-running generations are included. See the [kit guide source](templates/test-kit/README.md) and [compatibility evidence](templates/test-kit/docs/COMPATIBILITY.md). The default repository plugins remain instructions-only.
 

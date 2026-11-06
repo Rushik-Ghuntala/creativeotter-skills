@@ -44,6 +44,18 @@ test('the extracted multi-client ZIP is complete, credential-free and reproducib
       assert.ok((await readFile(path.join(base, 'LICENSE'))).equals(await readFile(path.join(ROOT, 'LICENSE'))));
       assert.ok((await readFile(path.join(base, 'NOTICE'))).equals(await readFile(path.join(ROOT, 'NOTICE'))));
     }
+    for (const [label, manifest] of [['chatgpt-codex', '.codex-plugin/plugin.json'], ['claude', '.claude-plugin/plugin.json']]) {
+      const archive = path.join(kit, 'install', `creativeotter-${label}-v${config.version}.zip`);
+      const listing = spawnSync('unzip', ['-Z1', archive], { encoding: 'utf8' });
+      assert.equal(listing.status, 0, listing.stderr);
+      const names = listing.stdout.trim().split('\n');
+      assert.ok(names.includes(manifest), 'Manifest must be at the upload ZIP root');
+      assert.ok(names.includes('.mcp.json'));
+      assert.ok(names.includes('LICENSE') && names.includes('NOTICE'));
+      assert.equal(names.filter(name => /^skills\/[^/]+\/SKILL\.md$/.test(name)).length, 21);
+      assert.ok(names.every(name => !name.split('/').some(part => part === '..' || part.startsWith('.env') || part === '.git')));
+      assert.equal(spawnSync('unzip', ['-tq', archive], { encoding: 'utf8' }).status, 0);
+    }
     const marketplace = await json(path.join(kit, '.agents/plugins/marketplace.json'));
     assert.equal(marketplace.plugins[0].source.path, './plugins/codex');
     assert.equal((await json(path.join(kit, '.claude-plugin/marketplace.json'))).plugins[0].source, './plugins/claude');
