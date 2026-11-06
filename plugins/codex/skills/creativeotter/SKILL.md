@@ -9,6 +9,8 @@ CreativeOtter adaptation, 2026-11-01. Read [the runtime contract](references/run
 
 Use suitable native host tools first under the hybrid runtime contract. Inspect the real host inventory; do not require a provider key for an available native tool. Use the configured `creativeotter` connection for mandatory credit authorization before native or API generation, account data and saved delivery. Missing billing must stop generation. `get_capabilities` describes our backend, not the host’s native inventory. Do not substitute another external plugin’s similarly named tools.
 
+Keep customer replies short and use image names or positions. Internal IDs and technical diagnostics stay inside tools unless explicitly requested; follow the runtime contract’s customer-facing reply guidance.
+
 ## Choose the workflow
 
 | Outcome | Skill |

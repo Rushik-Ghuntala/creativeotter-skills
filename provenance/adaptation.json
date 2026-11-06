@@ -1,7 +1,7 @@
 {
   "source_repository": "https://github.com/CreativeClawCo/creative-claw-marketplace",
   "source_commit": "9a611714f425047e44de916eac7d778804a188fa",
-  "adaptation_version": "0.5.2",
+  "adaptation_version": "0.5.3",
   "adapted_on": "2026-11-01",
   "skill_count": 21,
   "note": "Modified files carry adaptation notices. Original snapshot and license remain unchanged. Source-null files are original CreativeOtter additions.",
@@ -402,7 +402,7 @@
       "source": "upstream/plugins/creative-claw/skills/creativeclaw/references/workflows/account.md",
       "path": "skills/creativeotter/references/workflows/account.md",
       "source_sha256": "849cfd6ab45243ae442c91f9c01eee7998148e6aa6cd029e7cf76022ecea7e75",
-      "sha256": "c57461431e54ed467babbba6a94994928d63ae596254d516dec27a0c973d7e98",
+      "sha256": "1f659a86b54a124d3cd75a90bf8887e2ac33df0771efb00ef489363161e7f49f",
       "modified": true
     },
     {
@@ -486,7 +486,7 @@
       "source": "upstream/plugins/creative-claw/skills/creativeclaw/SKILL.md",
       "path": "skills/creativeotter/SKILL.md",
       "source_sha256": "2a4266b12f1310b695510c39577fb238f730c83e10eaf384272a493a6b15c48f",
-      "sha256": "bbeb279f9a42fe31be3fcb1ca3e95b2181359c516772c99efc3b5f005f1f8e87",
+      "sha256": "da0b3f5d052d81d669e4ac21688ced0758908921c7c50cf24670a1fcbf7a2f41",
       "modified": true
     },
     {
@@ -3236,13 +3236,13 @@
     {
       "source": null,
       "path": "skills/creativeotter/references/runtime-contract.md",
-      "sha256": "4cc473fc51ffb22cbf52734630a6e1c4ca7ef3ab59932f7071051efb084afe3f",
+      "sha256": "dc394c1460faa8362e4bd90895b3d1f5a0663094f155958ffd2e49deae92e514",
       "modified": true
     },
     {
       "source": null,
       "path": "skills/creativeotter-ad-variations/references/runtime-contract.md",
-      "sha256": "4cc473fc51ffb22cbf52734630a6e1c4ca7ef3ab59932f7071051efb084afe3f",
+      "sha256": "dc394c1460faa8362e4bd90895b3d1f5a0663094f155958ffd2e49deae92e514",
       "modified": true
     },
     {
@@ -3260,7 +3260,7 @@
     {
       "source": null,
       "path": "skills/creativeotter-budget-projects/references/runtime-contract.md",
-      "sha256": "4cc473fc51ffb22cbf52734630a6e1c4ca7ef3ab59932f7071051efb084afe3f",
+      "sha256": "dc394c1460faa8362e4bd90895b3d1f5a0663094f155958ffd2e49deae92e514",
       "modified": true
     },
     {
@@ -3278,7 +3278,7 @@
     {
       "source": null,
       "path": "skills/creativeotter-build-film/references/runtime-contract.md",
-      "sha256": "4cc473fc51ffb22cbf52734630a6e1c4ca7ef3ab59932f7071051efb084afe3f",
+      "sha256": "dc394c1460faa8362e4bd90895b3d1f5a0663094f155958ffd2e49deae92e514",
       "modified": true
     },
     {
@@ -3296,7 +3296,7 @@
     {
       "source": null,
       "path": "skills/creativeotter-clone-voice/references/runtime-contract.md",
-      "sha256": "4cc473fc51ffb22cbf52734630a6e1c4ca7ef3ab59932f7071051efb084afe3f",
+      "sha256": "dc394c1460faa8362e4bd90895b3d1f5a0663094f155958ffd2e49deae92e514",
       "modified": true
     },
     {
@@ -3314,7 +3314,7 @@
     {
       "source": null,
       "path": "skills/creativeotter-create-avatar/references/runtime-contract.md",
-      "sha256": "4cc473fc51ffb22cbf52734630a6e1c4ca7ef3ab59932f7071051efb084afe3f",
+      "sha256": "dc394c1460faa8362e4bd90895b3d1f5a0663094f155958ffd2e49deae92e514",
       "modified": true
     },
     {
@@ -3332,7 +3332,7 @@
     {
       "source": null,
       "path": "skills/creativeotter-create-character/references/runtime-contract.md",
-      "sha256": "4cc473fc51ffb22cbf52734630a6e1c4ca7ef3ab59932f7071051efb084afe3f",
+      "sha256": "dc394c1460faa8362e4bd90895b3d1f5a0663094f155958ffd2e49deae92e514",
       "modified": true
     },
     {
@@ -3350,7 +3350,7 @@
     {
       "source": null,
       "path": "skills/creativeotter-create-reels/references/runtime-contract.md",
-      "sha256": "4cc473fc51ffb22cbf52734630a6e1c4ca7ef3ab59932f7071051efb084afe3f",
+      "sha256": "dc394c1460faa8362e4bd90895b3d1f5a0663094f155958ffd2e49deae92e514",
       "modified": true
     },
     {
@@ -3368,7 +3368,7 @@
     {
       "source": null,
       "path": "skills/creativeotter-create-ugc-ad/references/runtime-contract.md",
-      "sha256": "4cc473fc51ffb22cbf52734630a6e1c4ca7ef3ab59932f7071051efb084afe3f",
+      "sha256": "dc394c1460faa8362e4bd90895b3d1f5a0663094f155958ffd2e49deae92e514",
       "modified": true
     },
     {
@@ -3386,7 +3386,7 @@
     {
       "source": null,
       "path": "skills/creativeotter-edit-media/references/runtime-contract.md",
-      "sha256": "4cc473fc51ffb22cbf52734630a6e1c4ca7ef3ab59932f7071051efb084afe3f",
+      "sha256": "dc394c1460faa8362e4bd90895b3d1f5a0663094f155958ffd2e49deae92e514",
       "modified": true
     },
     {
@@ -3404,7 +3404,7 @@
     {
       "source": null,
       "path": "skills/creativeotter-generate-image/references/runtime-contract.md",
-      "sha256": "4cc473fc51ffb22cbf52734630a6e1c4ca7ef3ab59932f7071051efb084afe3f",
+      "sha256": "dc394c1460faa8362e4bd90895b3d1f5a0663094f155958ffd2e49deae92e514",
       "modified": true
     },
     {
@@ -3422,7 +3422,7 @@
     {
       "source": null,
       "path": "skills/creativeotter-generate-music/references/runtime-contract.md",
-      "sha256": "4cc473fc51ffb22cbf52734630a6e1c4ca7ef3ab59932f7071051efb084afe3f",
+      "sha256": "dc394c1460faa8362e4bd90895b3d1f5a0663094f155958ffd2e49deae92e514",
       "modified": true
     },
     {
@@ -3440,7 +3440,7 @@
     {
       "source": null,
       "path": "skills/creativeotter-generate-sound-effects/references/runtime-contract.md",
-      "sha256": "4cc473fc51ffb22cbf52734630a6e1c4ca7ef3ab59932f7071051efb084afe3f",
+      "sha256": "dc394c1460faa8362e4bd90895b3d1f5a0663094f155958ffd2e49deae92e514",
       "modified": true
     },
     {
@@ -3458,7 +3458,7 @@
     {
       "source": null,
       "path": "skills/creativeotter-generate-video/references/runtime-contract.md",
-      "sha256": "4cc473fc51ffb22cbf52734630a6e1c4ca7ef3ab59932f7071051efb084afe3f",
+      "sha256": "dc394c1460faa8362e4bd90895b3d1f5a0663094f155958ffd2e49deae92e514",
       "modified": true
     },
     {
@@ -3476,7 +3476,7 @@
     {
       "source": null,
       "path": "skills/creativeotter-generate-voiceover/references/runtime-contract.md",
-      "sha256": "4cc473fc51ffb22cbf52734630a6e1c4ca7ef3ab59932f7071051efb084afe3f",
+      "sha256": "dc394c1460faa8362e4bd90895b3d1f5a0663094f155958ffd2e49deae92e514",
       "modified": true
     },
     {
@@ -3494,7 +3494,7 @@
     {
       "source": null,
       "path": "skills/creativeotter-plan-video/references/runtime-contract.md",
-      "sha256": "4cc473fc51ffb22cbf52734630a6e1c4ca7ef3ab59932f7071051efb084afe3f",
+      "sha256": "dc394c1460faa8362e4bd90895b3d1f5a0663094f155958ffd2e49deae92e514",
       "modified": true
     },
     {
@@ -3512,7 +3512,7 @@
     {
       "source": null,
       "path": "skills/creativeotter-product-photoshoot/references/runtime-contract.md",
-      "sha256": "4cc473fc51ffb22cbf52734630a6e1c4ca7ef3ab59932f7071051efb084afe3f",
+      "sha256": "dc394c1460faa8362e4bd90895b3d1f5a0663094f155958ffd2e49deae92e514",
       "modified": true
     },
     {
@@ -3530,7 +3530,7 @@
     {
       "source": null,
       "path": "skills/creativeotter-render-html/references/runtime-contract.md",
-      "sha256": "4cc473fc51ffb22cbf52734630a6e1c4ca7ef3ab59932f7071051efb084afe3f",
+      "sha256": "dc394c1460faa8362e4bd90895b3d1f5a0663094f155958ffd2e49deae92e514",
       "modified": true
     },
     {
@@ -3548,7 +3548,7 @@
     {
       "source": null,
       "path": "skills/creativeotter-setup/references/runtime-contract.md",
-      "sha256": "4cc473fc51ffb22cbf52734630a6e1c4ca7ef3ab59932f7071051efb084afe3f",
+      "sha256": "dc394c1460faa8362e4bd90895b3d1f5a0663094f155958ffd2e49deae92e514",
       "modified": true
     },
     {
@@ -3566,7 +3566,7 @@
     {
       "source": null,
       "path": "skills/creativeotter-submit-feedback/references/runtime-contract.md",
-      "sha256": "4cc473fc51ffb22cbf52734630a6e1c4ca7ef3ab59932f7071051efb084afe3f",
+      "sha256": "dc394c1460faa8362e4bd90895b3d1f5a0663094f155958ffd2e49deae92e514",
       "modified": true
     },
     {
@@ -3590,7 +3590,7 @@
     {
       "source": null,
       "path": "skills/creativeotter-swap-characters/references/runtime-contract.md",
-      "sha256": "4cc473fc51ffb22cbf52734630a6e1c4ca7ef3ab59932f7071051efb084afe3f",
+      "sha256": "dc394c1460faa8362e4bd90895b3d1f5a0663094f155958ffd2e49deae92e514",
       "modified": true
     },
     {
